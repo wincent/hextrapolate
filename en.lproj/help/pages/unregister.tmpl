@@ -1,0 +1,29 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Unregistering Hextrapolate'
+  #set $tag         = 'unregister'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to('transferring_license', 'Transferring your license to another machine'))
+#end
+
+#def content
+
+Before unregistering Hextrapolate it is recommend that you $link_to('backing_up_your_license', 'back up your license').
+
+<div id="task_box">
+  
+To unregister your copy of Hextrapolate:
+
+` From the Hextrapolate menu select Register…
+` When the registration preference pane appears, click the Unregister button
+` When the confirmation sheet drops down, click the Unregister button
+  
+</div>
+
+#end

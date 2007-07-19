@@ -1,0 +1,22 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'UTF-8 text encoding'
+  #set $tag         = 'utf8'
+  $see_also($link_to('text_encodings'))
+#end
+
+###############################################################################
+
+#def content
+
+UTF-8 is a 8-bit text encoding capable of encoding a much wider range of characters than ASCII. UTF stands for Unicode Transformation Format.
+
+In UTF-8, characters 0 through 127 have the same meaning as their ASCII counterparts. Unlike ASCII, UTF-8 is not limited to 7-bits per character; it can use all 8 bits and in fact many glyphs require 2, 3, or even 4 bytes (octets).
+
+#end

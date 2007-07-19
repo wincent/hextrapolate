@@ -1,0 +1,37 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Bases'
+  #set $tag         = 'bases'
+  $see_also($link_to('binary_representation'))
+  $see_also($link_to('octal_representation'))
+  $see_also($link_to('decimal_representation'))
+  $see_also($link_to('hexadecimal_representation'))
+#end
+
+#def content
+
+Hextrapolate provides fields for entering numbers in binary (base 2), octal (base 8), decimal (base 10) and hexadecimal (base 16).
+
+In addition, it provides two adjustable fields for selecting any base from base 2 through to base 36.
+
+<div class="screenshot"><img src="../gfx/base-popup.png" width="182" height="189" alt="Base menu"></div>
+
+Beyond base 10, each subsequent base is created by adding one more letter from the roman alphabet to the set of allowed digits. To illustrate:
+
+* At base 16, digits <tt>0</tt> through <tt>9</tt> and letters <tt>a</tt> through <tt>f</tt> are allowed.
+* Base 17 adds <tt>g</tt> to the set of allowed digits.
+* By the time we reach base 36, digits <tt>0</tt> through <tt>9</tt> and letters <tt>a</tt> through <tt>z</tt> are allowed.
+
+If we were to introduce a distinction between lower and uppercase letters we could go even further, as far as base 62, but for the time being Hextrapolate stops at base 36.
+
+h2. Keyboard navigation and tool-tips
+
+As shown in the screenshot above, keyboard shortcuts are provided for quickly switching between bases. Tool-tips are shown to indicate the alternative names for some of the common bases.
+
+#end

@@ -1,0 +1,37 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: example_task.tmpl.txt 77 2007-04-14 11:59:53Z wincent $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = "Why doesn't Hextrapolate let me type the characters I want?"
+  #set $tag         = 'foobar' ### normally the same as the base filename without an extension
+  ###set $abstract    = "if different from page title"
+  ##$see_also($link_to('base2', 'other text'))
+  ##$see_also($link_to_category('base2', 'other text'))
+#end
+
+###############################################################################
+
+#def content
+
+This is the body content, done with Textile-like formatting.
+
+_funny_
+
+<div id="task_box">
+  
+para 1 of the task box
+  
+para 2 of the task box
+
+</div>
+
+#end
+
+## To bypass WalrusCloth, override body_content block instead of content block
+###def body_content
+###end
+

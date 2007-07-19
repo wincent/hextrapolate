@@ -1,0 +1,30 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_task.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Finding out where Hextrapolate is installed'
+  #set $tag         = 'locating_hextrapolate'
+  $see_also($link_to('installing', 'installing Hextrapolate'))
+  $see_also($link_to('uninstalling', 'uninstalling Hextrapolate'))
+#end
+
+###############################################################################
+
+#def content
+
+Hextrapolate is installed by "drag and drop". The most common install location is the <tt>Applications</tt> folder. If you wish to uninstall Hextrapolate but cannot remember where you installed it you can use Spotlight to find out its location.
+
+<div id="task_box">
+  
+` Click the Spotlight icon in the far right of the menu bar.
+` In the search field that appears type "Hextrapolate"
+` When Hextrapolate appears under the search results in the "Applications" group, hover the mouse over its name and a tool-tip will be displayed showing its installed location on your disk. 
+
+</div>
+
+#end
+

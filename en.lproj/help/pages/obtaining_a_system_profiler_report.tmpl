@@ -1,0 +1,33 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_task.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Obtaining a System Profiler report'
+  #set $tag         = 'obtaining_a_system_profiler_report'
+  $see_also($link_to('how_to_file_a_good_bug_report'))
+  $see_also($link_to('reporting_bugs'))
+#end
+
+###############################################################################
+
+#def content
+
+To provide detailed troubleshooting information with your bug report you can attach a System Profiler report.
+
+<div id="task_box">
+
+h2. To obtain a System Profiler report:
+
+` Open the System Profiler application (inside the <tt>Utilities</tt> folder in the <tt>Applications</tt> folder).
+` From the File menu, choose Export.
+  
+</div>
+
+System Profile reports can be quite large so you may want to compress it prior to attaching it to your bug report. One way of doing this is to click on the report in the Finder while holding down the Control key, then select "Create Archive" from the contextual menu.
+
+#end
+

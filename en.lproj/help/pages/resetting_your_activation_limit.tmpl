@@ -1,0 +1,34 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Resetting your activation limit'
+  #set $tag         = 'resetting_your_activation_limit'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $category('activation_topics')
+#end
+
+#def content
+
+If you exceed your activation limit, contact me via email to <a href="mailto:support@wincent.com">support@wincent.com</a> and I will reset your limit. Please provide your contact details, registration email address, and product name so that I can locate your license.
+
+Once your limit has been reset you may then delete your old activation certificate and obtain a new one.
+
+<div id="task_box">
+
+To delete your old activation certificate:
+
+` Using the Finder, go to your home directory and open the <tt>Library</tt> folder
+` Inside the <tt>Library</tt> folder, open the <tt>Preferences</tt> folder
+` Drag the file <tt>com.wincent.Hextrapolate.activation.certificate.plist</tt> from the <tt>Preferences</tt> folder to the Trash.
+
+</div>
+
+The next time you launch Hextrapolate it will show a dialog offering to perform activation and obtain a new certificate for you.
+
+#end

@@ -1,0 +1,26 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../WOCommon/help/access'
+
+#def setup
+  #super
+  #include 'settings.txt'
+  #set $page_title = 'Hextrapolate Help'
+#end
+
+#def splash_image
+  <img src="gfx/splash.png" alt="Hextrapolate main window" width="200" height="159" border="0">
+#end
+
+#def right
+  <h2>What's new in Hextrapolate?</h2>
+  <p>$link_to('whats_new', 'Check out great new features.')</p>
+  <h2>Learn about Hextrapolate</h2>
+  <p>$link_to('learn_about', 'Quickly convert numbers of unlimited size')</p>
+  <h2>Solving problems</h2>
+  <p>$link_to('troubleshooting_tips', 'Find the answers to common problems.')</p>
+  <h2>Index</h2>
+  <p>$link_to('full_index', 'Look up topics easily')</p>
+#end

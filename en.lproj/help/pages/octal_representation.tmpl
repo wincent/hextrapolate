@@ -1,0 +1,35 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Octal representation'
+  #set $tag         = 'octal_representation'
+  $see_also($link_to('bases'))
+#end
+
+###############################################################################
+
+#def content
+
+An octal representation is a number written using Base 8. Each digit may have only one of eight possible values (0 through 7). In computing, octal representations are most often encountered in the context of file system permissions where three or four digit octal numbers are used to denote the access permissions of the user, group and others.
+
+The octal representation of the positive integers is the same as decimal up until the eight digit:
+
+* 1
+* 2
+* 3
+* 4
+* 5
+* 6
+* 7
+* 10 (in the decimal system, 8)
+
+All positive integers (and 0) may be written in octal representation.
+
+Appending a zero to the right-hand side of a binary representation multiplies it by 8.
+
+#end

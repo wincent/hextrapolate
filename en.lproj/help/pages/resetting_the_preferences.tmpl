@@ -1,0 +1,36 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Resetting the preferences'
+  #set $tag         = 'resetting_the_preferences'
+  $see_also($link_to('troubleshooting_tips'))
+  $see_also($link_to_category('troubleshooting'))
+  $category('troubleshooting')
+  $see_also($link_to('quitting', 'quitting Hextrapolate'))
+#end
+
+###############################################################################
+
+#def content
+
+If you are experiencing problems with Hextrapolate you may wish to reset its preferences.
+
+<div id="task_box">
+
+To reset Hextrapolate's preferences:
+
+` Quit Hextrapolate
+` Using the Finder, go to your home directory and open the <tt>Library</tt> folder
+` Inside the <tt>Library</tt> folder, open the <tt>Preferences</tt> folder
+` Drag the file <tt>com.wincent.Hextrapolate.plist</tt> from the <tt>Preferences</tt> folder to your Desktop, or to the Trash if you wish to dispose of it permanently
+
+The next time you launch Hextrapolate it will automatically create a new preferences file.
+
+</div>
+
+#end

@@ -1,0 +1,69 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Troubleshooting tips'
+  #set $tag         = 'troubleshooting_tips'
+  $see_also($link_to('reporting_bugs'))
+  $category('troubleshooting')
+#end
+
+###############################################################################
+
+#def content
+
+There are number of basic troubleshooting techniques that you can try whenever you experience problems with Mac OS X. These tips apply equally to all Mac OS X applications, not just Hextrapolate.
+
+<div id="task_box">
+  
+h2. Update to the latest version
+
+The latest version of Hextrapolate may already contain a fix for the problem. See $link_to('upgrading_hextrapolate') for information on how to updgrade to the latest version.
+
+h2. Try logging out
+
+If you have been logged in for a long time your system's environment may have degraded to the point where subtle problems occur. You can rule out these causes by logging out and logging in again. If the problem continues to occur after a log-out/log-in cycle then you should continue troubleshooting.
+
+h2. Try rebooting
+
+Likewise, if you system has been running for a long time without a reboot performance may be degraded and other subtle problems may occur. Try rebooting and see if the problem persists.
+
+h2. Try an uninstall/reinstall cycle
+
+Sometimes in the day-to-day use of a system files get moved, deleted, and overwritten. You should try uninstalling the software and then reinstalling it. See $link_to('uninstalling') and $link_to('uninstalling', 'uninstalling Hextrapolate') for information on how to do this.
+
+If the problem goes away, you know that your previous installation was somehow damaged.
+
+h2. Reset your preferences
+
+Preference files can become corrupted or unreadable over time, and in some cases this can lead to crashes or application misbehaviour. You can rule out this cause by $link_to('resetting_the_preferences').
+
+h2. Rule out potential conflicts with third-party software
+
+If you have any third-party software installed, especially if it is a system modification, it could potentially cause a conflict with other programs on your Mac. To rule out this as a possible cause, try temporarily disabling third-party add-ons and see if the problem goes away.
+
+h2. Check for a corrupt disk
+
+Check your hard disk for corruption by booting from your Mac OS X install disc and running Disk Utility.
+
+You can do this by inserting your Mac OS X install disc and restarting while holding down the C key. Once booting is complete you can choose Disk Utility from the Utilities menu and verify your disk.
+
+h2. Try from another user account
+
+Try to reproduce the problem when logged in to a different user account on the same machine. This will rule out any causes that may be confined to your specific account (settings, caches files, preferences and so on).
+
+h2. Try from another machine
+
+Taking this troubleshooting technique even further, if you have more than one machine you can try reproducing the problem on another computer. If the problem is present only on one machine then there is possible a local, machine-specific cause.
+
+</div>
+
+If your troubleshooting is not successful, please $link_to('reporting_bugs', 'file a bug report') or $link_to('getting_support', 'ask for support').
+
+#end
+
+

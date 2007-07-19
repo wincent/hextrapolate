@@ -1,0 +1,32 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Quitting Hextrapolate'
+  #set $tag         = 'quitting'
+  $see_also($link_to('force_quitting', 'force quitting Hextrapolate'))
+#end
+
+###############################################################################
+
+#def content
+
+You can quit Hextrapolate using any of the standard methods for quitting applications on Mac OS X:
+
+<div id="task_box">
+  
+* When Hextrapolate is the frontmost, active application:
+** Use the mouse to select "Quit Hextrapolate" from the "Hextrapolate" menu.
+** Hold the Command key and press the "Q" key.
+* Click-and-hold on the Hextrapolate Dock icon and choose "Quit" from the menu which appears.
+* Hold down the Command key and cycle through the list of running applications by pressing the Tab key until Hextrapolate is selected; then, without releasing the command key tap the "Q" key.
+
+</div>
+
+If Hextrapolate stops responding you may need to Force Quit it.
+
+#end

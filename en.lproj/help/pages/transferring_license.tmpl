@@ -1,0 +1,35 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Transferring your license to another machine'
+  #set $tag         = 'transferring_license'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to('unregister', 'Unegistering Hextrapolate'))
+  $see_also($link_to('activation', 'Activation'))
+#end
+
+#def content
+
+In order to transfer your Hextrapolate license from one machine to another you first $link_to('unregister') the existing installed copy and then $link_to('registering', 'register') the copy on the new machine.
+
+You can do this from within the Hextrapolate registration preference pane. Alternatively, you can copy the license file from one machine to another as described below.
+
+<div id="task_box">
+  
+To manually copy your license from one machine to another:
+
+` Quit Hextrapolate.
+` Using the Finder, go to your home directory and open the <tt>Library</tt> folder
+` Inside the <tt>Library</tt> folder, open the <tt>Preferences</tt> folder
+` Copy the file <tt>com.wincent.Hextrapolate.license.plist</tt> from the <tt>Preferences</tt> folder to the corresponding folder on your target machine.
+
+</div>
+
+There is no need to copy your activation certificate (<tt>com.wincent.Hextrapolate.activation.certificate.plist</tt>) to the new machine as these certificates are specific to the machine on which you performed the activation.
+
+#end

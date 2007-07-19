@@ -1,0 +1,31 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Why use product activation?'
+  #set $tag         = 'why_use_product_activation'
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $category('activation_topics')
+#end
+
+#def content
+
+h2. Why
+
+One of the great things about the Internet is that it makes it very easy to distribute software to a large number of people. Unfortunately it's also very easy to distribute license codes and cracks. A single leak can quickly lead to thousands of pirated copies. Product activation minimizes the damage caused by such leaks. If the same license code is used to activate a product hundreds or thousands of times, then it's clear that a leak has occurred and further activations can be stopped before the damage spreads too far.
+
+h2. How
+
+Every aspect of the product activation system is carefully designed to reducing the damage done by software piracy without inconveniencing honest users. Whereas in older products users entered their license codes and clicked an "OK" button, they now click a "Verify" button. The only difference is that their license is now verified with the wincent.com server and after few seconds or less the product is permanently activated. No personal information is transmitted to the Wincent server in the process so your privacy is protected (see $link_to('activation_privacy')).
+
+Product activation doesn't interfere with normal use (moving your license to another machine, reinstalling your system or changing your hardware) because each license is allowed a reasonable number of activations.
+
+h2. Who
+
+Product activation is employed by some of the largest software companies in the world such as Microsoft, Macromedia, Adobe, Network Associates and Symantec and the list is constantly growing. In the not-too-distant future product activation is likely to be included in the majority of commercial software. (You can read more general information about product activation and the companies that use it on <a href="http://www.bsa.org/usa/antipiracy/Product-Activation.cfm">this page</a> at the <a href="http://bsa.org/">Business Software Alliance</a> website.)
+
+#end

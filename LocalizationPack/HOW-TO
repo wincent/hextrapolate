@@ -1,0 +1,11 @@
+I made this localization pack by doing the following:
+
+nibtool -L English.lproj/MainMenu.nib > English.lproj/MainMenu.strings
+mkdir LocalizationPack
+mkdir LocalizationPack/WinHex1.0b2LocalizationPack
+svn export --non-interactive English.lproj \
+LocalizationPack/WinHex1.0b2Localization/English.lproj
+rm -r Localizationpack/WinHex1.0b2LocalizationPack/English.lproj MainMenu.nib
+
+Then I zipped it up in the Finder to produce:
+WinHex1.0b2LocalizationPack.zip

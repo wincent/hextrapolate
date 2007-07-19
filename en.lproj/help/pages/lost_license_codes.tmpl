@@ -1,0 +1,37 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'What to do if you lose your license code'
+  #set $tag         = 'lost_license_codes'
+  $see_also($link_to('missing_license', "What to do if you haven't received your license"))
+  $see_also($link_to('purchasing', 'Purchasing Hextrapolate'))
+  $see_also($link_to('backing_up_your_license'))
+#end
+
+#def content
+
+If you lose your license code you can have it resent to you by an automated system.
+
+It is recommended that you keep backups of your license notices.
+
+<div id="task_box">
+
+` From the Hextrapolate menu select Register…
+` When the registration preference pane appears, click the "Retrieve lost license code" button
+
+</div>
+
+h2. Screenshots
+
+<div class="screenshot"><img src="../gfx/registration-pane.png" width="464" height="389" alt="Registration preferences pane"></div>
+
+h2. Alternatives
+
+If you unable to obtain your license using this method, contact me via email at <a href="mailto:support@wincent.com">support@wincent.com</a>.
+
+#end

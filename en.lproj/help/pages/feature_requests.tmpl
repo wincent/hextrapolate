@@ -1,0 +1,28 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'How to submit a feature request'
+  #set $tag         = 'feature_requests'
+#end
+
+###############################################################################
+
+#def content
+
+There are two avenues for submitting a feature request for Hextrapolate:
+
+<div id="task_box">
+  
+* Submit a feature request via the web at <a href="http://bugs.wincent.com/">bugs.wincent.com</a>
+* Submit a feature request via email to <a href="mailto:features@wincent.com">features@wincent.com</a>
+
+</div>
+
+Submitting a feature request via the web is strongly recommended because you can use the web interface to perform a search before submitting (it may be that someone else has already requested the enhancement).
+
+#end

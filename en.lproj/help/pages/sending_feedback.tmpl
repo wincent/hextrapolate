@@ -1,0 +1,30 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Sending feedback'
+  #set $tag         = 'sending_feedback'
+  $see_also($link_to('reporting_bugs'))
+  $see_also($link_to('feature_requests'))
+  $see_also($link_to('getting_support'))
+#end
+
+###############################################################################
+
+#def content
+
+Your feedback can help to make Hextrapolate a better product. If you have general feedback that doesn't fall into the categories of $link_to('feature_requests', 'requesting a feature'), $link_to('reporting_bugs', 'reporting a bug') or $link_to('getting_support') please get in touch.
+
+<div id="task_box">
+
+To submit feedback for Hextrapolate:
+
+` Contact me via email to <a href="mailto:feedback@wincent.com">feedback@wincent.com</a>.
+
+</div>
+
+#end

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>Registration</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>CFBundleDisplayName</key>
+	<string>Registration</string>
+	<key>CFBundleIconFile</key>
+	<string>Registration.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.wincent.preferences.Registration</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>WO_INFO_PLIST_VERSION (WO_BUILDNUMBER)</string>
+	<key>NSPrefPaneIconFile</key>
+	<string>RegistrationPref.tiff</string>    
+	<key>NSPrefPaneIconLabel</key>
+	<string>Registration</string>
+	<key>NSPrincipalClass</key>
+	<string>WORegistrationPreferencePane</string>
+	<key>WOPreferencesCategory</key>
+	<string>Basic</string>
+	<key>WOCopyrightYear</key>
+	<string>WO_COPYRIGHT_YEAR</string>
+</dict>
+</plist>

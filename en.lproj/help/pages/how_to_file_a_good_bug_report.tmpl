@@ -1,0 +1,69 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'How to file a good bug report'
+  #set $tag         = 'how_to_file_a_good_bug_report'
+  $see_also($link_to('troubleshooting_tips'))
+  $see_also($link_to('reporting_bugs'))
+  $see_also($link_to_category('troubleshooting'))
+  $category('troubleshooting')
+#end
+
+###############################################################################
+
+#def content
+
+Submitting good bug reports is the best way to get flaws in Hextrapolate fixed as quickly as possible. There are a number of steps you can take to ensure that your bug reports are of high quality:
+
+<div id="task_box">
+  
+h2. Perform basic troubleshooting first
+
+It's important to eliminate possible causes outside of the software. You may find that the problem is being caused by something external to the program, such as a corrupt preferences file, and once you correct the external cause the problem goes away.
+
+See "$link_to('troubleshooting_tips')" for information on basic troubleshooting.
+
+h2. Search before reporting
+
+Perform a search of the database at <a href="http://bugs.wincent.com/">bugs.wincent.com</a> prior to submitting a report; you can save yourself the effort of filing a report if someone else has already reported the issue.
+
+h2. Find out how to reproduce the bug
+
+Reproducibility is *the* most important attribute a bug report can have. This means figuring out how to "reproduce" the problem; that is, working out a list of steps required to trigger or cause the bug. Without these instructions I may not be able to fix the bug.
+
+h2. Describe your system
+
+Include basic information about your system such as:
+
+* the version of Mac OS X that you are running
+* the version of Hextrapolate in which you've found a bug
+* whether your machine is Intel or PowerPC-based
+
+One way of providing all this information and more is by $link_to('obtaining_a_system_profiler_report', 'including a system profiler report').
+
+h2. Collect information from the Console
+
+Use the Console application (located in the <tt>Utilities</tt> folder inside the <tt>Applications</tt> folder) to see if anything related to the issue is printed to the <tt>system.log</tt> or <tt>console.log</tt> files. Look for lines which include the word "Hextrapolate", especially lines which contain error messages or warnings.
+
+Save any relevant lines and include them in your report.
+
+h2. Collect information from the Activity Monitor
+
+If Hextrapolate stops responding for long periods of time you can use the Activity monitor (located in the <tt>Utilities</tt> folder inside the <tt>Applications</tt> folder) to gather information about where it might be stuck.
+
+Select Hextrapolate from the list of running processes and choose "Sample Process" from the "View" menu, then include the resulting sample in your report.
+
+h2. One issue per bug report
+
+Keep your bug report focussed on a single issue. This will make it easier for others to find your bug report in the database and contribute data to help track down the issue.
+
+</div>
+
+To actually report a bug, see $link_to('reporting_bugs').
+
+#end

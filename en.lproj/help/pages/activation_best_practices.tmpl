@@ -1,0 +1,58 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Activation best practices'
+  #set $tag         = 'activation_best_practices'
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $see_also($link_to('getting_support', 'Requesting support'))
+  $category('activation_topics')
+#end
+
+#def content
+
+The Hextrapolate activation system fulfills or exceeds the best practice guidelines for product activation published by the Business Software Alliance:
+
+h2. Respect for Privacy
+
+Activation should not collect or transmit personally identifiable information without the users' explicit knowledge and should comply with applicable data protection laws.
+
+* $link_to('activation_privacy')
+
+h2. Ease of Use
+
+Activation methods should not be burdensome to the user. Ideally, they should be limited to a one-time step or process per machine.
+
+* $link_to('registering', 'Registering Hextrapolate')
+
+h2. Full Disclosure
+
+Publishers should clearly explain the activation process, including the activation data and how it is transmitted, so that users understand how activation works and are assured that their privacy will be respected.
+
+* $link_to('how_does_activation_work', 'How does activation work?')
+
+h2. Support
+
+Documentation and access to high quality support should be made available to assist users with activating their product and to answer their questions.
+
+* $link_to('getting_support', 'Requesting support')
+
+h2. Security
+
+The activation solution should use appropriate security to protect stored and transmitted activation data.
+
+h2. Speed
+
+The activation process should be completed as quickly as possible.
+
+h2. User Control
+
+Activation should empower users to easily move their software program to a new or upgraded computer in a manner authorized by the license agreement.
+
+* $link_to('transferring_license', 'Transferring your license from one machine to another')
+
+#end

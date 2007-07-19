@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "Hextrapolate";
+CFBundleShortVersionString = "Hextrapolate version «CFBundleVersion»";
+CFBundleGetInfoString = "Hextrapolate version «CFBundleVersion», Copyright «WOCopyrightYear» Wincent Colaiuta.";
+NSHumanReadableCopyright = "Copyright «WOCopyrightYear» Wincent Colaiuta.";

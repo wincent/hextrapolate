@@ -1,0 +1,31 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Force Quitting Hextrapolate'
+  #set $tag         = 'force_quitting'
+  $see_also($link_to('quitting', 'quitting Hextrapolate'))
+  $see_also($link_to_category('troubleshooting'))
+  $see_also($link_to('reporting_bugs', 'reporting bugs'))
+#end
+
+###############################################################################
+
+#def content
+
+If Hextrapolate stops responding you may not be able to quit it by the usual means. You may have to do a "force quit". To do this you can use any of the standard methods for force quitting applications on Mac OS X:
+
+<div id="task_box">
+  
+* Hold down the Option and Command keys and press Escape: the system should display a dialog listing all running applications; you can then select Hextrapolate from the list and press "Force Quit".
+* Bring up the Hextrapolate Dock menu by clicking and holding on the Hextrapolate icon in the Dock and select "Force Quit".
+
+</div>
+
+If Hextrapolate stops responding please consider filing a bug report. 
+
+#end

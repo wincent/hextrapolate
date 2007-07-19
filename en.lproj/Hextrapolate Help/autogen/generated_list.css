@@ -1,0 +1,104 @@
+/*
+  
+  generated_list.css
+  Last updated: 5 January 2007
+  
+  Created by Wincent Colaiuta on 11 October 2006.
+  Copyright Wincent Colaiuta 2006-2007.
+  $Id$
+  
+ */
+
+/* Hack: <html><head><meta name="robots" content="noindex"></head></html> (tells Help Indexer to ignore this file) */
+
+body {
+  margin: 2px 12px 12px;
+  font-family: "Lucida Grande", Arial, sans-serif
+  }
+
+h1 {
+  font-size: 11pt;
+  margin-bottom: 0
+  }
+
+p {
+  font-size: 9pt;
+  line-height: 12pt;
+  text-decoration: none
+  }
+
+a {
+  color: #00f;
+  font-size: 9pt;
+  line-height: 12pt;
+  text-decoration: none
+  }
+
+a:hover {
+  color: #00f;
+  text-decoration: underline
+  }
+
+#banner {
+  background-color: #f2f2f2; 
+  background-repeat: no-repeat; 
+  padding: -2px 6px 0; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 1.2em; 
+  float: left; 
+  border-bottom: 1px solid #bfbfbf 
+  }
+
+#icon {
+  margin-bottom: -3px;
+  float: left
+  }
+
+#page_title {
+  margin-top: 12px;
+  margin-bottom: -3px;
+  margin-left: 40px;
+  width: 88%;
+  border: solid 1px #fff
+  }
+
+#main_box {
+  margin-top: 36px;
+  padding-right: 6px
+  }
+
+#home_link { 
+  position: absolute; 
+  top: 2px; 
+  left: 10px 
+}
+
+#home_link a {
+  color: #00f;
+  font-size: 8pt;
+  margin: -9px 0 -6px
+}
+
+#index_link { 
+  background-color: #f2f2f2; 
+  padding-top: 2px; 
+  padding-right: 25px; 
+  top: 2px; 
+  right: 12px; 
+  width: auto; 
+  float: right 
+  }
+
+#index_link a { 
+  color: #00f;
+  font-size: 8pt;
+  margin: -9px 0 -6px;
+  padding-top: 24px;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  border-left: 1px solid #bfbfbf 
+  }
+

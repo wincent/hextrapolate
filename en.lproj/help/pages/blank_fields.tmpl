@@ -1,0 +1,27 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Why are the text fields blank?'
+  #set $tag         = 'blank_fields'
+  $see_also($link_to('ascii', 'ASCII text encoding'))
+  $see_also($link_to('text_encodings'))
+  $see_also($link_to('let_me_type', "Why doesn't Hextrapolate let me type the characters I want?"))
+  $category('troubleshooting')
+#end
+
+#def content
+
+Hextrapolate provides two adjustable fields for showing a number in a text encoding (ASCII, UTF-8 or UTF-16).
+
+If you enter a number which does not have a valid representation in the specified text encoding then the corresponding field will appear as blank.
+
+This can occur quite often in the case of ASCII because the ASCII text encoding only contains 95 printable characters. It can also happen in the case of UTF-8; even though UTF-8 is capable of encoding thousands of different characters it requires the bytes to be in a very specific order, so it is quite easy to enter numbers which do not respond to valid UTF-8 text.
+
+UTF-16 spans a much wider range of possible values and so is less likely to show as a blank field.
+
+#end

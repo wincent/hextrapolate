@@ -1,0 +1,1 @@
+.././mpn/powerpc32/diveby3.asm

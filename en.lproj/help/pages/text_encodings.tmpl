@@ -1,0 +1,31 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Text encodings'
+  #set $tag         = 'text_encodings'
+  $see_also($link_to('ascii', 'ASCII text encoding'))
+  $see_also($link_to('utf8', 'UTF-8 text encoding'))
+  $see_also($link_to('utf16', 'UTF-16 text encoding'))
+  $see_also($link_to('let_me_type', "Why doesn't Hextrapolate let me type the characters I want?"))
+  $see_also($link_to('blank_fields', 'Why are the text fields blank?'))
+  $see_also($link_to('garbage_in_text_fields', 'Why are there garbage characters in the text fields?'))
+#end
+
+#def content
+
+Hextrapolate provides adjustable fields for entering and displaying text in ASCII, UTF-8, or UTF-16 text encodings. A text encoding is a mapping between data (codes) and the characters represented by those codes. For example, in ASCII the lowercase letter <tt>x</tt> is encoded as 120 (decimal).
+
+<div class="screenshot"><img src="../gfx/encoding-popup.png" width="174" height="132" alt="Encoding menu"></div>
+
+Note that not all numbers correspond to valid strings in a given text encoding, and even if a string is valid it may contain characters for which no glyph exists in the installed fonts.
+
+h2. Tool-tips
+
+As shown in the screenshot above, tool-tips are shown as a reminder for the abbreviations, LE (little-endian) and BE (big-endian). See $link_to('utf16', 'UTF-16 text encoding') for more information about endianness.
+
+#end

@@ -1,0 +1,21 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'What happens if the network is down when I try to activate?'
+  #set $tag         = 'what_happens_if_the_network_is_down'
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $category('activation_topics')
+#end
+
+#def content
+
+Hextrapolate will still run without activation so if you have a temporary network failure you can try again later (Hextrapolate will remind you to do so the next time you run it). Once the software has been activated it does not need to connect to the Internet again so there is no dependency on a network connection.
+
+The wincent.com activation server runs an industry-standard UNIX-like operating system (Red Hat Enterprise Linux) and is hosted by Rackspace, regarded by many as the most reliable hosting provider in the world. Their data centers have uninterruptable backup power generators and multiple, redundant, high-bandwidth connections to the Internet. Rackspace guarantees a "Zero-Downtime Network". In the unlikely event that you cannot connect to the activation servers during maintenance or due to a transitory network fault between your machine and the servers you will find that you can continue to use the software and perform the activation later.
+
+#end

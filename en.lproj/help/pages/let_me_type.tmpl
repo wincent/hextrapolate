@@ -1,0 +1,34 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = "Why doesn't Hextrapolate let me type the characters I want?"
+  #set $tag         = 'let_me_type'
+  $see_also($link_to('binary_representation'))
+  $see_also($link_to('octal_representation'))
+  $see_also($link_to('decimal_representation'))
+  $see_also($link_to('hexadecimal_representation'))
+  $see_also($link_to('ascii', 'ASCII text encoding'))
+  $see_also($link_to('text_encodings'))
+  $see_also($link_to('bases'))
+  $see_also($link_to_category('troubleshooting'))
+  $category('troubleshooting')
+#end
+
+#def content
+
+Hextrapolate only allows you to type numbers and letters that are valid for a particular base or text encoding. The allowed characters for some of the common bases and text encodings are shown below:
+
+* _Hexadecimal_: the digits 0 through 9, as well as the letters a through f
+* _Decimal_: the digits 0 through 9
+* _Octal_: the digits 0 through 7
+* _Binary_: the digits 0 and 1
+* _ASCII_: the 95 printable characters of the ASCII character encoding; these include all the 26 lowercase and uppercase letters of the Roman alphabet, the digits 0 through 9, and a number of punctuation and other characters (see $link_to('ascii', 'ASCII text encoding') for a full listing)
+
+If a character you type is rejected Hextrapolate will show information about it in a tool-tip (see $link_to('digit_error', 'digit error (screenshot)') and $link_to('encoding_error', 'text encoding error (screenshot)')).
+
+#end

@@ -1,0 +1,32 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_task.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Downloading Hextrapolate'
+  #set $tag         = 'downloading'
+  $see_also($link_to('installing'))
+#end
+
+###############################################################################
+
+#def content
+
+The latest version of Hextrapolate is always available from the Wincent website.
+
+<div id="task_box">
+
+To download the Hextrapolate disk image:
+
+` Navigate to <a href="http://hextrapolate.wincent.com/">hextrapolate.wincent.com</a> in your web browser.
+` Click on the "Download" link in the sidebar.
+` Click on the "Download" button that corresponds to the version of Hextrapolate that you wish to download.
+
+</div>
+
+If you are running an older version of Mac OS X you may not be able to use the latest version of Hextrapolate. The downloads page indicates the minimum version requirement, and provides download links for previous versions of Hextrapolate that will run on older versions of Mac OS X.
+
+#end

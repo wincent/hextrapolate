@@ -1,0 +1,28 @@
+## Created by Wincent Colaiuta on 23 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Before unregistering'
+  #set $tag         = 'before_unregistering'
+  $see_also($link_to('unregister', 'Unregistering Hextrapolate'))
+  $see_also($link_to('transferring_license', 'Transferring your license to another machine'))
+  $see_also($link_to('activation', 'Activation'))
+#end
+
+#def content
+
+h2. Why unregister Hextrapolate?
+
+You should unregister any installed copies of Hextrapolate before selling or otherwise disposing of your computer.
+
+If you wish to transfer your copy of Hextrapolate from one computer to another then you $link_to('unregister') it on one machine before $link_to('registering') on the other.
+
+h2. Things to consider
+
+Before you unregister your copy of Hextrapolate, remember that you will have to go through the activation process if you later decide to register again. Each license includes a reasonable number of activations, to allow for normal usage patterns (system upgrades, machine purchases, hardware failures and so on), but you should avoid needlessly unregistering and re-activating because if you hit your activation limit then you will have to request for it to be reset.
+
+#end

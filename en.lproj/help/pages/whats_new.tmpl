@@ -1,0 +1,76 @@
+## Created by Wincent Colaiuta on 21 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6761 2007-04-14T11:59:53.204092Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = "What's new in Hextrapolate?"
+  #set $tag         = 'whats_new'
+  ###set $abstract    = "if different from page title"
+  ##$see_also($link_to('base2', 'other text'))
+  ##$see_also($link_to_category('base2', 'other text'))
+#end
+
+###############################################################################
+
+#def content
+
+Hextrapolate version 2.0 is a complete ground-up rewrite of the previous version (formerly known as WinHex) and delivers many new features, bug fixes and enhancements. The new conversion engine is faster, more resource efficient and more powerful.
+
+<div class="feature">
+
+h2. Selectable text encodings<br>
+<img src="../gfx/encoding-popup.png" width="174" height="132" alt="Encoding pop-up">
+
+You can now convert numbers to and from more text encodings: ASCII, UTF-8, and two variants of UTF-16 (little and big endian). Not only that, but the conversion engine has been rewritten to better handle cases where the number being converted is not valid for the selected encoding.
+
+* $link_to('text_encodings')
+
+</div>
+
+<div class="feature">
+
+h2. More choices<br>
+<img src="../gfx/more-choices.png" width="129" height="110" alt="More choices">
+
+More fields have been added to the interface to provide more flexible conversions. This means that you can now convert to and from any of the supported text encodings and bases without having to repeatedly switch your selected encoding or base. Exotic conversion which were previously a two step process (for example Base 12 to Base 19) can now be done in a single step.
+
+* $link_to('bases')
+* $link_to('text_encodings')
+
+</div>
+
+<div class="feature">
+
+h2. Better feedback<br>
+<img src="../gfx/better-feedback.png" width="164" height="57" alt="Better feedback">
+
+The Hextrapolate main window now shows more information in the title bar, allowing you to see at a glance the size of the number currently being converted (in bits and bytes). Numbers can be arbitrarily large in size, extending to thousands of bits and beyond.
+
+</div>
+
+<div class="feature">
+
+h2. Comprehensive tool-tips<br>
+<img src="../gfx/tool-tips.png" width="171" height="105" alt="Tool-tips">
+
+More tool tips have been added to the interface to provide better feedback in realtime if you try to type a character which is not allowed in a particular base or text encoding.
+
+* $link_to('let_me_type', 'Getting feedback on errors')
+
+</div>
+
+<div class="feature">
+  
+h2. Integrated help<br>
+<img src="../gfx/integrated-help.png" width="171" height="105" alt="Integrated help">
+
+Extensive help documentation prepared in the familiar format used by Apple applications is now embedded within the Hextrapolate application itself. An online mirror of the documentation can be found <a href="http://wincent.com/a/products/hextrapolate/help/">here</a>.
+
+</div>
+
+#end
+
+

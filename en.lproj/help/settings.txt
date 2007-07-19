@@ -1,0 +1,20 @@
+## settings.tmpl
+## A template for application-wide default settings
+## WOCommon help templates
+##
+## Created by Wincent Colaiuta on 11 October 2006.
+## Copyright 2006-2007 Wincent Colaiuta
+## $Id: settings.txt 75 2007-04-12 13:07:56Z wincent $
+
+##
+## appliction-wide default settings go in here
+##
+
+#set $book_id     = 'Hextrapolate Help'
+#set $book_icon   = 'Hextrapolate Help/gfx/icon16.png'
+
+##
+## the page_title should be overridden on a per-page basis
+##
+
+#set $page_title  = 'Help'

@@ -1,0 +1,28 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_task.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Uninstalling Hextrapolate'
+  #set $tag         = 'uninstalling'
+  $see_also($link_to('locating_hextrapolate', 'Finding out where Hextrapolate is installed'))
+  $see_also($link_to('transferring_license', 'Transferring your Hextrapolate license to another machine'))
+#end
+
+###############################################################################
+
+#def content
+
+Uninstalling Hextrapolate is a simple two-step process:
+
+<div id="task_box">
+  
+` Using the Finder navigate to the folder where you have Hextrapolate installed (most commonly the <tt>Applications</tt> folder).
+` Drag the Hextrapolate application icon to the Trash.
+
+</div>
+
+#end

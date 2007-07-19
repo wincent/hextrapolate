@@ -1,0 +1,22 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_task.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Upgrading Hextrapolate'
+  #set $tag         = 'upgrading_hextrapolate'
+  $see_also($link_to('installing'))
+  $see_also($link_to('uninstalling'))
+  $see_also($link_to('quitting', 'quitting Hextrapolate'))
+#end
+
+###############################################################################
+
+#def content
+
+Hextrapolate uses a "drag-and-drop" installation procedure. This means that you can upgrade to a new version by dragging the old version to the Trash (see $link_to('uninstalling')) and then copying the new version to your desired location (see $link_to('installing')).
+
+#end

@@ -1,0 +1,31 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Purchasing Hextrapolate'
+  #set $tag         = 'purchasing'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to('missing_license', "What to do if you haven't received your license"))
+#end
+
+#def content
+
+Purchase Hextrapolate and you will receive a license code via email as soon as the transaction is complete.
+
+<div id="task_box">
+  
+To purchase a Hextrapolate license:
+
+` From the Hextrapolate menu select "Buy now…"
+` Choose the appropriate license type (single-user, multi-user) and proceed to the checkout
+` An automated system will issue you with a license code via email
+  
+</div>
+
+Once you have received your license code you may use it to $link_to('registering', 'register Hextrapolate').
+
+#end

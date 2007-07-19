@@ -1,0 +1,33 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Reporting bugs'
+  #set $tag         = 'reporting_bugs'
+  $see_also($link_to('troubleshooting_tips'))
+  $see_also($link_to_category('troubleshooting'))
+  $category('troubleshooting')
+#end
+
+###############################################################################
+
+#def content
+
+Before submitting a bug report please try the $link_to('troubleshooting_tips'). If you think you've discovered a bug there are two avenues for submitting a bug report:
+
+<div id="task_box">
+  
+* Submit a bug report via the web at <a href="http://bugs.wincent.com/">bugs.wincent.com</a>
+* Submit a bug report via email to <a href="mailto:bugs@wincent.com">bugs@wincent.com</a>
+
+</div>
+
+Submitting a bug report via the web is strongly recommended because you can use the web interface to perform a search before submitting (it may be that someone else has already reported the issue).
+
+When submitting a bug report, please follow the guidelines for $link_to('how_to_file_a_good_bug_report'); submitting a detailed, high-quality bug report will help me to fix the issue.
+
+#end

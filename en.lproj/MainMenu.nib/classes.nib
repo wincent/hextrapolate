@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {"" = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = NSWindow; LANGUAGE = ObjC; SUPERCLASS = NSResponder; }, 
+        {CLASS = WOBinaryFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = WODecimalFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = WOGeneralBaseFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = WOHexFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {
+            ACTIONS = {
+                buyNow = id; 
+                enterRegistration = id; 
+                showHelp = id; 
+                showPreferences = id; 
+                submitFeedback = id; 
+            }; 
+            CLASS = WOHextrapolateController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alternateSelectableBaseTextField = NSTextField; 
+                alternateSelectableTextEncodingTextField = NSTextField; 
+                mainWindow = NSWindow; 
+                selectableBaseTextField = NSTextField; 
+                selectableTextEncodingTextField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = WOOctalFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }, 
+        {CLASS = WOPointingHandCursorButton; LANGUAGE = ObjC; SUPERCLASS = NSButton; }, 
+        {CLASS = WORegistrationView; LANGUAGE = ObjC; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,35 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_task.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Installing Hextrapolate'
+  #set $tag         = 'installing'
+  $see_also($link_to('uninstalling'))
+  $see_also($link_to('quitting', 'quitting Hextrapolate'))
+#end
+
+###############################################################################
+
+#def content
+
+Hextrapolate uses a "drag-and-drop" installation procedure. This means that you can install it wherever you wish. The most common location is the <tt>Applications</tt> folder.
+
+Before installing you will need a copy of the Hextrapolate disk image (see $link_to('downloading', 'downloading Hextrapolate')).
+
+<div id="task_box">
+
+To install Hextrapolate:
+
+` In the Finder, double-click on the Hextrapolate disk image to mount it.
+` Once the disk image has mounted a window will appear in which you can see the Hextrapolate application.
+` Drag the Hextrapolate application to a location of your choosing.
+
+</div>
+
+If you wish to try Hextrapolate without installing it you can run it from the mounted disk image by double-clicking the Hextrapolate application icon. If you do this you will need to quit Hextrapolate before unmounting the disk image.
+
+#end

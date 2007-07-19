@@ -1,0 +1,40 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Backing up your license'
+  #set $tag         = 'backing_up_your_license'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to('activation', 'Activation'))
+  $see_also($link_to('lost_license_codes', 'Lost license codes'))
+#end
+
+#def content
+
+h2. Backing up your license notice
+
+Although it is possible to have your license code resent to you by an automated system it is still highly recommended that you make backups when you receive your license notice via email.
+
+* _Email addresses change_: if you change email addresses you might not be able to have your code remailed to your automatically.
+* _Hard drives fail_: don't just copy the license notice to another location on your hard drive; print it out as well so that you have a hard-copy in the event of a hardware failure.
+
+h2. Backing up your license certificate
+
+When you $link_to('registering', 'register') Hextrapolate a license certificate is created inside your <tt>Library</tt> folder. Upon $link_to('activation', 'activating') an activation certificate will be created as well. You can make manual copies of these and store them in a safe place.
+
+<div id="task_box">
+  
+To manually back-up your license and activation certificate:
+
+` Quit Hextrapolate.
+` Using the Finder, go to your home directory and open the <tt>Library</tt> folder
+` Inside the <tt>Library</tt> folder, open the <tt>Preferences</tt> folder
+` Copy the files <tt>com.wincent.Hextrapolate.license.plist</tt> and <tt>com.wincent.Hextrapolate.activation.certificate.plist</tt> from the <tt>Preferences</tt> folder to the backup location of your choice (for example, another disk, a recordable CD or DVD, or a USB stick)
+
+</div>
+
+#end

@@ -1,0 +1,34 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Binary representation'
+  #set $tag         = 'binary_representation'
+  $see_also($link_to('bases'))
+#end
+
+###############################################################################
+
+#def content
+
+A binary representation is a number written using Base 2. Each digit may have only one of two possible values (0 or 1) hence the name, binary. Binary representations have many applications in computer science because they map well onto the "off" and "on" states of electronic transistors.
+
+The first few positive integers written in binary form are:
+
+* 1
+* 10
+* 11
+* 100
+* 101
+* 110
+* 111
+
+All positive integers (and 0) may be written in binary representation.
+
+Appending a zero to the right-hand side of a binary representation multiplies it by 2.
+
+#end

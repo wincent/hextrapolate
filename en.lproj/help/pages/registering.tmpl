@@ -1,0 +1,40 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Registering Hextrapolate'
+  #set $tag         = 'registering'
+  $see_also($link_to('activation', 'Activation'))
+  $see_also($link_to('unregister', 'Unregistering Hextrapolate'))
+  $see_also($link_to('transferring_license', 'Transferring your license to another machine'))
+#end
+
+#def content
+
+Once you have $link_to('purchasing', 'purchased a Hextrapolate license') you will receive a license code via email. To complete the registration you will copy your license code from the email into Hextrapolate.
+
+<div id="task_box">
+  
+To register your copy of Hextrapolate:
+
+` From the Hextrapolate menu select Register…
+` When the registration preference pane appears, click the "Enter license code" button
+` When the confirmation sheet drops down, enter your email address _exactly_ as it appears in your license notice (if you enter a different address your license will not work) into the text field labelled "Email address"
+` In the field labelled "License code", enter your license code exactly as it appears in your license notice; license codes are quite long so the best way to do this is to use copy and paste (you can copy the entire code at once as a single slab of text)
+` Click the Verify button to activate your license
+  
+</div>
+
+h2. Screenshots
+
+<div class="screenshot"><img src="../gfx/register-menu-item.png" width="284" height="322" alt="Register menu"></div>
+
+<div class="screenshot"><img src="../gfx/registration-pane.png" width="464" height="389" alt="Registration preferences pane"></div>
+
+<div class="screenshot"><img src="../gfx/registration-sheet.png" width="456" height="339" alt="Registration sheet"></div>  
+
+#end

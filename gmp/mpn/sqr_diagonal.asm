@@ -1,0 +1,1 @@
+.././mpn/powerpc32/sqr_diagonal.asm

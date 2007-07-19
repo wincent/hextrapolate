@@ -1,0 +1,22 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Text encoding errors'
+  #set $tag         = 'encoding_error'
+  $see_also($link_to('let_me_type', "Why doesn't Hextrapolate let me type the characters I want?"))
+#end
+
+#def content
+
+Hextrapolate only allows you to type numbers and letters that are valid for the selected text encoding.
+
+If a character you type is rejected Hextrapolate will show information about it in a tool-tip:
+
+<div class="screenshot"><img src="../gfx/invalid-char-for-encoding.png" width="405" height="269" alt="Text encoding error"></div>
+
+#end

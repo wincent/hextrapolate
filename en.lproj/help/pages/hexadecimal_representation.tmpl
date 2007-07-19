@@ -1,0 +1,24 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Hexadecimal representation'
+  #set $tag         = 'hexadecimal_representation'
+  $see_also($link_to('bases'))
+#end
+
+###############################################################################
+
+#def content
+
+A hexadecimal representation is a number written using Base 16. Each digit may have only one of 16 possible values (the numerals 0 through 9 and the letters a through f). Hexadecimal representations are frequently used in computing.
+
+All positive integers (and 0) may be written in hexadecimal representation.
+
+Appending a zero to the right-hand side of a hexadecimal representation multiplies it by 16.
+
+#end

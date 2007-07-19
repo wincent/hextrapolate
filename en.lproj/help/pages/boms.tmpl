@@ -1,0 +1,23 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Does Hextrapolate use BOMs?'
+  #set $tag         = 'boms'
+  $see_also($link_to('text_encodings'))
+  $see_also($link_to('utf16', 'UTF-16'))
+#end
+
+###############################################################################
+
+#def content
+
+Hextrapolate does not use BOMs (Byte Order Markers) to distinguish between text-encodings.
+
+The byte order, little-endian or big-endian, is implicit in the name of the encoding (UTF-16 LE or UTF-16 BE).
+
+#end

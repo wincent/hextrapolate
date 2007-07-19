@@ -1,0 +1,25 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'How many times may I activate?'
+  #set $tag         = 'how_many_times_may_i_activate'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to('transferring_license', 'Transferring your license to another machine'))
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $category('activation_topics')
+#end
+
+#def content
+
+A single-user license permits you to install and run Hextrapolate on a single machine, but the activation limit is set to five activations, not one, to allow for scenarios such as switching to a new machine, replacing your hard drive, or performing a full system re-install. This is because the spirit of the activation system is to target mass piracy, not penalize honest paying customers.
+
+An automatic system is in place that performs a yearly revision of each license and that grants users additional activations per license, per user, per year; this should fit in nicely with the typical pattern in which users upgrade to new machines once every year or two. The additional activations are applied to any license that is in good standing (activation limit not exceeded) and which has been activated at some point in the previous 12 months.
+
+If you exceed the activation limit, contact me via email to <a href="mailto:support@wincent.com">support@wincent.com</a> to have your limit reset.
+
+#end

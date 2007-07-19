@@ -1,0 +1,24 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Activation'
+  #set $tag         = 'activation'
+  $see_also($link_to('registering', 'Registering Hextrapolate'))
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $category('activation_topics')
+#end
+
+#def content
+
+Product activation takes place when you enter your license code and click the "Verify" button (see $link_to('registering', 'Registering Hextrapolate')).
+
+<div class="screenshot"><img src="../gfx/registration-sheet.png" alt="Registration sheet" width="456" height="339"></div>
+
+The program connects once (and once only) to the <a href="https://secure.wicent.com/">secure.wincent.com</a> webserver to validate the license and the product is then activated permanently. If you later install the product on another machine, you will need to activate the product once more on that machine (see $link_to('transferring_license', 'Transferring your license')). The activation process takes only a few seconds.
+
+#end

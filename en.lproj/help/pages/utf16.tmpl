@@ -1,0 +1,24 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'UTF-16 text encoding'
+  #set $tag         = 'utf16'
+  $see_also($link_to('text_encodings'))
+#end
+
+###############################################################################
+
+#def content
+
+UTF-16 is a 16-bit text encoding capable of encoding a much wider range of characters than ASCII. UTF stands for Unicode Transformation Format.
+
+The minimum size for each character is 16 bits, twice as large as the minimum size for UTF-8, although the maximum size to encode a character is the same for both (4 bytes).
+
+There are two principal varieties of UTF-16, little-endian and big-endian, often abbreviated to UTF-16 LE and UTF-16 BE. The difference between the two varieties is the order in which the bytes are stored in each 16 bit word. The little-endian version stores the least-significant byte first, and the big-endian version stores the most-significant byte first.
+
+#end

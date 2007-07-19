@@ -1,0 +1,29 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id$
+
+#extends '../../../WOCommon/help/task'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'What happens if Wincent stops trading?'
+  #set $tag         = 'what_happens_if_wincent_stops_trading'
+  $see_also($link_to_category('activation_topics', 'Activation topics'))
+  $category('activation_topics')
+#end
+
+#def content
+
+When discussing product activation people sometimes ask:
+
+bq. What happens if Wincent stops trading at some point in the future and the activation server goes off-line forever? How can people continue to enjoy the software they've licensed if they can't activate it?
+
+I have no plans to discontinue trading but recognize that this is a frequently voiced concern about product activation, so I make the following undertaking:
+
+In the event that Wincent should stop trading it will do one of the following at its discretion:
+
+` Make available for free download updated versions of all products with the product activation requirements removed. These versions would be freely redistributable.
+` Make available special license codes which turn off the product activation requirement. These codes would be freely redistributable.
+` Release the source code for the protected applications under an open source license such as the GPL or the BSD license.
+
+#end

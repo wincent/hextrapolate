@@ -1,0 +1,39 @@
+## Created by Wincent Colaiuta on 21 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: example_discover.tmpl.txt 83 2007-04-23 12:52:38Z wincent $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = "Learn about Hextrapolate"
+  #set $tag         = 'learn_about'
+  ###set $abstract    = "if different from page title"
+  ##$see_also($link_to('base2', 'other text'))
+  ##$see_also($link_to_category('base2', 'other text'))
+#end
+
+###############################################################################
+
+#def content
+
+intro intro intro
+
+<div class="feature">
+
+h2. Cool title for the feature<br>
+<img src="../gfx/foobar.png" width="" height="" alt="the image">
+## keep images less that 180 pixels wide
+## no blank line between the header and the img or WalrusCloth will stick the img in a paragraph of its own (not what we want)
+## need the br after the header text for safari (fine in firefox)
+
+the description of the feature
+
+* optional links to more
+* more more more
+
+</div>
+
+#end
+
+

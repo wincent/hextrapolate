@@ -1,0 +1,35 @@
+## Created by Wincent Colaiuta on 11 April 2007.
+## Copyright 2007 Wincent Colaiuta
+## $Id: /mirrors/Hextrapolate/trunk/en.lproj/help/example_basic.tmpl.txt 6745 2007-04-12T13:07:56.741665Z wincent  $
+
+#extends '../../../WOCommon/help/basic'
+
+#def setup
+  #include '../settings.txt'
+  #set $page_title  = 'Requesting support'
+  #set $tag         = 'requesting_support'
+  $see_also($link_to('troubleshooting_tips'))
+  $see_also($link_to_category('troubleshooting'))
+  $see_also($link_to('reporting_bugs'))
+  $see_also($link_to('feature_requests'))
+  $see_also($link_to('sending_feedback'))
+  $category('troubleshooting')
+#end
+
+###############################################################################
+
+#def content
+
+Before submitting a support request please try the $link_to('troubleshooting_tips'). Consider $link_to('feature_requests', 'requesting a feature'), $link_to('reporting_bugs', 'reporting a bug') or $link_to('sending_feedback') rather than sending a support request if it seems more appropriate.
+
+<div id="task_box">
+
+To request Hextrapolate support:
+
+` Perform basic troubleshooting as described in $link_to('troubleshooting_tips').
+` If you think you have discovered a bug, consider submitting a $link_to('reporting_bugs', 'bug report').
+` Contact me via email to <a href="mailto:support@wincent.com">support@wincent.com</a>.
+
+</div>
+
+#end

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>General</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>com.wincent.Hextrapolate.preferences.General</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>WO_INFO_PLIST_VERSION (WO_BUILDNUMBER)</string>
+	<key>NSMainNibFile</key>
+	<string>GeneralPref</string>
+	<key>NSPrefPaneIconFile</key>
+	<string>GeneralPref.tiff</string>
+	<key>NSPrefPaneIconLabel</key>
+	<string>General</string>
+	<key>NSPrincipalClass</key>
+	<string>GeneralPref</string>
+	<key>WOPreferencesCategory</key>
+	<string>Basic</string>
+	<key>WOCopyrightYear</key>
+	<string>WO_COPYRIGHT_YEAR</string>
+</dict>
+</plist>
