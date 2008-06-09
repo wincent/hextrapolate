@@ -1249,6 +1249,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = BC6D89AC089C0B780035A305 /* Build configuration list for PBXProject "Hextrapolate" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1275,6 +1276,7 @@
 					ProjectRef = BC4FC61A0BC6CE5500C8913C /* WOTest.xcodeproj */;
 				},
 			);
+			projectRoot = "";
 			targets = (
 				BC4FCBF00BC6E0EC00C8913C /* Update obfuscation (dependencies) */,
 				BC4FC6830BC6D5E600C8913C /* Update Hextrapolate build number */,
