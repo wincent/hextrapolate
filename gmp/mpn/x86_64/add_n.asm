@@ -7,7 +7,7 @@ dnl  This file is part of the GNU MP Library.
 
 dnl  The GNU MP Library is free software; you can redistribute it and/or modify
 dnl  it under the terms of the GNU Lesser General Public License as published
-dnl  by the Free Software Foundation; either version 2.1 of the License, or (at
+dnl  by the Free Software Foundation; either version 3 of the License, or (at
 dnl  your option) any later version.
 
 dnl  The GNU MP Library is distributed in the hope that it will be useful, but
@@ -16,15 +16,15 @@ dnl  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 dnl  License for more details.
 
 dnl  You should have received a copy of the GNU Lesser General Public License
-dnl  along with the GNU MP Library; see the file COPYING.LIB.  If not, write
-dnl  to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-dnl  Boston, MA 02110-1301, USA.
+dnl  along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 include(`../config.m4')
 
 
-C         cycles/limb
-C Hammer:     3.0
+C		    cycles/limb
+C AMD K8:		 3
+C Intel P4:		11.5
+C Intel Core 2:		13.25
 
 
 C INPUT PARAMETERS
@@ -42,12 +42,13 @@ PROLOGUE(mpn_add_n)
 	xorl	%eax, %eax		C clear cy
 
 	ALIGN(4)			C minimal alignment for claimed speed
-.Loop:	movq	(%rsi,%rcx,8), %rax
+L(loop):
+	movq	(%rsi,%rcx,8), %rax
 	movq	(%rdx,%rcx,8), %r10
 	adcq	%r10, %rax
 	movq	%rax, (%rdi,%rcx,8)
 	incq	%rcx
-	jne	.Loop
+	jne	L(loop)
 
 	movq	%rcx, %rax		C zero %rax
 	adcq	%rax, %rax

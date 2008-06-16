@@ -1,12 +1,12 @@
 dnl  IA-64 mpn_popcount.
 
-dnl  Copyright 2000, 2001 Free Software Foundation, Inc.
+dnl  Copyright 2000, 2001, 2006 Free Software Foundation, Inc.
 
 dnl  This file is part of the GNU MP Library.
 
 dnl  The GNU MP Library is free software; you can redistribute it and/or modify
 dnl  it under the terms of the GNU Lesser General Public License as published
-dnl  by the Free Software Foundation; either version 2.1 of the License, or (at
+dnl  by the Free Software Foundation; either version 3 of the License, or (at
 dnl  your option) any later version.
 
 dnl  The GNU MP Library is distributed in the hope that it will be useful, but
@@ -15,15 +15,17 @@ dnl  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 dnl  License for more details.
 
 dnl  You should have received a copy of the GNU Lesser General Public License
-dnl  along with the GNU MP Library; see the file COPYING.LIB.  If not, write
-dnl  to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-dnl  Boston, MA 02110-1301, USA.
+dnl  along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 dnl  Runs at 1 cycle/limb on the Itanium.  That is the peak performance for the
 dnl  popcnt instruction, so this is optimal code.  It should be straightforward
 dnl  to write mpn_hamdist with the same awesome performance.
 
 include(`../config.m4')
+
+define(ABI32,
+m4_assert_onearg()
+`ifdef(`HAVE_ABI_32',`$1')')
 
 C INPUT PARAMETERS
 C sp = r32
@@ -33,8 +35,12 @@ ASM_START()
 PROLOGUE(mpn_popcount)
 	.prologue
 	.save	ar.lc, r2
-		mov	r2 = ar.lc
+ABI32(`		addp4	r32 = 0, r32')	C M  src extend
+		mov	r2 = ar.lc	C I0
+ABI32(`		zxt4	r33 = r33')	C I1  size extend
+		;;
 	.body
+
 		and	r22 = 3, r33
 		shr.u	r23 = r33, 2	;;
 		mov	ar.lc = r22

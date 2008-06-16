@@ -1,1 +1,0 @@
-.././mpn/powerpc32/addlsh1_n.asm

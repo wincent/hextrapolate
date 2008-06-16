@@ -2,17 +2,17 @@
 
                   GMP port to Power Macintosh and MacOS
 
-                       Kent Boortz <kent@swox.se>
+                             Kent Boortz
 
 ===========================================================================
 
-Copyright 2000, 2001, 2002 Free Software Foundation, Inc.
+Copyright 2000, 2001, 2002, 2007 Free Software Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -21,9 +21,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-02110-1301, USA.
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 
 
@@ -98,7 +96,7 @@ From the MPW development environment you need at least
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./About_MPW_etc.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/MPW_Shell.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/Scripts.sit.hqx
-    ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/Tools/GetFileName.sit.hqx    
+    ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/Tools/GetFileName.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/Tools/Make.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/Tools/MrC.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/MPW/Tools/PPCAsm.sit.hqx
@@ -106,7 +104,7 @@ From the MPW development environment you need at least
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/Interfaces&Libraries/Libraries.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/Interfaces&Libraries/RuntimeLibraries.sit.hqx
     ftp://ftp.apple.com/developer/Tool_Chest/Core_Mac_OS_Tools/MPW_etc./MPW-GM/Interfaces&Libraries/Interfaces/CIncludes.sit.hqx
-    
+
 Put these into a folder and drag the whole folder to the "StuffIt
 Expander" icon to unpack them.
 
@@ -204,7 +202,7 @@ To cleanup to the state before configure you execute the output from
 
         % make clean
 
-To remove the the resulting library as well you do
+To remove the resulting library as well you do
 
         % make distclean
 
@@ -240,4 +238,4 @@ remove files from the Unix side while MPW is running. MPW cache
 information about what the file system looks like and gets very
 confused or crash.
 
-Kent Boortz <kent@swox.se>
+Kent Boortz

@@ -10,7 +10,7 @@
 #
 # The GNU MP Library is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published
-# by the Free Software Foundation; either version 2.1 of the License, or (at
+# by the Free Software Foundation; either version 3 of the License, or (at
 # your option) any later version.
 #
 # The GNU MP Library is distributed in the hope that it will be useful, but
@@ -19,9 +19,7 @@
 # License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-# the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-# MA 02110-1301, USA.
+# along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 
 # Usage: config.guess
@@ -376,6 +374,7 @@ main ()
   case 0x8000: puts ("powerpc7450"); break;
   case 0x8001: puts ("powerpc7455"); break;
   case 0x8002: puts ("powerpc7457"); break;
+  case 0x8003: puts ("powerpc7447"); break; /* really 7447A */
   case 0x800c: puts ("powerpc7410"); break;
   }
   return 0;
@@ -488,7 +487,10 @@ main (void)
       case CPU_SUBTYPE_POWERPC_750:   puts ("powerpc750");  break;
       case CPU_SUBTYPE_POWERPC_7400:  puts ("powerpc7400"); break;
       case CPU_SUBTYPE_POWERPC_7450:  puts ("powerpc7450"); break;
-      /* Darwin 6.8.5 doesn't define a constant for 970, but gives 100 */
+      /* Darwin 6.8.5 doesn't define the following */
+      case 0x8001:                    puts ("powerpc7455"); break;
+      case 0x8002:                    puts ("powerpc7457"); break;
+      case 0x8003:                    puts ("powerpc7447"); break;
       case 100:                       puts ("powerpc970");  break;
       }
     }
@@ -654,8 +656,8 @@ sparc-*-* | sparc64-*-*)
   fi
   ;;
 
-i?86-*-*)
-  cat <<EOF >${dummy}1.s
+i?86-*-* | amd64-*-* | x86_64-*-*)
+  cat <<EOF >${dummy}0.s
 	.globl cpuid
 	.globl _cpuid
 cpuid:
@@ -671,6 +673,21 @@ _cpuid:
 	movl %ecx,8(%esi)
 	popl %ebx
 	popl %esi
+	ret
+EOF
+  cat <<EOF >${dummy}1.s
+	.globl cpuid
+	.globl _cpuid
+cpuid:
+_cpuid:
+	push %rbx
+	mov %esi,%eax
+	.byte 0x0f
+	.byte 0xa2
+	mov %ebx,(%rdi)
+	mov %edx,4(%rdi)
+	mov %ecx,8(%rdi)
+	pop %rbx
 	ret
 EOF
   cat <<EOF >${dummy}2.c
@@ -703,7 +720,8 @@ main ()
 	case 6:
 	  if (model == 1)	modelstr = "pentiumpro";
 	  else if (model <= 6)	modelstr = "pentium2";
-	  else			modelstr = "pentium3";
+	  else if (model <= 14)	modelstr = "pentium3";
+	  else			modelstr = "core2";
 	  break;
 	case 15:
 	  modelstr = "pentium4";
@@ -724,9 +742,7 @@ main ()
 	  modelstr = "athlon";
 	  break;
 	case 15:
-	  /* We might want to return opteron, athlon64, or the CPU core name
-	     hammer here instead of the architecture name x86_64.  */
-	  modelstr = "x86_64";
+	  modelstr = "athlon64";
 	  break;
 	}
     }
@@ -764,9 +780,25 @@ EOF
     fi
   fi
 
+  if test -z "$exact_cpu"; then
+  if ($CC_FOR_BUILD ${dummy}0.s ${dummy}2.c -o $dummy) >/dev/null 2>&1; then
+    # On 80386 and early 80486 cpuid is not available and will result in a
+    # SIGILL message, hence 2>/dev/null.
+    #
+    # On i386-unknown-freebsd4.9, "/bin/sh -c ./dummy" seems to send an
+    # "Illegal instruction (core dumped)" message to stdout, so we test $?
+    # to check if the program run was successful.
+    #
+    x=`$SHELL -c ./$dummy 2>/dev/null`
+    if test $? = 0 && test -n "$x"; then
+      exact_cpu=$x
+    fi
+  fi
+  fi
+
   # We need to remove some .o files here since lame C compilers
   # generate these even when not asked.
-  rm -f ${dummy}1.s ${dummy}1.o ${dummy}2.c ${dummy}2.o $dummy
+  rm -f ${dummy}0.s ${dummy}0.o ${dummy}1.s ${dummy}1.o ${dummy}2.c ${dummy}2.o $dummy
   ;;
 
 esac

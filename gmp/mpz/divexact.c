@@ -1,13 +1,13 @@
 /* mpz_divexact -- finds quotient when known that quot * den == num && den != 0.
 
-Copyright 1991, 1993, 1994, 1995, 1996, 1997, 1998, 2000, 2001, 2002, 2005, 2006
-Free Software Foundation, Inc.
+Copyright 1991, 1993, 1994, 1995, 1996, 1997, 1998, 2000, 2001, 2002, 2005,
+2006, 2007 Free Software Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -16,9 +16,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA.  */
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 
 /*  Ken Weber (kweber@mat.ufrgs.br, kweber@mcs.kent.edu)
 
@@ -65,10 +63,11 @@ mpz_divexact (mpz_ptr quot, mpz_srcptr num, mpz_srcptr den)
   dp = den->_mp_d;
   qp = quot->_mp_d;
 
-  if (nsize == 0)
+  if (nsize < dsize)
     {
-      if (dsize == 0)
-	DIVIDE_BY_ZERO;
+      /* This special case avoids segfaults below when the function is
+	 incorrectly called with |N| < |D|, N != 0.  It also handles the
+	 well-defined case N = 0.  */
       quot->_mp_size = 0;
       return;
     }

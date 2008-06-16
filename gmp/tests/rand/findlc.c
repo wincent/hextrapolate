@@ -5,7 +5,7 @@ This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -14,9 +14,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA.
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 */
 
 #include <stdio.h>
@@ -30,7 +28,7 @@ MA 02110-1301, USA.
 #define RCSID(msg) \
 static /**/const char *const rcsid[] = { (char *)rcsid, "\100(#)" msg }
 
-RCSID("$Id: findlc.c 44 2007-04-07 00:22:53Z wincent $");
+RCSID("$Id: findlc.c,v 1.3 2007/08/30 19:38:21 tege Exp $");
 
 int g_debug = 0;
 
@@ -106,7 +104,7 @@ main (int argc, char *argv[])
   unsigned long int m2exp;
 #define DIMS 6			/* dimensions run in spectral test */
   mpf_t v[DIMS-1];		/* spectral test result (there's no v
-                                   for 1st dimension */
+				   for 1st dimension */
   mpf_t f_merit, low_merit, high_merit;
   mpz_t acc, minus8;
   mpz_t min, max;
@@ -193,7 +191,7 @@ main (int argc, char *argv[])
   mpz_setbit (s, 0);		/* Make it odd.  */
 
   v_best = m_best = 2*(DIMS-1);
-  for (;;) 
+  for (;;)
     {
       mpz_add (acc, acc, s);
       mpz_mod_2exp (acc, acc, m2exp);
@@ -214,7 +212,7 @@ main (int argc, char *argv[])
 
 	  if (mpf_cmp_ui (v[f], 1 << (30 / (f + 2) + (f == 2))) < 0)
 	    v_lose++;
-	    
+
 	  if (mpf_cmp (f_merit, low_merit) < 0)
 	    m_lose++;
 

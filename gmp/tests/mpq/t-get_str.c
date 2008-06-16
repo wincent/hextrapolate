@@ -6,7 +6,7 @@ This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -15,9 +15,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA. */
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,14 +30,14 @@ check_one (mpq_srcptr q, int base, const char *want)
 {
   char    *str, *ret;
   size_t  str_alloc;
-  
+
   MPQ_CHECK_FORMAT (q);
   mp_trace_base = base;
 
   str_alloc =
     mpz_sizeinbase (mpq_numref(q), ABS(base)) +
     mpz_sizeinbase (mpq_denref(q), ABS(base)) + 3;
-  
+
   str = mpq_get_str (NULL, base, q);
   if (strlen(str)+1 > str_alloc)
     {
@@ -59,9 +57,9 @@ check_one (mpq_srcptr q, int base, const char *want)
       abort ();
     }
   (*__gmp_free_func) (str, strlen (str) + 1);
-  
+
   str = (char *) (*__gmp_allocate_func) (str_alloc);
-  
+
   ret = mpq_get_str (str, base, q);
   if (str != ret)
     {

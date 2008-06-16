@@ -8,14 +8,14 @@
    INTERFACES.  IT IS ALMOST GUARANTEED THAT THEY'LL CHANGE OR DISAPPEAR IN
    A FUTURE GNU MP RELEASE.
 
-Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software
+Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2007 Free Software
 Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -24,9 +24,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA. */
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 
 
 /* References:
@@ -40,8 +38,6 @@ MA 02110-1301, USA. */
 
    Tapes versus Pointers, a study in implementing fast algorithms,
    by Arnold Scho"nhage, Bulletin of the EATCS, 30, p. 23-32, 1986.
-
-   See also http://www.loria.fr/~zimmerma/bignum
 
 
    Future:
@@ -537,7 +533,7 @@ mpn_fft_mul_modF_K (mp_ptr *ap, mp_ptr *bp, mp_size_t n, int K)
 	  if (cc != 0)
 	    {
 	      cc = mpn_add_1 (tp, tp, n2, cc);
-	      ASSERT_NOCARRY (mpn_add_1 (tp, tp, n2, cc));
+	      ASSERT (cc == 0);
 	    }
 	  a[n] = mpn_sub_n (a, tp, tpn, n) && mpn_add_1 (a, a, n, CNST_LIMB(1));
 	}

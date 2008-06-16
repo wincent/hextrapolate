@@ -8,7 +8,7 @@
 #
 # The GNU MP Library is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
-# the Free Software Foundation; either version 2.1 of the License, or (at your
+# the Free Software Foundation; either version 3 of the License, or (at your
 # option) any later version.
 #
 # The GNU MP Library is distributed in the hope that it will be useful, but
@@ -17,9 +17,7 @@
 # License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-# the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-# MA 02110-1301, USA.
+# along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 
 # The following options are the same as AM_INIT_AUTOMAKE in configure.in,
@@ -32,6 +30,8 @@ AUTOMAKE_OPTIONS = 1.8 gnu no-dependencies ansi2knr
 
 # Libtool -version-info for libgmp.la and libmp.la.  See "Versioning" in the
 # libtool manual.
+#
+#	CURRENT:REVISION:AGE
 #
 # 1. No interfaces changed, only implementations (good): Increment REVISION.
 #
@@ -58,7 +58,9 @@ AUTOMAKE_OPTIONS = 1.8 gnu no-dependencies ansi2knr
 #        4.1.3    6:3:3    3:5:0   4:7:1
 #        4.1.4    6:3:3    3:5:0   4:7:1	WRONG, same as 4.1.3!
 #        4.2      6:0:3    3:2:0   4:4:1	REALLY WRONG, same as 4.1!
-#        4.2.1    7:1:4    4:1:1   4:10:1
+#        4.2.1    7:1:4    4:1:1   4:10:1	WRONG for libgmpxx
+#        4.2.2    7:2:4    4:2:0   4:11:1
+#	 5.0      8:0:5    4:3:0   4:12:1	preliminary
 #
 # Starting at 3:0:0 is a slight abuse of the versioning system, but it
 # ensures we're past soname libgmp.so.2, which was used on Debian GNU/Linux
@@ -72,15 +74,15 @@ AUTOMAKE_OPTIONS = 1.8 gnu no-dependencies ansi2knr
 # libgmpxx.so.3.0.4) incrementing, to make it clear which GMP it's from.
 
 LIBGMP_LT_CURRENT =  7
-LIBGMP_LT_REVISION = 1
+LIBGMP_LT_REVISION = 2
 LIBGMP_LT_AGE =      4
 
 LIBGMPXX_LT_CURRENT =  4
-LIBGMPXX_LT_REVISION = 1
-LIBGMPXX_LT_AGE =      1
+LIBGMPXX_LT_REVISION = 2
+LIBGMPXX_LT_AGE =      0
 
 LIBMP_LT_CURRENT =  4
-LIBMP_LT_REVISION = 10
+LIBMP_LT_REVISION = 11
 LIBMP_LT_AGE =      1
 
 

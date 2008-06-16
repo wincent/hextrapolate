@@ -1,13 +1,13 @@
 /* Definitions for GNU multiple precision functions.   -*- mode: c -*-
 
 Copyright 1991, 1993, 1994, 1995, 1996, 1997, 1999, 2000, 2001, 2002, 2003,
-2004, 2005, 2006 Free Software Foundation, Inc.
+2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -16,9 +16,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA. */
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 
 #ifndef __GMP_H__
 
@@ -416,11 +414,17 @@ typedef __mpq_struct *mpq_ptr;
    inline" would be an acceptable substitute if the compiler (or linker)
    discards unused statics.  */
 
-/* gcc has __inline__ in all modes, including strict ansi.  Give a prototype
-   for an inline too, so as to correctly specify "dllimport" on windows, in
-   case the function is called rather than inlined.  */
+ /* gcc has __inline__ in all modes, including strict ansi.  Give a prototype
+    for an inline too, so as to correctly specify "dllimport" on windows, in
+    case the function is called rather than inlined.
+    GCC 4.3 and above with -std=c99 or -std=gnu99 implements ISO C99
+    inline semantics, unless -fgnu89-inline is used.  */
 #ifdef __GNUC__
+#ifdef __GNUC_STDC_INLINE__
+#define __GMP_EXTERN_INLINE extern __inline__ __attribute__ ((__gnu_inline__))
+#else
 #define __GMP_EXTERN_INLINE      extern __inline__
+#endif
 #define __GMP_INLINE_PROTOTYPES  1
 #endif
 
@@ -512,7 +516,9 @@ typedef __mpq_struct *mpq_ptr;
 
 #if defined (__cplusplus)
 extern "C" {
+#ifdef _GMP_H_HAVE_FILE
 using std::FILE;
+#endif
 #endif
 
 #define mp_set_memory_functions __gmp_set_memory_functions
@@ -2168,7 +2174,7 @@ enum
 /* Major version number is the value of __GNU_MP__ too, above and in mp.h. */
 #define __GNU_MP_VERSION 4
 #define __GNU_MP_VERSION_MINOR 2
-#define __GNU_MP_VERSION_PATCHLEVEL 1
+#define __GNU_MP_VERSION_PATCHLEVEL 2
 
 #define __GMP_H__
 #endif /* __GMP_H__ */

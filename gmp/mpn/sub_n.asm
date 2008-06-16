@@ -1,1 +1,0 @@
-.././mpn/powerpc32/sub_n.asm

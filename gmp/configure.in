@@ -3,14 +3,14 @@ dnl  Process this file with autoconf to produce a configure script.
 
 define(GMP_COPYRIGHT,[[
 
-Copyright 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006
-Free Software Foundation, Inc.
+Copyright 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
+2007 Free Software Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published
-by the Free Software Foundation; either version 2.1 of the License, or (at
+by the Free Software Foundation; either version 3 of the License, or (at
 your option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -19,15 +19,13 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA.
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 ]])
 
 AC_COPYRIGHT(GMP_COPYRIGHT)
 AH_TOP(/*GMP_COPYRIGHT*/)
 
-AC_REVISION($Revision: 1.11 $)
+AC_REVISION($Revision: 1.22 $)
 AC_PREREQ(2.59)
 AC_INIT(GNU MP, GMP_VERSION, gmp-bugs@swox.com, gmp)
 AC_CONFIG_SRCDIR(gmp-impl.h)
@@ -676,9 +674,10 @@ case $host in
 	cclist="gcc icc"
 	icc_cflags="-no-gcc"
 	icc_cflags_optlist="opt"
-	# FIXME: Check if -O3 is really right.  The manual warns it is for
-	# large data sets, for which GMP uses assembly loops.
-	icc_cflags_opt="-O3 -O2 -O1"
+	# Don't use -O3, it is for "large data sets" and also miscompiles GMP.
+	# But icc miscompiles GMP at any optimization level, at higher levels
+	# it miscompiles more files...
+	icc_cflags_opt="-O2 -O1"
 	;;
 
       *-*-hpux*)
@@ -835,9 +834,11 @@ case $host in
     cclist="gcc cc"
     cc_cflags="-O2"
     gcc_cflags="-O2 -mpowerpc"
-    gcc_cflags_optlist="precomp subtype cpu"
+    gcc_cflags_optlist="precomp subtype asm cpu"
     gcc_cflags_precomp="-no-cpp-precomp"
     gcc_cflags_subtype="-force_cpusubtype_ALL"	# for vmx on darwin
+    gcc_cflags_asm=""
+    gcc_cflags_cpu=""
 
     # grab this object, though it's not a true cycle counter routine
     SPEED_CYCLECOUNTER_OBJ=powerpc.lo
@@ -846,10 +847,10 @@ case $host in
     case $host_cpu in
       powerpc740 | powerpc750)
         path="powerpc32/750 powerpc32" ;;
-      powerpc7400)
+      powerpc7400 | powerpc7410)
         path="powerpc32/vmx powerpc32/750 powerpc32" ;;
-      [powerpc745?])
-        path="powerpc32/vmx powerpc32 powerpc32" ;;
+      [powerpc74[45]?])
+        path="powerpc32/vmx powerpc32" ;;
       *)
         path="powerpc32" ;;
     esac
@@ -882,8 +883,11 @@ case $host in
       powerpc630)   gcc_cflags_cpu="-mcpu=630" ;;
       powerpc740)   gcc_cflags_cpu="-mcpu=740" ;;
       powerpc7400 | powerpc7410)
+		    gcc_cflags_asm="-Wa,-maltivec"
 		    gcc_cflags_cpu="-mcpu=7400 -mcpu=750" ;;
-      powerpc745?)  gcc_cflags_cpu="-mcpu=7450" ;;
+      [powerpc74[45]?])
+		    gcc_cflags_asm="-Wa,-maltivec"
+		    gcc_cflags_cpu="-mcpu=7450" ;;
       powerpc750)   gcc_cflags_cpu="-mcpu=750" ;;
       powerpc801)   gcc_cflags_cpu="-mcpu=801" ;;
       powerpc821)   gcc_cflags_cpu="-mcpu=821" ;;
@@ -1271,9 +1275,9 @@ case $host in
   # mode, in case -m32 has failed not because it's an old gcc, but because
   # it's a dual 32/64-bit gcc without a 32-bit libc, or whatever.
   #
-  X86_PATTERN | x86_64-*-*)
+  X86_PATTERN | athlon64-*-* | core2-*-* | x86_64-*-*)
     abilist="32"
-    cclist="gcc icc"
+    cclist="gcc icc cc"
     gcc_cflags="-O2 $fomit_frame_pointer"
     gcc_32_cflags_maybe="-m32"
     icc_cflags="-no-gcc"
@@ -1369,7 +1373,7 @@ case $host in
         gcc_cflags_arch="-march=athlon -march=pentiumpro -march=pentium"
         ;;
       i786 | pentium4)
-        # pentiumpro is the primary fallback when gcc doens't know pentium4.
+        # pentiumpro is the primary fallback when gcc doesn't know pentium4.
         # This gets us cmov to eliminate branches.  Maybe "athlon" would be
         # a possibility on gcc 3.0.
         #
@@ -1387,7 +1391,7 @@ case $host in
         gcc_cflags_cpu="-mtune=c3 -mcpu=c3 -mcpu=i486 -m486"
         gcc_cflags_arch="-march=c3 -march=pentium-mmx -march=pentium"
         ;;
-      x86_64)
+      athlon64 | core2 | x86_64)
         gcc_cflags_cpu="-mtune=k8 -mcpu=athlon -mcpu=pentiumpro -mcpu=i486 -m486"
         gcc_cflags_arch="-march=k8 -march=k8~-mno-sse2 -march=athlon -march=pentiumpro -march=pentium"
         ;;
@@ -1404,12 +1408,12 @@ case $host in
       pentiummmx)           path="x86/pentium/mmx x86/pentium x86" ;;
       i686 | pentiumpro)    path="x86/p6 x86" ;;
       pentium2)             path="x86/p6/mmx x86/p6 x86" ;;
-      pentium3)             path="x86/p6/p3mmx x86/p6/mmx x86/p6 x86";;
+      pentium3 | core2)     path="x86/p6/p3mmx x86/p6/mmx x86/p6 x86";;
       [k6[23]])             path="x86/k6/k62mmx x86/k6/mmx x86/k6 x86" ;;
       k6)                   path="x86/k6/mmx x86/k6 x86" ;;
-      # we don't have any specific 32-bit code for opteron (x86_64), the
+      # we don't have any specific 32-bit code for athlon64/opteron, the
       # athlon code should be reasonable
-      athlon | x86_64)      path="x86/k7/mmx x86/k7 x86" ;;
+      athlon | athlon64)    path="x86/k7/mmx x86/k7 x86" ;;
       i786 | pentium4)      path="x86/pentium4/sse2 x86/pentium4/mmx x86/pentium4 x86" ;;
       # VIA/Centaur processors, sold as CyrixIII and C3.
       viac32)               path="x86/p6/p3mmx x86/p6/mmx x86/p6 x86";;
@@ -1417,8 +1421,10 @@ case $host in
       *)                    path="x86" ;;
     esac
 
-    # If the user asked for a fat build, override the path set above
+    # If the user asked for a fat build, override the path and flags set above
     if test $enable_fat = yes; then
+      gcc_cflags_cpu=""
+      gcc_cflags_arch=""
       extra_functions="$extra_functions fat fat_entry"
       path="x86/fat x86"
       fat_path="x86 x86/fat x86/i486
@@ -1436,17 +1442,31 @@ case $host in
 		      SQR_KARATSUBA_THRESHOLD SQR_TOOM3_THRESHOLD"
     fi
 
-    case $host in
-      x86_64-*-*)
-        abilist="64 32"
-        path_64="x86_64"
+    case $host_cpu in
+      athlon64 | core2 | pentium4 | x86_64)
         cclist_64="gcc"
         gcc_64_cflags="-O2 -m64"
         gcc_64_cflags_optlist="cpu"
         CALLING_CONVENTIONS_OBJS_64='amd64call.lo amd64check$U.lo'
         SPEED_CYCLECOUNTER_OBJ_64=x86_64.lo
         cyclecounter_size_64=2
-        ;;
+
+	case $host_cpu in
+	  athlon64 | x86_64)
+	    abilist="64 32"
+	    path_64="x86_64"
+	    ;;
+	  pentium4)
+	    abilist="64 32"
+	    path_64="x86_64/pentium4 x86_64"
+	    cclist_64="gcc"
+	    ;;
+	  core2)
+	    abilist="64 32"
+	    path_64="x86_64/core2 x86_64"
+	    ;;
+	esac
+	;;
     esac
     ;;
 
@@ -1739,7 +1759,7 @@ if test $found_compiler = yes; then
 
       for flag in $optflags; do
 
-	# ~ respresents a space in an option spec
+	# ~ represents a space in an option spec
         flag=`echo "$flag" | tr '~' ' '`
 
         case $flag in
@@ -1989,7 +2009,7 @@ done
 # enough assembler.
 #
 case $host in
-  X86_PATTERN | x86_64-*-*)
+  X86_PATTERN | athlon64-*-* | core2-*-* | x86_64-*-*)
     if test "$ABI" = 32; then
       case "$path $fat_path" in
         *mmx*)   GMP_ASM_X86_MMX( , [GMP_STRIP_PATH(*mmx*)]) ;;
@@ -2952,7 +2972,7 @@ if test "$gmp_asm_syntax_testing" != no; then
           ;;
       esac
       ;;
-    X86_PATTERN | x86_64-*-*)
+    X86_PATTERN | athlon64-*-* | core2-*-* | x86_64-*-*)
       GMP_ASM_ALIGN_FILL_0x90
       case $ABI in
         32)
@@ -2964,6 +2984,10 @@ if test "$gmp_asm_syntax_testing" != no; then
       	  case $enable_profiling in
       	    prof | gprof)  GMP_ASM_X86_MCOUNT ;;
       	  esac
+	  case $host in
+	    *-*-darwin*)
+	      GMP_INCLUDE_MPN(x86/darwin.m4) ;;
+	  esac
           ;;
         64)
           GMP_INCLUDE_MPN(x86_64/x86_64-defs.m4)

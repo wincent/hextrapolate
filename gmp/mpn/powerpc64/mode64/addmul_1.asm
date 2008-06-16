@@ -1,13 +1,13 @@
 dnl  PowerPC-64 mpn_addmul_1 -- Multiply a limb vector with a limb and add
 dnl  the result to a second limb vector.
 
-dnl  Copyright 1999, 2000, 2001, 2003 Free Software Foundation, Inc.
+dnl  Copyright 1999, 2000, 2001, 2003, 2007 Free Software Foundation, Inc.
 
 dnl  This file is part of the GNU MP Library.
 
 dnl  The GNU MP Library is free software; you can redistribute it and/or modify
 dnl  it under the terms of the GNU Lesser General Public License as published
-dnl  by the Free Software Foundation; either version 2.1 of the License, or (at
+dnl  by the Free Software Foundation; either version 3 of the License, or (at
 dnl  your option) any later version.
 
 dnl  The GNU MP Library is distributed in the hope that it will be useful, but
@@ -16,15 +16,14 @@ dnl  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 dnl  License for more details.
 
 dnl  You should have received a copy of the GNU Lesser General Public License
-dnl  along with the GNU MP Library; see the file COPYING.LIB.  If not, write
-dnl  to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-dnl  Boston, MA 02110-1301, USA.
+dnl  along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 include(`../config.m4')
 
 C		cycles/limb
 C POWER3/PPC630:     6-18
 C POWER4/PPC970:     10
+C POWER5:	     10.25
 
 C INPUT PARAMETERS
 C res_ptr	r3
@@ -42,6 +41,8 @@ PROLOGUE(mpn_addmul_1c)
 	addic	r0,r0,0
 	addi	r3, r3, -8
 	addi	r4, r4, -8
+	ALIGN(16)
+	nop
 L(top):	ldu	r0,8(r4)
 	ld	r10,8(r3)
 	mulld	r9,r0,r6

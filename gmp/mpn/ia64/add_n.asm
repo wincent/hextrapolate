@@ -1,13 +1,13 @@
 dnl  IA-64 mpn_add_n -- Add two limb vectors of the same length > 0 and store
 dnl  sum in a third limb vector.
 
-dnl  Copyright 2000, 2001, 2002 Free Software Foundation, Inc.
+dnl  Copyright 2000, 2001, 2002, 2006 Free Software Foundation, Inc.
 
 dnl  This file is part of the GNU MP Library.
 
 dnl  The GNU MP Library is free software; you can redistribute it and/or modify
 dnl  it under the terms of the GNU Lesser General Public License as published
-dnl  by the Free Software Foundation; either version 2.1 of the License, or (at
+dnl  by the Free Software Foundation; either version 3 of the License, or (at
 dnl  your option) any later version.
 
 dnl  The GNU MP Library is distributed in the hope that it will be useful, but
@@ -16,9 +16,7 @@ dnl  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 dnl  License for more details.
 
 dnl  You should have received a copy of the GNU Lesser General Public License
-dnl  along with the GNU MP Library; see the file COPYING.LIB.  If not, write
-dnl  to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-dnl  Boston, MA 02110-1301, USA.
+dnl  along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
 
 include(`../config.m4')
 
@@ -60,8 +58,8 @@ ifdef(`HAVE_ABI_32',
 }
 		.align	32
 .Loop:
-	.pred.rel "mutex",p8,p9
   { .mii;	mov		r20 = r16
+	.pred.rel "mutex",p8,p9
 	   (p8)	add		r19 = r16, r17, 1
 	   (p9)	add		r19 = r16, r17		;;
 } { .mfi;	ld8		r16 = [r33], 8
@@ -90,8 +88,8 @@ ifdef(`HAVE_ABI_32',
 		mov		ar.lc = r2
 		br.ret.sptk.many b0
 .Loopm:
-	.pred.rel "mutex",p6,p7
   { .mii;	mov		r20 = r16
+	.pred.rel "mutex",p6,p7
 	   (p6)	add		r19 = r16, r17, 1
 	   (p7)	add		r19 = r16, r17		;;
 } { .mfi;	ld8		r16 = [r33], 8

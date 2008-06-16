@@ -6,13 +6,13 @@
 	mpz_mul_si
 	mpz_addmul_ui (should this really allow a+=a*c?)
 
-Copyright 1996, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
+Copyright 1996, 1999, 2000, 2001, 2002, 2007 Free Software Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -21,9 +21,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA. */
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -186,7 +184,7 @@ int
 main (int argc, char **argv)
 {
   int i;
-  int pass, reps = 100;
+  int pass, reps = 50;
   mpz_t in1, in2, in3;
   unsigned long int in2i;
   mp_size_t size;
@@ -221,7 +219,7 @@ main (int argc, char **argv)
   for (pass = 1; pass <= reps; pass++)
     {
       mpz_urandomb (bs, rands, 32);
-      size_range = mpz_get_ui (bs) % 12 + 2;
+      size_range = mpz_get_ui (bs) % 16 + 2;
 
       mpz_urandomb (bs, rands, size_range);
       size = mpz_get_ui (bs);
@@ -404,7 +402,7 @@ main (int argc, char **argv)
 	    FAIL2 (mpz_rootrem, in1, in2, NULL);
 	}
 
-      if (pass < reps / 2)	/* run fewer tests since gcdext lots of time */
+      if (size_range < 10)	/* gcd/gcdext still quadratic */
 	{
 	  mpz_gcdext (ref1, ref2, ref3, in1, in2);
 

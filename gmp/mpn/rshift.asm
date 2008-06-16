@@ -1,1 +1,0 @@
-.././mpn/powerpc32/rshift.asm

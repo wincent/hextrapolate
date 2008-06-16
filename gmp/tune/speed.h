@@ -7,7 +7,7 @@ This file is part of the GNU MP Library.
 
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -16,9 +16,7 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA. */
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.  */
 
 #ifndef __SPEED_H__
 #define __SPEED_H__
@@ -852,7 +850,7 @@ int speed_routine_count_zeros_setup _PROTO ((struct speed_params *s,
 /* For mpn_mul_basecase, xsize=r, ysize=s->size. */
 #define SPEED_ROUTINE_MPN_MUL_BASECASE(function)			\
   {									\
-    mp_ptr    wp;							\
+    mp_ptr    xp, wp;							\
     mp_size_t size1;							\
     unsigned  i;							\
     double    t;							\
@@ -865,8 +863,9 @@ int speed_routine_count_zeros_setup _PROTO ((struct speed_params *s,
 									\
     TMP_MARK;								\
     SPEED_TMP_ALLOC_LIMBS (wp, size1 + s->size, s->align_wp);		\
+    SPEED_TMP_ALLOC_LIMBS (xp, size1, s->align_xp);			\
 									\
-    speed_operand_src (s, s->xp, size1);				\
+    speed_operand_src (s, xp, size1);					\
     speed_operand_src (s, s->yp, s->size);				\
     speed_operand_dst (s, wp, size1 + s->size);				\
     speed_cache_fill (s);						\
@@ -874,7 +873,7 @@ int speed_routine_count_zeros_setup _PROTO ((struct speed_params *s,
     speed_starttime ();							\
     i = s->reps;							\
     do									\
-      function (wp, s->xp, size1, s->yp, s->size);			\
+      function (wp, xp, size1, s->yp, s->size);				\
     while (--i != 0);							\
     t = speed_endtime ();						\
 									\

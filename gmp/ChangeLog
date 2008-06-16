@@ -1,11 +1,11 @@
 Copyright 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001,
-	  2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
+	  2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 .
 This file is part of the GNU MP Library.
 .
 The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or (at your
+the Free Software Foundation; either version 3 of the License, or (at your
 option) any later version.
 .
 The GNU MP Library is distributed in the hope that it will be useful, but
@@ -14,9 +14,214 @@ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
 License for more details.
 .
 You should have received a copy of the GNU Lesser General Public License
-along with the GNU MP Library; see the file COPYING.LIB.  If not, write to
-the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-MA 02110-1301, USA.
+along with the GNU MP Library.  If not, see http://www.gnu.org/licenses/.
+
+2007-09-10  Torbjorn Granlund  <tege@swox.com>
+
+	* Version 4.2.2 released.
+
+	* mpn/powerpc32/addlsh1_n.asm: Use L() for labels.
+	* mpn/powerpc32/sublsh1_n.asm: Likewise.
+	* mpn/x86_64/add_n.asm: Likewise.
+	* mpn/x86_64/addmul_1.asm: Likewise.
+	* mpn/x86_64/lshift.asm: Likewise.
+	* mpn/x86_64/mul_1.asm: Likewise.
+	* mpn/x86_64/rshift.asm: Likewise.
+	* mpn/x86_64/sub_n.asm: Likewise.
+	* mpn/x86_64/submul_1.asm: Likewise.
+
+2007-09-09  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/x86/x86-defs.m4 (LEA): New define.
+	* mpn/x86/darwin.m4: New file, for now just defining LEA.
+	* configure.in: Pick up x86/darwin.m4.
+	* mpn/x86/*: Use LEA for PIC references.
+
+	* configure.in: For X86/32, treat core2 like pentium3.
+
+2007-09-06  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/amd64check.c (calling_conventions_values): Put constants,
+	dynamic values in this array (was in scalars).
+	(calling_conventions_check): Corresponding changes.
+	* tests/amd64call.asm: Rewrite to be PIC, smaller, using amd64check.c's
+	array.
+
+	* configure.in: Match powerpc7410 consistently.
+
+	* ltmain.sh, aclocal.m4, configure: Update to libtool 1.5.24.
+
+2007-09-04  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/amd64call.asm: Remove bogus no-op moves.
+
+2007-09-03  Torbjorn Granlund  <tege@swox.com>
+
+	From Richard Guenther:
+	* gmp-h.in (__GMP_EXTERN_INLINE): Declare conditionally on
+	__GNUC_STDC_INLINE__.
+	* tests/cxx/t-locale.cc: #include <cstdlib>, for abort.
+
+2007-09-01  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/x86_64/core2/gmp-mparam.h: New file.
+	* mpn/x86_64/pentium4/gmp-mparam.h: New file.
+
+	* configure.in: Handle athlon64, core2, and pentium4 separately for
+	64-bit ABI.
+
+	* config.sub: Recog athlon64, core2, and opteron.
+
+	* config.guess: Make two x86 variants, for 32-bit ABI and 64-bit ABI.
+	Return "athlon64" and "core2", not x86_64.
+
+2007-08-31  Torbjorn Granlund  <tege@swox.com>
+
+	From Patrick Pelissier:
+	* gmp-h.in: Don't refer to FILE from C++ unless we've seen FILE.
+
+2007-08-30  Torbjorn Granlund  <tege@swox.com>
+
+	* demos/isprime.c: Include string.h for strcmp.
+
+	* demos/pexpr.c (TIME): Remove an unused variable.
+
+	* demos/factorize.c (main): Declare to int.
+
+	* Update license to version 3.  All files affected.
+
+2007-08-24  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/mpz/convert.c (string_urandomb): Slant random base generation
+	towards base 10.
+
+2007-05-22  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/memory.c: Cast args to new mem* calls to avoid unaligned ops.
+
+2007-05-19  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/memory.c: Add red zones around allocations.
+
+2007-05-15  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/mpz/convert.c (string_urandomb): New function.
+	(main): Use it by enabling ifdef'ed out code.
+
+2007-04-25  Torbjorn Granlund  <tege@swox.com>
+
+	* mpz/divexact.c: Handle undefined case of |N| < |D| to avoid segfaults.
+
+	* tests/mpz/reuse.c: Increase operand sizes, decrease # of tests.
+
+2007-02-24  Torbjorn Granlund  <tege@swox.com>
+
+	* gmp-impl.h (x86 ULONG_PARITY): Don't let Intel's icc fool us it is
+	GCC.
+
+	* doc/gmp.texi (Toom 3-Way Multiplication): Fix typo.
+	(mpz_scan0, mpz_scan1): Fix typos.
+	(Float Internals): Rewrite paragraph about struct types.
+
+2007-02-05  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/generic/mul_fft.c (mpn_fft_mul_modF_K): Fix an ASSERT_NOCARRY
+	that caused invalid recomputation.
+
+2006-11-23  Torbjorn Granlund  <tege@swox.com>
+
+	* randmt.c (__gmp_randclear_mt): Initialize ALLOC field, like in
+	__gmp_randinit_mt_noseed.
+	(__gmp_randclear_mt, __gmp_randinit_mt_noseed): Make similar functions
+	look similar.
+	(__gmp_randclear_mt): Pass actually allocated size.
+
+	* tune/speed.h (SPEED_ROUTINE_MPN_MUL_BASECASE): Allocate space for xp
+	locally, s->xp might be insufficient.
+
+2006-11-22  Torbjorn Granlund  <tege@swox.com>
+
+	From Pedro Gimeno:
+	* randmt.c (__gmp_randinit_mt_noseed): Initialize ALLOC field of result
+	param.
+
+	* configure.in (x86): Append cc to cclist.
+
+2006-10-31  Torbjorn Granlund  <tege@swox.com>
+
+	* gmp-h.in (__GNU_MP_VERSION_PATCHLEVEL): Bump.
+
+	* gmpxx.h: Remove ternary stuff, it is hardly an optimization and it
+	writes to destination before reading all source operands.
+
+2006-07-12  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/x86_64/lshift.asm: Use .byte sequence instead of movd for moving
+	from MMX register to general register (workaround for GNU vs Solaris
+	assembler incompatibility).
+	* mpn/x86_64/rshift.asm: Likewise.
+
+	* tests/amd64call.asm: Use jmp instead of jmpq to placate Solaris.
+
+2006-06-30  Torbjorn Granlund  <tege@swox.com>
+
+	* configure.in (powerpc-*): Remove repeated path component.
+
+2006-06-29  Torbjorn Granlund  <tege@swox.com>
+
+	* doc/texinfo.tex: Update to 2004-11-25.16 version.
+
+2006-06-15  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/ia64/add_n.asm: Move mutex decls to work around Intel assembler
+	bug.
+	* mpn/ia64/sub_n.asm: Likewise.
+
+	* configure.in (ia64-*-linux*): Don't use -O3.
+
+2006-06-14  Torbjorn Granlund  <tege@swox.com>
+
+	* mpq/get_str.c: Fix upper base limit boundary in an ASSERT.
+
+	* tests/refmpn.c (refmpn_sb_divrem_mn): Use ASSERT_CARRY for add-back.
+
+2006-05-31  Torbjorn Granlund  <tege@swox.com>
+
+	* tests/mpz/t-set_d.c (check_data): Add more data points.
+
+	* mpz/set_d.c: Handle negative return values from __gmp_extract_double.
+
+2006-05-20  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/ia64/popcount.asm: Extend arguments for ABI=32.
+
+2006-05-16  Torbjorn Granlund  <tege@swox.com>
+
+	* configure.in: Clear out gcc_cflags_cpu and gcc_cflags_arch for a fat
+	build.
+
+	* demos/primes.c (find_primes): Increase mpz_probab_prime_p cnt to 10.
+
+	* mpn/generic/addsub_n.c: Fix criteria for when to call _nc functions.
+
+2006-05-12  Torbjorn Granlund  <tege@swox.com>
+
+	* configure.in: Handle "powerpc744?" like "powerpc745?".
+
+	* config.guess: Recognize more ppc processor types.
+
+2006-05-11  Torbjorn Granlund  <tege@swox.com>
+
+	* tune/speed.c (usage): Update URL for gnuplot and quickplot.
+
+2006-05-09  Torbjorn Granlund  <tege@swox.com>
+
+	* configure.in (powerpc-*-*): Pass -maltivec to assembler for
+	appropriate CPUs.
+
+2006-05-08  Torbjorn Granlund  <tege@swox.com>
+
+	* mpn/powerpc32/aix.m4 (LEA): Remove [RW] attribute.
 
 2006-05-04  Torbjorn Granlund  <tege@swox.com>
 
@@ -80,7 +285,7 @@ MA 02110-1301, USA.
 	* extract-dbl.c: Don't rely on undefined casts to mp_limb_signed_t.
 
 	* configure.in: Disable AC_C_RESTRICT for now.
-	* mpn/generic/diveby3.c: Don't use restict keyword for now.
+	* mpn/generic/diveby3.c: Don't use restrict keyword for now.
 
 2006-04-11  Torbjorn Granlund  <tege@swox.com>
 
@@ -273,8 +478,8 @@ MA 02110-1301, USA.
 	* config.guess: Recognize power4 and up under linux-gnu.
 	* config.sub: Generalize power recognition code.
 	* acinclude.m4 (POWERPC64_PATTERN): Add 64-bit powerpc processors.
-	* configure.in: Recognize powerpc procssors masquerading as power
-	procssors.
+	* configure.in: Recognize powerpc processors masquerading as power
+	processors.
 
 2006-01-17  Torbjorn Granlund  <tege@swox.com>
 
@@ -797,7 +1002,7 @@ MA 02110-1301, USA.
 
 2004-10-07  Torbjorn Granlund  <tege@swox.com>
 
-	* configfsf.guess: Patch HP-UX code to accomodate HP compiler's new
+	* configfsf.guess: Patch HP-UX code to accommodate HP compiler's new
 	inability to read from stdin.
 
 	* mpn/powerpc64/mode64/addsub_n.asm: Remove accidentally added file.
