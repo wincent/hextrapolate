@@ -74,9 +74,6 @@ static WODynamicBaseTransformer         *alternateSelectableBaseTransformer     
 // allocate (and leak) transformers which will last for the life of the program
 + (void)initialize
 {
-    // load WOBaseCore early on
-    [NSApp loadWOBaseCore];
-    
     // static transformers
     [NSValueTransformer setValueTransformer:[[WOGeneralBaseTransformer alloc] initWithBase:16] forName:WO_HEX_TRANSFORMER];
     [NSValueTransformer setValueTransformer:[[WOGeneralBaseTransformer alloc] initWithBase:10] forName:WO_DECIMAL_TRANSFORMER];
@@ -134,6 +131,7 @@ static WODynamicBaseTransformer         *alternateSelectableBaseTransformer     
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+#if 0
     // check for license and activation certificate on disk, display registration reminder if appropriate
     WOLicense       *license            = [WOLicense licenseReadingFromDisk:WOProductHextrapolate];
     NSDictionary    *activation         = [license activationCertificateReadingFromDisk];
@@ -172,7 +170,7 @@ static WODynamicBaseTransformer         *alternateSelectableBaseTransformer     
     }
     else unless (isActivated)
         [controller showActivationRequiredAlert];
-    
+#endif
     // check that last exit was clean
     WOCrashCatcher *crashCatcher = [WOCrashCatcher sharedCatcher];
     [crashCatcher setHandlesSignals:NO];            // override preferences on disk
