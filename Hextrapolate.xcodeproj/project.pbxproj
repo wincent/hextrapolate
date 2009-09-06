@@ -73,17 +73,6 @@
 			name = "Hextrapolate (Disk Image)";
 			productName = "Hextrapolate (Disk Image)";
 		};
-		BC4FCBF00BC6E0EC00C8913C /* Update obfuscation (dependencies) */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = BC4FCBF70BC6E12400C8913C /* Build configuration list for PBXAggregateTarget "Update obfuscation (dependencies)" */;
-			buildPhases = (
-			);
-			dependencies = (
-				BC7B06270DFD5BDD008059BB /* PBXTargetDependency */,
-			);
-			name = "Update obfuscation (dependencies)";
-			productName = "Update obfuscation (dependencies)";
-		};
 		BCDF3A8E0BCD581000D7FE9C /* Regenerate help */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = BCDF3A980BCD583700D7FE9C /* Build configuration list for PBXAggregateTarget "Regenerate help" */;
@@ -366,13 +355,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = BC70BE600B3023180003BC72;
 			remoteInfo = "obfuscated-symbol-updater";
-		};
-		BC7B06260DFD5BDD008059BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC70C9D10B31B1FF0003BC72;
-			remoteInfo = "Update obfuscation";
 		};
 		BCED0CE10BC7FAB7005A752F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1196,7 +1178,6 @@
 			);
 			projectRoot = "";
 			targets = (
-				BC4FCBF00BC6E0EC00C8913C /* Update obfuscation (dependencies) */,
 				BC4FC6830BC6D5E600C8913C /* Update Hextrapolate build number */,
 				8D1107260486CEB800E47090 /* Hextrapolate */,
 				BC4FC6AB0BC6D6B700C8913C /* HextrapolateTests */,
@@ -1697,11 +1678,6 @@
 			target = BC7056100BC7ECFA009F566C /* General.prefPane */;
 			targetProxy = BC70567E0BC7F398009F566C /* PBXContainerItemProxy */;
 		};
-		BC7B06270DFD5BDD008059BB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Update obfuscation";
-			targetProxy = BC7B06260DFD5BDD008059BB /* PBXContainerItemProxy */;
-		};
 		BCED0CE20BC7FAB7005A752F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D1107260486CEB800E47090 /* Hextrapolate */;
@@ -1955,28 +1931,6 @@
 			};
 			name = Release;
 		};
-		BC4FCBF80BC6E12400C8913C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Update obfuscation (dependencies)";
-			};
-			name = Debug;
-		};
-		BC4FCBF90BC6E12400C8913C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = "Update obfuscation (dependencies)";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		BC6D89A9089C0B780035A305 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC1FD9920A0249C90032A48E /* cocoa-app-target.xcconfig */;
@@ -2131,15 +2085,6 @@
 			buildConfigurations = (
 				BC4FC7D00BC6DDC700C8913C /* Debug */,
 				BC4FC7D10BC6DDC700C8913C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BC4FCBF70BC6E12400C8913C /* Build configuration list for PBXAggregateTarget "Update obfuscation (dependencies)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BC4FCBF80BC6E12400C8913C /* Debug */,
-				BC4FCBF90BC6E12400C8913C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
