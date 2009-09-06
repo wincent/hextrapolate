@@ -18,12 +18,12 @@
 
 + (WOMPZWrapper *)wrapperWithString:(NSString *)aString inBase:(unsigned)base
 {
-    return [[[self alloc] initWithString:aString inBase:base] autorelease];
+    return [[self alloc] initWithString:aString inBase:base];
 }
 
 + (WOMPZWrapper *)wrapperWithData:(NSData *)aData
 {
-    return [[[self alloc] initWithData:aData] autorelease];
+    return [[self alloc] initWithData:aData];
 }
 
 - (id)initWithString:(NSString *)aString inBase:(unsigned)base
@@ -34,11 +34,8 @@
     {
         int result = mpz_set_str(_MPZValue, [aString UTF8String], (int)base);
         if (result == -1)
-        {
-            [self dealloc];
             [NSException raise:WO_GMP_CONVERSION_EXCEPTION 
                         format:@"mpz_init_set_str failed with string \"%@\" and base %d", aString, base];
-        }
     }
     return self;
 }
@@ -58,10 +55,10 @@
     return self;
 }
 
-- (void)dealloc
+- (void)finalize
 {
     mpz_clear(_MPZValue);
-    [super dealloc];
+    [super finalize];
 }
 
 // called by Cocoa calls in -takeObjectValueFrom:

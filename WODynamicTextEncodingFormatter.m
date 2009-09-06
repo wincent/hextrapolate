@@ -41,13 +41,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    WO_RELEASE(_transformers);
-    [super dealloc];
-}
-
-
 #pragma mark -
 #pragma mark NSFormatter overrides
 
