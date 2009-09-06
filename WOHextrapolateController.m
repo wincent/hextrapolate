@@ -294,7 +294,9 @@ static WODynamicBaseTransformer         *alternateSelectableBaseTransformer     
 - (void)controlTextDidEndEditing:(NSNotification *)aNotification
 {
     // the notification object should be the textfield that ended editing
-    [[[aNotification object] ifResponds] setToolTip:nil];
+    id object = [aNotification object];
+    if (object && [object respondsToSelector:@selector(setToolTip:)])
+        [object setToolTip:nil];
 }
 
 #pragma mark NSWindow delegate methods
