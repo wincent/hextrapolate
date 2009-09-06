@@ -3,8 +3,7 @@
 // Hextrapolate
 //
 // Created by Wincent Colaiuta on 7 April 2007.
-// Copyright 2007 Wincent Colaiuta.
-// $Id: WODynamicBaseTransformer.m 48 2007-04-07 04:36:04Z wincent $
+// Copyright 2007-2008 Wincent Colaiuta.
 
 // class header
 #import "WODynamicBaseTransformer.h"
@@ -12,8 +11,8 @@
 // other class headers
 #import "WOHextrapolateController.h"
 
-// WOCommon other headers
-#import "WOCommon/WODebugMacros.h"
+// WOPublic other headers
+#import "WOPublic/WODebugMacros.h"
 
 @implementation WODynamicBaseTransformer
 

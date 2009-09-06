@@ -3,8 +3,7 @@
 // Hextrapolate
 //
 // Created by Wincent Colaiuta on Sat Dec 20 2003.
-// Copyright 2003-2007 Wincent Colaiuta
-// $Id: WOHextrapolateController.m 89 2007-04-25 10:37:08Z wincent $
+// Copyright 2003-2008 Wincent Colaiuta
 
 // class header
 #import "WOHextrapolateController.h"
@@ -36,14 +35,10 @@
 #import "WOCommon/NSApplication+WOConvenience.h"
 #import "WOCommon/NSApplication+WOLicensing.h"
 #import "WOCommon/NSDictionary+WOCreation.h"
-#import "WOCommon/NSObject+WOHOMIfResponds.h"
 #import "WOCommon/NSString+WOURLUtilities.h"
 
 // WOCommon other headers
 #import "WOCommon/WOConvenienceMacros.h"
-
-// WOBaseCore headers
-#import "WOCommon/WOBaseCore/WOBaseCoreStrings.h"
 
 // transformer names
 #define WO_HEX_TRANSFORMER                                  @"WOHexTransformer"

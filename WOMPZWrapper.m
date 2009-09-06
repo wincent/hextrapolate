@@ -3,8 +3,7 @@
 // Hextrapolate
 //
 // Created by Wincent Colaiuta on Thu Jan 01 2004.
-// Copyright 2004-2007 Wincent Colaiuta
-// $Id: WOMPZWrapper.m 54 2007-04-07 14:05:09Z wincent $
+// Copyright 2004-2008 Wincent Colaiuta
 
 // class header
 #import "WOMPZWrapper.h"
@@ -12,8 +11,8 @@
 // other project headers
 #import "WOHextrapolate.h"
 
-// WOCommon macro headers
-#import "WOCommon/WODebugMacros.h"
+// WOPublic headers
+#import "WOPublic/WODebugMacros.h"
 
 @implementation WOMPZWrapper
 

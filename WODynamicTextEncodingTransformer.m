@@ -3,8 +3,7 @@
 // Hextrapolate
 //
 // Created by Wincent Colaiuta on 7 April 2007.
-// Copyright 2007 Wincent Colaiuta.
-// $Id: WODynamicTextEncodingTransformer.m 51 2007-04-07 12:56:14Z wincent $
+// Copyright 2007-2008 Wincent Colaiuta.
 
 // class header
 #import "WODynamicTextEncodingTransformer.h"
@@ -12,8 +11,8 @@
 // other project headers
 #import "WOHextrapolateController.h"
 
-// WOCommon macro headers
-#import "WOCommon/WODebugMacros.h"
+// WOPublic macro headers
+#import "WOPublic/WODebugMacros.h"
 
 @implementation WODynamicTextEncodingTransformer
 
