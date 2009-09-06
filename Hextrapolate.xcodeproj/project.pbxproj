@@ -39,7 +39,6 @@
 				BC4FC74A0BC6DB4E00C8913C /* ShellScript */,
 			);
 			dependencies = (
-				BC4FC7450BC6DB3400C8913C /* PBXTargetDependency */,
 				BC4FC7470BC6DB3B00C8913C /* PBXTargetDependency */,
 			);
 			name = "Hextrapolate + Tests (run)";
@@ -58,7 +57,6 @@
 				BC70567F0BC7F398009F566C /* PBXTargetDependency */,
 				BCED13B70BC81048005A752F /* PBXTargetDependency */,
 				BC2C4A080BC885710001BB9D /* PBXTargetDependency */,
-				BC4FC7BF0BC6DCC500C8913C /* PBXTargetDependency */,
 			);
 			name = "Hextrapolate + Dependencies";
 			productName = "Hextrapolate + Dependencies";
@@ -81,8 +79,8 @@
 			buildPhases = (
 			);
 			dependencies = (
-				BC4FCBF60BC6E10300C8913C /* PBXTargetDependency */,
 				BC4FCBF40BC6E10300C8913C /* PBXTargetDependency */,
+				BC7B06270DFD5BDD008059BB /* PBXTargetDependency */,
 			);
 			name = "Update obfuscation (dependencies)";
 			productName = "Update obfuscation (dependencies)";
@@ -149,22 +147,15 @@
 		BC7056C50BC7F822009F566C /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7056C40BC7F822009F566C /* CoreServices.framework */; };
 		BCBE448F0BC6E808005453E2 /* WOLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE448C0BC6E808005453E2 /* WOLogManager.m */; };
 		BCBE44900BC6E808005453E2 /* WOObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE448D0BC6E808005453E2 /* WOObject.m */; };
-		BCBE44910BC6E808005453E2 /* WOSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE448E0BC6E808005453E2 /* WOSingleton.m */; };
 		BCBE44950BC6E839005453E2 /* NSMutableString+WOEditingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE44920BC6E839005453E2 /* NSMutableString+WOEditingUtilities.m */; };
 		BCBE44960BC6E839005453E2 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE44930BC6E839005453E2 /* NSString+WOCreation.m */; };
 		BCBE44970BC6E839005453E2 /* NSString+WOFileUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE44940BC6E839005453E2 /* NSString+WOFileUtilities.m */; };
 		BCBE449C0BC6E876005453E2 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE44990BC6E876005453E2 /* NSMutableString+WOEditingUtilitiesTests.m */; };
 		BCBE449D0BC6E876005453E2 /* WOObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE449A0BC6E876005453E2 /* WOObjectTests.m */; };
-		BCBE449E0BC6E876005453E2 /* WOSingletonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE449B0BC6E876005453E2 /* WOSingletonTests.m */; };
 		BCBE49FF0BC6FF55005453E2 /* WOGeneralBaseTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE49FB0BC6FF55005453E2 /* WOGeneralBaseTransformer.m */; };
 		BCBE4B300BC71D70005453E2 /* NSDictionary+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4B2F0BC71D70005453E2 /* NSDictionary+WOCreation.m */; };
 		BCBE4B320BC71D89005453E2 /* NSDictionary+WOCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4B310BC71D89005453E2 /* NSDictionary+WOCreationTests.m */; };
 		BCBE4B330BC71D94005453E2 /* WOGeneralBaseTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE49F80BC6FF55005453E2 /* WOGeneralBaseTransformerTests.m */; };
-		BCBE4CD50BC72F58005453E2 /* NSObject+WOHOMIfResponds.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4CD40BC72F58005453E2 /* NSObject+WOHOMIfResponds.m */; };
-		BCBE4CD80BC72F99005453E2 /* WOHOMIfRespondsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4CD60BC72F99005453E2 /* WOHOMIfRespondsProxy.m */; };
-		BCBE4CD90BC72F99005453E2 /* WOHOMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4CD70BC72F99005453E2 /* WOHOMProxy.m */; };
-		BCBE4CDC0BC72FB8005453E2 /* NSObject+WOHOMIfRespondsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4CDA0BC72FB8005453E2 /* NSObject+WOHOMIfRespondsTests.m */; };
-		BCBE4CDD0BC72FB8005453E2 /* WOHOMIfRespondsProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4CDB0BC72FB8005453E2 /* WOHOMIfRespondsProxyTests.m */; };
 		BCBE4D290BC732C2005453E2 /* WODynamicBaseTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4D250BC732C1005453E2 /* WODynamicBaseTransformer.m */; };
 		BCBE4DFF0BC7391C005453E2 /* WOTextEncodingTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4DFB0BC7391C005453E2 /* WOTextEncodingTransformer.m */; };
 		BCBE4E000BC7392F005453E2 /* WODynamicBaseTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBE4D220BC732C1005453E2 /* WODynamicBaseTransformerTests.m */; };
@@ -206,14 +197,12 @@
 		BCED143A0BC81A92005A752F /* WOLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED14380BC81A92005A752F /* WOLicense.m */; };
 		BCED143C0BC81AC0005A752F /* WOLicenseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED143B0BC81AC0005A752F /* WOLicenseTests.m */; };
 		BCED15150BC81DCF005A752F /* NSArray+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED15120BC81DCF005A752F /* NSArray+WOConvenience.m */; };
-		BCED15160BC81DCF005A752F /* WOBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED15130BC81DCF005A752F /* WOBundle.m */; };
 		BCED15170BC81DCF005A752F /* WOCDSAWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED15140BC81DCF005A752F /* WOCDSAWrapper.m */; };
 		BCED15190BC81E02005A752F /* NSData+WOLicensing.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED15180BC81E02005A752F /* NSData+WOLicensing.m */; };
 		BCED151D0BC81E85005A752F /* WOStringDecryption.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED151C0BC81E85005A752F /* WOStringDecryption.m */; };
 		BCED151F0BC81EAC005A752F /* WOStringDecryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED151E0BC81EAC005A752F /* WOStringDecryptionTests.m */; };
 		BCED15250BC81ED7005A752F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCED15240BC81ED7005A752F /* SystemConfiguration.framework */; };
 		BCED152C0BC81F22005A752F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCED152B0BC81F21005A752F /* Security.framework */; };
-		BCED15440BC81FA9005A752F /* WOBaseCore.bundle in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = BC4FC0C40BC6CB9600C8913C /* WOBaseCore.bundle */; };
 		BCED16390BC82480005A752F /* NSDate+WOLocaleUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED16380BC82480005A752F /* NSDate+WOLocaleUtilities.m */; };
 		BCED1A8E0BC82624005A752F /* NSString+WOLicensing.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED1A8D0BC82623005A752F /* NSString+WOLicensing.m */; };
 		BCED1A900BC82635005A752F /* NSString+WOLicensingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED1A8F0BC82635005A752F /* NSString+WOLicensingTests.m */; };
@@ -231,69 +220,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BC4FC6AB0BC6D6B700C8913C;
 			remoteInfo = HextrapolateTests;
-		};
-		BC4FC0C10BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
-			remoteInfo = WOCommon;
-		};
-		BC4FC0C30BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC7CCE5E0A91125800B83673;
-			remoteInfo = WOBaseCore;
-		};
-		BC4FC0C50BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC4C5DEF0AB30BFD00CD1FB0;
-			remoteInfo = "blacklisting-tool";
-		};
-		BC4FC0C70BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC9644AB0ACC6495007E94A4;
-			remoteInfo = "bundle-encryption-tool";
-		};
-		BC4FC0C90BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC3EC2300ACC699F004ACBFC;
-			remoteInfo = "activation-diagnostics";
-		};
-		BC4FC0CB0BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC3EC2350ACC69C3004ACBFC;
-			remoteInfo = "registration-tool";
-		};
-		BC4FC0CD0BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC2730450B17110600DB23C6;
-			remoteInfo = HOMSpeedTest;
-		};
-		BC4FC0CF0BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC51F9070B2D829300F32073;
-			remoteInfo = "string-obfuscator";
-		};
-		BC4FC0D10BC6CB9600C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC70BE600B3023180003BC72;
-			remoteInfo = "obfuscated-symbol-updater";
 		};
 		BC4FC0E60BC6CBA700C8913C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -372,13 +298,6 @@
 			remoteGlobalIDString = BCF8EE5609AF3E730095BCD2;
 			remoteInfo = "WOTest + Tests";
 		};
-		BC4FC7440BC6DB3400C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC7CB61D0A8BA57000B83673;
-			remoteInfo = "WOCommon + run tests";
-		};
 		BC4FC7460BC6DB3B00C8913C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -392,13 +311,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BC4FC6830BC6D5E600C8913C;
 			remoteInfo = "Update Hextrapolate build number";
-		};
-		BC4FC7BE0BC6DCC500C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC4FC7A80BC6DBEA00C8913C;
-			remoteInfo = "WOBaseCore Hextrapolate";
 		};
 		BC4FC7C30BC6DD0B00C8913C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -421,19 +333,54 @@
 			remoteGlobalIDString = BC883F9E0BB82D0D006A94F1;
 			remoteInfo = "Update obfuscation";
 		};
-		BC4FCBF50BC6E10300C8913C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC70C9D10B31B1FF0003BC72;
-			remoteInfo = "Update obfuscation";
-		};
 		BC70567E0BC7F398009F566C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BC7056100BC7ECFA009F566C;
 			remoteInfo = General.prefPane;
+		};
+		BC7B061C0DFD5BD2008059BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D5B49B6048680CD000E48DA;
+			remoteInfo = WOCommon;
+		};
+		BC7B061E0DFD5BD2008059BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC4C5DEF0AB30BFD00CD1FB0;
+			remoteInfo = "blacklisting-tool";
+		};
+		BC7B06200DFD5BD2008059BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC3EC2350ACC69C3004ACBFC;
+			remoteInfo = "registration-tool";
+		};
+		BC7B06220DFD5BD2008059BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC51F9070B2D829300F32073;
+			remoteInfo = "string-obfuscator";
+		};
+		BC7B06240DFD5BD2008059BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC70BE600B3023180003BC72;
+			remoteInfo = "obfuscated-symbol-updater";
+		};
+		BC7B06260DFD5BDD008059BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC70C9D10B31B1FF0003BC72;
+			remoteInfo = "Update obfuscation";
 		};
 		BCED0CE10BC7FAB7005A752F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -513,7 +460,6 @@
 			dstPath = Hextrapolate.app/Contents/Resources;
 			dstSubfolderSpec = 16;
 			files = (
-				BCED15440BC81FA9005A752F /* WOBaseCore.bundle in Copy Bundle Resources */,
 			);
 			name = "Copy Bundle Resources";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +495,7 @@
 		BC22604D0593CE2000AE184B /* WOGeneralBaseFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOGeneralBaseFormatter.h; sourceTree = "<group>"; };
 		BC22604E0593CE2000AE184B /* WOGeneralBaseFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOGeneralBaseFormatter.m; sourceTree = "<group>"; };
 		BC2C40810BC880220001BB9D /* RunAllTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunAllTests.sh; sourceTree = "<group>"; };
-		BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WOCommon.xcodeproj; path = ../WOCommon/WOCommon.xcodeproj; sourceTree = SOURCE_ROOT; };
+		BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WOCommon.xcodeproj; path = ../../WOCommon/src/WOCommon.xcodeproj; sourceTree = SOURCE_ROOT; };
 		BC4FC0D30BC6CBA700C8913C /* WODebug.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WODebug.xcodeproj; path = ../../WODebug/src/WODebug.xcodeproj; sourceTree = SOURCE_ROOT; };
 		BC4FC0F60BC6CBD300C8913C /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		BC4FC1030BC6CC0300C8913C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -594,13 +540,11 @@
 		BC7056C40BC7F822009F566C /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		BCBE448C0BC6E808005453E2 /* WOLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOLogManager.m; path = WOCommon/WOLogManager.m; sourceTree = "<group>"; };
 		BCBE448D0BC6E808005453E2 /* WOObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOObject.m; path = WOCommon/WOObject.m; sourceTree = "<group>"; };
-		BCBE448E0BC6E808005453E2 /* WOSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOSingleton.m; path = WOCommon/WOSingleton.m; sourceTree = "<group>"; };
 		BCBE44920BC6E839005453E2 /* NSMutableString+WOEditingUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+WOEditingUtilities.m"; path = "WOCommon/NSMutableString+WOEditingUtilities.m"; sourceTree = "<group>"; };
 		BCBE44930BC6E839005453E2 /* NSString+WOCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+WOCreation.m"; path = "WOCommon/NSString+WOCreation.m"; sourceTree = "<group>"; };
 		BCBE44940BC6E839005453E2 /* NSString+WOFileUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+WOFileUtilities.m"; path = "WOCommon/NSString+WOFileUtilities.m"; sourceTree = "<group>"; };
 		BCBE44990BC6E876005453E2 /* NSMutableString+WOEditingUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+WOEditingUtilitiesTests.m"; path = "WOCommon/tests/NSMutableString+WOEditingUtilitiesTests.m"; sourceTree = "<group>"; };
 		BCBE449A0BC6E876005453E2 /* WOObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOObjectTests.m; path = WOCommon/tests/WOObjectTests.m; sourceTree = "<group>"; };
-		BCBE449B0BC6E876005453E2 /* WOSingletonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOSingletonTests.m; path = WOCommon/tests/WOSingletonTests.m; sourceTree = "<group>"; };
 		BCBE49F80BC6FF55005453E2 /* WOGeneralBaseTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOGeneralBaseTransformerTests.m; path = Tests/WOGeneralBaseTransformerTests.m; sourceTree = "<group>"; };
 		BCBE49F90BC6FF55005453E2 /* WOGeneralBaseTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOGeneralBaseTransformerTests.h; path = Tests/WOGeneralBaseTransformerTests.h; sourceTree = "<group>"; };
 		BCBE49FA0BC6FF55005453E2 /* WOGeneralBaseTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOGeneralBaseTransformer.h; sourceTree = "<group>"; };
@@ -608,11 +552,6 @@
 		BCBE4B2F0BC71D70005453E2 /* NSDictionary+WOCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+WOCreation.m"; path = "WOCommon/NSDictionary+WOCreation.m"; sourceTree = "<group>"; };
 		BCBE4B310BC71D89005453E2 /* NSDictionary+WOCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+WOCreationTests.m"; path = "WOCommon/tests/NSDictionary+WOCreationTests.m"; sourceTree = "<group>"; };
 		BCBE4BFD0BC727E9005453E2 /* WOHextrapolateLocalizations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOHextrapolateLocalizations.h; sourceTree = "<group>"; };
-		BCBE4CD40BC72F58005453E2 /* NSObject+WOHOMIfResponds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+WOHOMIfResponds.m"; path = "WOCommon/NSObject+WOHOMIfResponds.m"; sourceTree = "<group>"; };
-		BCBE4CD60BC72F99005453E2 /* WOHOMIfRespondsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOHOMIfRespondsProxy.m; path = WOCommon/WOHOMIfRespondsProxy.m; sourceTree = "<group>"; };
-		BCBE4CD70BC72F99005453E2 /* WOHOMProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOHOMProxy.m; path = WOCommon/WOHOMProxy.m; sourceTree = "<group>"; };
-		BCBE4CDA0BC72FB8005453E2 /* NSObject+WOHOMIfRespondsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+WOHOMIfRespondsTests.m"; path = "WOCommon/tests/NSObject+WOHOMIfRespondsTests.m"; sourceTree = "<group>"; };
-		BCBE4CDB0BC72FB8005453E2 /* WOHOMIfRespondsProxyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOHOMIfRespondsProxyTests.m; path = WOCommon/tests/WOHOMIfRespondsProxyTests.m; sourceTree = "<group>"; };
 		BCBE4D220BC732C1005453E2 /* WODynamicBaseTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WODynamicBaseTransformerTests.m; path = Tests/WODynamicBaseTransformerTests.m; sourceTree = "<group>"; };
 		BCBE4D230BC732C1005453E2 /* WODynamicBaseTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WODynamicBaseTransformerTests.h; path = Tests/WODynamicBaseTransformerTests.h; sourceTree = "<group>"; };
 		BCBE4D240BC732C1005453E2 /* WODynamicBaseTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODynamicBaseTransformer.h; sourceTree = "<group>"; };
@@ -666,7 +605,6 @@
 		BCED14380BC81A92005A752F /* WOLicense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOLicense.m; path = WOCommon/WOLicense.m; sourceTree = "<group>"; };
 		BCED143B0BC81AC0005A752F /* WOLicenseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOLicenseTests.m; path = WOCommon/tests/WOLicenseTests.m; sourceTree = "<group>"; };
 		BCED15120BC81DCF005A752F /* NSArray+WOConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+WOConvenience.m"; path = "WOCommon/NSArray+WOConvenience.m"; sourceTree = "<group>"; };
-		BCED15130BC81DCF005A752F /* WOBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOBundle.m; path = WOCommon/WOBundle.m; sourceTree = "<group>"; };
 		BCED15140BC81DCF005A752F /* WOCDSAWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOCDSAWrapper.m; path = WOCommon/WOCDSAWrapper.m; sourceTree = "<group>"; };
 		BCED15180BC81E02005A752F /* NSData+WOLicensing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+WOLicensing.m"; path = "WOCommon/NSData+WOLicensing.m"; sourceTree = "<group>"; };
 		BCED151C0BC81E85005A752F /* WOStringDecryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOStringDecryption.m; path = WOCommon/WOStringDecryption.m; sourceTree = "<group>"; };
@@ -831,22 +769,6 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
-		BC4FC0A20BC6CB9500C8913C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BC4FC0C20BC6CB9600C8913C /* WOCommon.bundle */,
-				BC4FC0C40BC6CB9600C8913C /* WOBaseCore.bundle */,
-				BC4FC0C60BC6CB9600C8913C /* blacklisting-tool */,
-				BC4FC0C80BC6CB9600C8913C /* bundle-encryption-tool */,
-				BC4FC0CA0BC6CB9600C8913C /* activation-diagnostics */,
-				BC4FC0CC0BC6CB9600C8913C /* registration-tool */,
-				BC4FC0CE0BC6CB9600C8913C /* HOMSpeedTest */,
-				BC4FC0D00BC6CB9600C8913C /* string-obfuscator */,
-				BC4FC0D20BC6CB9600C8913C /* obfuscated-symbol-updater */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		BC4FC0D40BC6CBA700C8913C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,12 +839,9 @@
 				BCED08270BC7F9AE005A752F /* NSMutableString+WOPathUtilitiesTests.m */,
 				BCED08280BC7F9AE005A752F /* NSString+WOPathUtilitiesTests.m */,
 				BCED08290BC7F9AE005A752F /* WOMachineTests.m */,
-				BCBE4CDA0BC72FB8005453E2 /* NSObject+WOHOMIfRespondsTests.m */,
-				BCBE4CDB0BC72FB8005453E2 /* WOHOMIfRespondsProxyTests.m */,
 				BCBE4B310BC71D89005453E2 /* NSDictionary+WOCreationTests.m */,
 				BCBE44990BC6E876005453E2 /* NSMutableString+WOEditingUtilitiesTests.m */,
 				BCBE449A0BC6E876005453E2 /* WOObjectTests.m */,
-				BCBE449B0BC6E876005453E2 /* WOSingletonTests.m */,
 			);
 			name = WOCommon;
 			sourceTree = "<group>";
@@ -986,6 +905,18 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		BC7B06110DFD5BD2008059BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC7B061D0DFD5BD2008059BB /* WOCommon.bundle */,
+				BC7B061F0DFD5BD2008059BB /* blacklisting-tool */,
+				BC7B06210DFD5BD2008059BB /* registration-tool */,
+				BC7B06230DFD5BD2008059BB /* string-obfuscator */,
+				BC7B06250DFD5BD2008059BB /* obfuscated-symbol-updater */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BC81BA2205A27BFB002B17F4 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,7 +938,6 @@
 				BCED151C0BC81E85005A752F /* WOStringDecryption.m */,
 				BCED15180BC81E02005A752F /* NSData+WOLicensing.m */,
 				BCED15120BC81DCF005A752F /* NSArray+WOConvenience.m */,
-				BCED15130BC81DCF005A752F /* WOBundle.m */,
 				BCED15140BC81DCF005A752F /* WOCDSAWrapper.m */,
 				BCED14370BC81A92005A752F /* NSApplication+WOLicensing.m */,
 				BCED14380BC81A92005A752F /* WOLicense.m */,
@@ -1030,16 +960,12 @@
 				BC7056A20BC7F515009F566C /* WODraggableButtonCell.m */,
 				BC7056A30BC7F515009F566C /* WOMachine.m */,
 				BC7056A40BC7F515009F566C /* WOPreferencesWindowController.m */,
-				BCBE4CD60BC72F99005453E2 /* WOHOMIfRespondsProxy.m */,
-				BCBE4CD70BC72F99005453E2 /* WOHOMProxy.m */,
-				BCBE4CD40BC72F58005453E2 /* NSObject+WOHOMIfResponds.m */,
 				BCBE4B2F0BC71D70005453E2 /* NSDictionary+WOCreation.m */,
 				BCBE44920BC6E839005453E2 /* NSMutableString+WOEditingUtilities.m */,
 				BCBE44930BC6E839005453E2 /* NSString+WOCreation.m */,
 				BCBE44940BC6E839005453E2 /* NSString+WOFileUtilities.m */,
 				BCBE448C0BC6E808005453E2 /* WOLogManager.m */,
 				BCBE448D0BC6E808005453E2 /* WOObject.m */,
-				BCBE448E0BC6E808005453E2 /* WOSingleton.m */,
 				BCED10680BC80BF9005A752F /* WORegistrationTextField.m */,
 				BCED106A0BC80BF9005A752F /* WORegistrationTextFieldCell.m */,
 				BCED106C0BC80BF9005A752F /* WORegistrationTextView.m */,
@@ -1264,7 +1190,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = BC4FC0A20BC6CB9500C8913C /* Products */;
+					ProductGroup = BC7B06110DFD5BD2008059BB /* Products */;
 					ProjectRef = BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */;
 				},
 				{
@@ -1294,69 +1220,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		BC4FC0C20BC6CB9600C8913C /* WOCommon.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = WOCommon.bundle;
-			remoteRef = BC4FC0C10BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0C40BC6CB9600C8913C /* WOBaseCore.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = WOBaseCore.bundle;
-			remoteRef = BC4FC0C30BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0C60BC6CB9600C8913C /* blacklisting-tool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "blacklisting-tool";
-			remoteRef = BC4FC0C50BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0C80BC6CB9600C8913C /* bundle-encryption-tool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "bundle-encryption-tool";
-			remoteRef = BC4FC0C70BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0CA0BC6CB9600C8913C /* activation-diagnostics */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "activation-diagnostics";
-			remoteRef = BC4FC0C90BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0CC0BC6CB9600C8913C /* registration-tool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "registration-tool";
-			remoteRef = BC4FC0CB0BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0CE0BC6CB9600C8913C /* HOMSpeedTest */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = HOMSpeedTest;
-			remoteRef = BC4FC0CD0BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0D00BC6CB9600C8913C /* string-obfuscator */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "string-obfuscator";
-			remoteRef = BC4FC0CF0BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC4FC0D20BC6CB9600C8913C /* obfuscated-symbol-updater */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "obfuscated-symbol-updater";
-			remoteRef = BC4FC0D10BC6CB9600C8913C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		BC4FC0E70BC6CBA700C8913C /* WODebug.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1397,6 +1260,41 @@
 			fileType = wrapper.cfbundle;
 			path = WOTestSelfTests.bundle;
 			remoteRef = BC4FC62A0BC6CE5500C8913C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BC7B061D0DFD5BD2008059BB /* WOCommon.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WOCommon.bundle;
+			remoteRef = BC7B061C0DFD5BD2008059BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BC7B061F0DFD5BD2008059BB /* blacklisting-tool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "blacklisting-tool";
+			remoteRef = BC7B061E0DFD5BD2008059BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BC7B06210DFD5BD2008059BB /* registration-tool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "registration-tool";
+			remoteRef = BC7B06200DFD5BD2008059BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BC7B06230DFD5BD2008059BB /* string-obfuscator */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "string-obfuscator";
+			remoteRef = BC7B06220DFD5BD2008059BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BC7B06250DFD5BD2008059BB /* obfuscated-symbol-updater */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "obfuscated-symbol-updater";
+			remoteRef = BC7B06240DFD5BD2008059BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1460,7 +1358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\ncd \"${SOURCE_ROOT}\"\n\"${BUILDTOOLS_DIR}/UpdateSubversionRevisionNumbers.rb\"\n. \"${BUILDTOOLS_DIR}/UpdateBuildVersionNumbers.sh\" \"WOHextrapolate_Version.h\"\n";
+			shellScript = "set -e\ncd \"${SOURCE_ROOT}\"\n\"${BUILDTOOLS_DIR}/UpdateGitRevisionNumbers.rb\"\n. \"${BUILDTOOLS_DIR}/UpdateBuildVersionNumbers.sh\" \"WOHextrapolate_Version.h\"\n";
 		};
 		BC4FC70F0BC6D96F00C8913C /* Run Script (custom icon) */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1661,15 +1559,11 @@
 				BC01FE8C05A4144200A7ED81 /* WOSignedDecimalFormatter.m in Sources */,
 				BCBE448F0BC6E808005453E2 /* WOLogManager.m in Sources */,
 				BCBE44900BC6E808005453E2 /* WOObject.m in Sources */,
-				BCBE44910BC6E808005453E2 /* WOSingleton.m in Sources */,
 				BCBE44950BC6E839005453E2 /* NSMutableString+WOEditingUtilities.m in Sources */,
 				BCBE44960BC6E839005453E2 /* NSString+WOCreation.m in Sources */,
 				BCBE44970BC6E839005453E2 /* NSString+WOFileUtilities.m in Sources */,
 				BCBE49FF0BC6FF55005453E2 /* WOGeneralBaseTransformer.m in Sources */,
 				BCBE4B300BC71D70005453E2 /* NSDictionary+WOCreation.m in Sources */,
-				BCBE4CD50BC72F58005453E2 /* NSObject+WOHOMIfResponds.m in Sources */,
-				BCBE4CD80BC72F99005453E2 /* WOHOMIfRespondsProxy.m in Sources */,
-				BCBE4CD90BC72F99005453E2 /* WOHOMProxy.m in Sources */,
 				BCBE4D290BC732C2005453E2 /* WODynamicBaseTransformer.m in Sources */,
 				BCBE4DFF0BC7391C005453E2 /* WOTextEncodingTransformer.m in Sources */,
 				BCBE4EDB0BC74DCE005453E2 /* WODynamicTextEncodingTransformer.m in Sources */,
@@ -1701,7 +1595,6 @@
 				BCED14390BC81A92005A752F /* NSApplication+WOLicensing.m in Sources */,
 				BCED143A0BC81A92005A752F /* WOLicense.m in Sources */,
 				BCED15150BC81DCF005A752F /* NSArray+WOConvenience.m in Sources */,
-				BCED15160BC81DCF005A752F /* WOBundle.m in Sources */,
 				BCED15170BC81DCF005A752F /* WOCDSAWrapper.m in Sources */,
 				BCED15190BC81E02005A752F /* NSData+WOLicensing.m in Sources */,
 				BCED151D0BC81E85005A752F /* WOStringDecryption.m in Sources */,
@@ -1720,11 +1613,8 @@
 				BC4FC6D60BC6D8C200C8913C /* WOHextrapolateTestsController.m in Sources */,
 				BCBE449C0BC6E876005453E2 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */,
 				BCBE449D0BC6E876005453E2 /* WOObjectTests.m in Sources */,
-				BCBE449E0BC6E876005453E2 /* WOSingletonTests.m in Sources */,
 				BCBE4B320BC71D89005453E2 /* NSDictionary+WOCreationTests.m in Sources */,
 				BCBE4B330BC71D94005453E2 /* WOGeneralBaseTransformerTests.m in Sources */,
-				BCBE4CDC0BC72FB8005453E2 /* NSObject+WOHOMIfRespondsTests.m in Sources */,
-				BCBE4CDD0BC72FB8005453E2 /* WOHOMIfRespondsProxyTests.m in Sources */,
 				BCBE4E000BC7392F005453E2 /* WODynamicBaseTransformerTests.m in Sources */,
 				BCBE4E010BC7392F005453E2 /* WOTextEncodingTransformerTests.m in Sources */,
 				BCED082A0BC7F9AE005A752F /* CIImage+WOConvenienceTests.m in Sources */,
@@ -1790,11 +1680,6 @@
 			name = "WOTest + Tests";
 			targetProxy = BC4FC73C0BC6DAEE00C8913C /* PBXContainerItemProxy */;
 		};
-		BC4FC7450BC6DB3400C8913C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "WOCommon + run tests";
-			targetProxy = BC4FC7440BC6DB3400C8913C /* PBXContainerItemProxy */;
-		};
 		BC4FC7470BC6DB3B00C8913C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BC4FC72E0BC6DA5900C8913C /* Hextrapolate + Tests */;
@@ -1804,11 +1689,6 @@
 			isa = PBXTargetDependency;
 			target = BC4FC6830BC6D5E600C8913C /* Update Hextrapolate build number */;
 			targetProxy = BC4FC7BC0BC6DCA400C8913C /* PBXContainerItemProxy */;
-		};
-		BC4FC7BF0BC6DCC500C8913C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "WOBaseCore Hextrapolate";
-			targetProxy = BC4FC7BE0BC6DCC500C8913C /* PBXContainerItemProxy */;
 		};
 		BC4FC7C40BC6DD0B00C8913C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1825,15 +1705,15 @@
 			name = "Update obfuscation";
 			targetProxy = BC4FCBF30BC6E10300C8913C /* PBXContainerItemProxy */;
 		};
-		BC4FCBF60BC6E10300C8913C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Update obfuscation";
-			targetProxy = BC4FCBF50BC6E10300C8913C /* PBXContainerItemProxy */;
-		};
 		BC70567F0BC7F398009F566C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BC7056100BC7ECFA009F566C /* General.prefPane */;
 			targetProxy = BC70567E0BC7F398009F566C /* PBXContainerItemProxy */;
+		};
+		BC7B06270DFD5BDD008059BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Update obfuscation";
+			targetProxy = BC7B06260DFD5BDD008059BB /* PBXContainerItemProxy */;
 		};
 		BCED0CE20BC7FAB7005A752F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
