@@ -1,7 +1,7 @@
 === GMP 4.2 ===
 
 wget http://ftp.sunet.se/pub/gnu/gmp/gmp-4.2.tar.bz2
-tar xjvf gmp-4.2.tar.bz2 
+tar xjvf gmp-4.2.tar.bz2
 cd gmp-4.2
 
 ppc64 build (done on G5):
@@ -168,7 +168,7 @@ make check
 
 # in reality...
 wget http://ftp.sunet.se/pub/gnu/gmp/gmp-4.2.1.tar.bz2
-tar xjvf gmp-4.2.1.tar.bz2 
+tar xjvf gmp-4.2.1.tar.bz2
 cd gmp-4.2.1
 ./config.guess # => pentium3-apple-darwin8.9.1
 ./configure --disable-shared
@@ -196,14 +196,14 @@ cp .libs/libgmp.a ../ppc
 make clean
 cd ..
 mkdir fat
-lipo i386/libgmp.a ppc/libgmp.a -output fat/libgmp.a -create 
+lipo i386/libgmp.a ppc/libgmp.a -output fat/libgmp.a -create
 lipo -info fat/libgmp.a
 
 # copy into Hextrapolate working copy and check in to repository
 rm -r gmp                       # remove old headers directory
 ln -s gmp-4.2.1 gmp             # create symlink pointing to new headers directory
 mv gmp-4.2.1.tar.bz2 ../gmp/    # move source archive out of the way
-mv fat/libgmp.a src/lib/        
+mv fat/libgmp.a src/lib/
 mv ppc/libgmp.a src/lib/ppc/
 mv i386/libgmp.a src/lib/i386/
 rm -r fat ppc i386
@@ -219,4 +219,33 @@ rm -r ../gmp-4.2.1
 rm ../gmp
 
 
+= Gimp 4.2.2 =
 
+wget "ftp://ftp.gnu.org/gnu/gmp/gmp-4.2.2.tar.bz2"
+see: http://gmplib.org/macos.html
+
+ 3066  tar xjvf gmp-4.2.2.tar.bz2
+ 3067  cd gmp-4.2.2/
+ 3068  ./config.guess
+ 3069  ./configure --disable-shared
+ 3070  make
+ 3071  make check
+ 3072  make clean
+ 3073  ./configure --disable-shared --build=none-apple-darwin9.3.0
+ 3074  make
+ 3075  make check
+ 3076  mkdir ../i386
+ 3077  cp .libs/libgmp.a ../i386/
+ 3078  make clean
+ 3079  ./configure --disable-shared --build=none-apple-darwin9.3.0 --host=powerpc-apple-darwin9.3
+ 3080  ./configure --disable-shared --build=none-apple-darwin9.3.0 --host=powerpc-apple-darwin9.3
+CC=/usr/bin/powerpc-apple-darwin9-gcc-4.0.1
+ 3081  make
+ 3082  make check
+ 3083  mkdir ../ppc
+ 3084  cp .libs/libgmp.a ../ppc/
+ 3085  make clean
+ 3086  cd ..
+ 3087  mkdir fat
+ 3088  lipo i386/libgmp.a ppc/libgmp.a -output fat/libgmp.a -create
+ 3089  lipo -info fat/libgmp.a
