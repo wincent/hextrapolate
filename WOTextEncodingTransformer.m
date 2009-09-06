@@ -65,7 +65,7 @@
     NSParameterAssert([value respondsToSelector:@selector(data)]);
     NSData *data = [value data];
     if (!data) return nil;
-    
+
     // Both Foundation and Core Foundation allow their "ASCII" representations to include Unicode.
     // This is commented at the kCFStringEncodingASCII definition where it says:
     // "0..127 (in creating CFString, values greater than 0x7F are treated as corresponding Unicode value)"
@@ -75,7 +75,7 @@
     {
         CFIndex length          = CFStringGetLength(str);
         CFIndex convertedLength = 0;
-        
+
         // make sure non-lossy conversion is possible
         if (!(CFStringGetBytes(str, CFRangeMake(0, length), _encoding, 0, false, NULL, 0, &convertedLength) < length))
             string = [NSString stringWithString:(NSString *)str];
@@ -83,6 +83,5 @@
     }
     return string;
 }
-
 
 @end
