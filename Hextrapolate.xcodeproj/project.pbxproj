@@ -127,7 +127,7 @@
 		BC70561E0BC7ED26009F566C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC70561A0BC7ED26009F566C /* InfoPlist.strings */; };
 		BC7056310BC7ED45009F566C /* GeneralPref.nib in Resources */ = {isa = PBXBuildFile; fileRef = BC70562F0BC7ED45009F566C /* GeneralPref.nib */; };
 		BC7056340BC7ED54009F566C /* GeneralPref.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7056330BC7ED54009F566C /* GeneralPref.m */; };
-		BC7056910BC7F3C0009F566C /* General.bundle in Copy Files (preference panes) */ = {isa = PBXBuildFile; fileRef = BC7056110BC7ECFA009F566C /* General.bundle */; };
+		BC7056910BC7F3C0009F566C /* General.prefPane in Copy Files (preference panes) */ = {isa = PBXBuildFile; fileRef = BC7056110BC7ECFA009F566C /* General.prefPane */; };
 		BC7056A50BC7F515009F566C /* WODraggableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7056A10BC7F515009F566C /* WODraggableButton.m */; };
 		BC7056A60BC7F515009F566C /* WODraggableButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7056A20BC7F515009F566C /* WODraggableButtonCell.m */; };
 		BC7056A70BC7F515009F566C /* WOMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7056A30BC7F515009F566C /* WOMachine.m */; };
@@ -183,7 +183,7 @@
 		BCED13B30BC81015005A752F /* WORegistrationTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED106A0BC80BF9005A752F /* WORegistrationTextFieldCell.m */; };
 		BCED13B40BC81015005A752F /* WORegistrationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED106C0BC80BF9005A752F /* WORegistrationTextView.m */; };
 		BCED13B50BC81018005A752F /* WORegistrationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED106E0BC80BF9005A752F /* WORegistrationView.m */; };
-		BCED13B80BC81059005A752F /* Registration.bundle in Copy Files (preference panes) */ = {isa = PBXBuildFile; fileRef = BCED0F200BC80B90005A752F /* Registration.bundle */; };
+		BCED13B80BC81059005A752F /* Registration.prefPane in Copy Files (preference panes) */ = {isa = PBXBuildFile; fileRef = BCED0F200BC80B90005A752F /* Registration.prefPane */; };
 		BCED13D40BC810B2005A752F /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCED0CDC0BC7FA92005A752F /* PreferencePanes.framework */; };
 		BCED13D50BC810B2005A752F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		BCED14050BC817E2005A752F /* WORegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED14040BC817E2005A752F /* WORegistrationController.m */; };
@@ -421,8 +421,8 @@
 			dstPath = Hextrapolate.app/Contents/Resources/PreferencePanes;
 			dstSubfolderSpec = 16;
 			files = (
-				BCED13B80BC81059005A752F /* Registration.bundle in Copy Files (preference panes) */,
-				BC7056910BC7F3C0009F566C /* General.bundle in Copy Files (preference panes) */,
+				BCED13B80BC81059005A752F /* Registration.prefPane in Copy Files (preference panes) */,
+				BC7056910BC7F3C0009F566C /* General.prefPane in Copy Files (preference panes) */,
 			);
 			name = "Copy Files (preference panes)";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +463,10 @@
 		BC1B0DBE059444970056491F /* WOHextrapolateController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = WOHextrapolateController.h; sourceTree = "<group>"; };
 		BC1B0DBF059444970056491F /* WOHextrapolateController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = WOHextrapolateController.m; sourceTree = "<group>"; };
 		BC1B0DE305944FC00056491F /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
-		BC1FD9910A0249C90032A48E /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "../../buildtools/base-style.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BC1FD9920A0249C90032A48E /* cocoa-app-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "cocoa-app-target.xcconfig"; path = "../../buildtools/cocoa-app-target.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BC1FD9930A0249C90032A48E /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "../../buildtools/debug-style.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BC1FD9940A0249C90032A48E /* release-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "release-style.xcconfig"; path = "../../buildtools/release-style.xcconfig"; sourceTree = SOURCE_ROOT; };
+		BC1FD9910A0249C90032A48E /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "buildtools/base-style.xcconfig"; sourceTree = "<group>"; };
+		BC1FD9920A0249C90032A48E /* cocoa-app-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "cocoa-app-target.xcconfig"; path = "buildtools/cocoa-app-target.xcconfig"; sourceTree = "<group>"; };
+		BC1FD9930A0249C90032A48E /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "buildtools/debug-style.xcconfig"; sourceTree = "<group>"; };
+		BC1FD9940A0249C90032A48E /* release-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "release-style.xcconfig"; path = "buildtools/release-style.xcconfig"; sourceTree = "<group>"; };
 		BC1FD9990A024AF30032A48E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		BC1FDA020A024F580032A48E /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmp.a; path = lib/libgmp.a; sourceTree = SOURCE_ROOT; };
 		BC22602F0593CDCA00AE184B /* WOHexFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOHexFormatter.h; sourceTree = "<group>"; };
@@ -491,8 +491,8 @@
 		BC4FC6790BC6D48000C8913C /* WOHextrapolate_Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOHextrapolate_Version.h; sourceTree = "<group>"; };
 		BC4FC6AC0BC6D6B700C8913C /* HextrapolateTests.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HextrapolateTests.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4FC6AD0BC6D6B700C8913C /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
-		BC4FC6B50BC6D71E00C8913C /* loadable-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-bundle-target.xcconfig"; path = "../../buildtools/loadable-bundle-target.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BC4FC6B60BC6D71E00C8913C /* loadable-test-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-test-bundle-target.xcconfig"; path = "../../buildtools/loadable-test-bundle-target.xcconfig"; sourceTree = SOURCE_ROOT; };
+		BC4FC6B50BC6D71E00C8913C /* loadable-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-bundle-target.xcconfig"; path = "buildtools/loadable-bundle-target.xcconfig"; sourceTree = "<group>"; };
+		BC4FC6B60BC6D71E00C8913C /* loadable-test-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-test-bundle-target.xcconfig"; path = "buildtools/loadable-test-bundle-target.xcconfig"; sourceTree = "<group>"; };
 		BC4FC6D00BC6D84500C8913C /* WincentTestBundle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = WincentTestBundle.icns; path = ../WOCommon/WincentTestBundle.icns; sourceTree = SOURCE_ROOT; };
 		BC4FC6D40BC6D8C200C8913C /* WOHextrapolateTestsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOHextrapolateTestsController.h; path = Tests/WOHextrapolateTestsController.h; sourceTree = "<group>"; };
 		BC4FC6D50BC6D8C200C8913C /* WOHextrapolateTestsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOHextrapolateTestsController.m; path = Tests/WOHextrapolateTestsController.m; sourceTree = "<group>"; };
@@ -500,8 +500,8 @@
 		BC4FCBEE0BC6E0B500C8913C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = WOCommon/en.lproj/WOCommon.strings; sourceTree = "<group>"; };
 		BC597D2F05A327330054801A /* WOMPZWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMPZWrapper.h; sourceTree = "<group>"; };
 		BC597D3005A327330054801A /* WOMPZWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOMPZWrapper.m; sourceTree = "<group>"; };
-		BC70560C0BC7ECBF009F566C /* pref-pane-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "pref-pane-target.xcconfig"; path = "../../buildtools/pref-pane-target.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BC7056110BC7ECFA009F566C /* General.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = General.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC70560C0BC7ECBF009F566C /* pref-pane-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "pref-pane-target.xcconfig"; path = "buildtools/pref-pane-target.xcconfig"; sourceTree = "<group>"; };
+		BC7056110BC7ECFA009F566C /* General.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = General.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7056160BC7ED1A009F566C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PreferencePanes/General/Info.plist; sourceTree = "<group>"; usesTabs = 1; };
 		BC7056170BC7ED1A009F566C /* GeneralPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = GeneralPref.tiff; path = PreferencePanes/General/GeneralPref.tiff; sourceTree = "<group>"; };
 		BC70561B0BC7ED26009F566C /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = PreferencePanes/General/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -569,7 +569,7 @@
 		BCED0CDC0BC7FA92005A752F /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		BCED0CF20BC7FB7C005A752F /* hextrapolate-pref-pane.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "hextrapolate-pref-pane.xcconfig"; path = "PreferencePanes/hextrapolate-pref-pane.xcconfig"; sourceTree = "<group>"; };
 		BCED0D2B0BC7FD31005A752F /* NSApplication+WOConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSApplication+WOConvenience.m"; path = "WOCommon/NSApplication+WOConvenience.m"; sourceTree = "<group>"; };
-		BCED0F200BC80B90005A752F /* Registration.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Registration.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCED0F200BC80B90005A752F /* Registration.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Registration.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCED10660BC80BF9005A752F /* WORegistrationPreferencePane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WORegistrationPreferencePane.m; path = WOCommon/WORegistrationPreferencePane.m; sourceTree = "<group>"; };
 		BCED10680BC80BF9005A752F /* WORegistrationTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WORegistrationTextField.m; path = WOCommon/WORegistrationTextField.m; sourceTree = "<group>"; };
 		BCED106A0BC80BF9005A752F /* WORegistrationTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WORegistrationTextFieldCell.m; path = WOCommon/WORegistrationTextFieldCell.m; sourceTree = "<group>"; };
@@ -685,8 +685,8 @@
 			children = (
 				8D1107320486CEB800E47090 /* Hextrapolate.app */,
 				BC4FC6AC0BC6D6B700C8913C /* HextrapolateTests.bundle */,
-				BC7056110BC7ECFA009F566C /* General.bundle */,
-				BCED0F200BC80B90005A752F /* Registration.bundle */,
+				BC7056110BC7ECFA009F566C /* General.prefPane */,
+				BCED0F200BC80B90005A752F /* Registration.prefPane */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1141,7 +1141,7 @@
 			);
 			name = General.prefPane;
 			productName = General.prefPane;
-			productReference = BC7056110BC7ECFA009F566C /* General.bundle */;
+			productReference = BC7056110BC7ECFA009F566C /* General.prefPane */;
 			productType = "com.apple.product-type.bundle";
 		};
 		BCED0F1F0BC80B90005A752F /* Registration.prefPane */ = {
@@ -1161,7 +1161,7 @@
 			);
 			name = Registration.prefPane;
 			productName = Registration;
-			productReference = BCED0F200BC80B90005A752F /* Registration.bundle */;
+			productReference = BCED0F200BC80B90005A752F /* Registration.prefPane */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */

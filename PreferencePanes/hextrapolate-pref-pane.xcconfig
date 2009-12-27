@@ -1,13 +1,10 @@
+// hextrapolate-pref-pane.xcconfig
+// Settings for Hextrapolate preference pane targets
 //
-//  hextrapolate-pref-pane.xcconfig
-//  Settings for Hextrapolate preference pane targets
-//
-//  Created by Wincent Colaiuta on 7 April 2006.
-//  Copyright 2007 Wincent Colaiuta. 
-//  $Id: hextrapolate-pref-pane.xcconfig 60 2007-04-07 17:20:44Z wincent $
+// Copyright 2007-2009 Wincent Colaiuta. All rights reserved.
 
 // must use relative path here (cannot use "${BUILDTOOLS_DIR}" in an #include directive)
-#include "../../../buildtools/pref-pane-target.xcconfig"
+#include "../buildtools/pref-pane-target.xcconfig"
 
 BUNDLE_LOADER = $(TARGET_BUILD_DIR)/Hextrapolate.app/Contents/MacOS/Hextrapolate
 
