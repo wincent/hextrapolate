@@ -1,0 +1,2 @@
+define_not_for_expansion(`HAVE_HOST_CPU_none')
+define_not_for_expansion(`HAVE_ABI_long')
