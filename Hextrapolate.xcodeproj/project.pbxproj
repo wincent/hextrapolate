@@ -207,7 +207,6 @@
 		BCED1A900BC82635005A752F /* NSString+WOLicensingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED1A8F0BC82635005A752F /* NSString+WOLicensingTests.m */; };
 		BCED1A960BC82676005A752F /* NSCharacterSet+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED1A940BC82676005A752F /* NSCharacterSet+WOConvenience.m */; };
 		BCED1A970BC82676005A752F /* NSScanner+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED1A950BC82676005A752F /* NSScanner+WOConvenience.m */; };
-		BCED1B1F0BC82935005A752F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCED10740BC80C80005A752F /* Info.plist */; };
 		BCED1C220BC82D7A005A752F /* WOPointingHandCursorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED1C210BC82D7A005A752F /* WOPointingHandCursorButton.m */; };
 		BCF8A3FC0BDCDA4500D934EB /* Hextrapolate Help in Resources */ = {isa = PBXBuildFile; fileRef = BCF8A3A80BDCDA4500D934EB /* Hextrapolate Help */; };
 /* End PBXBuildFile section */
@@ -1332,7 +1331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCED1B1F0BC82935005A752F /* Info.plist in Resources */,
 				BCED10780BC80C97005A752F /* InfoPlist.strings in Resources */,
 				BCED107B0BC80CB3005A752F /* Registration.icns in Resources */,
 				BCED107C0BC80CB3005A752F /* RegistrationPref.tiff in Resources */,
