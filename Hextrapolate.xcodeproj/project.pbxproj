@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		BC2A3B1910E6E45E0051E3BF /* GMP */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BC2A3B1C10E6E47C0051E3BF /* Build configuration list for PBXAggregateTarget "GMP" */;
+			buildPhases = (
+				BC2A3B1810E6E45E0051E3BF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = GMP;
+			productName = GMP;
+		};
 		BC4FC6830BC6D5E600C8913C /* Update Hextrapolate build number */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = BC4FC6A50BC6D62600C8913C /* Build configuration list for PBXAggregateTarget "Update Hextrapolate build number" */;
@@ -468,6 +479,7 @@
 		BC2260480593CE0A00AE184B /* WOBinaryFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOBinaryFormatter.m; sourceTree = "<group>"; };
 		BC22604D0593CE2000AE184B /* WOGeneralBaseFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOGeneralBaseFormatter.h; sourceTree = "<group>"; };
 		BC22604E0593CE2000AE184B /* WOGeneralBaseFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOGeneralBaseFormatter.m; sourceTree = "<group>"; };
+		BC2A3B2310E6E4F30051E3BF /* gmp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = gmp.sh; sourceTree = "<group>"; };
 		BC2C40810BC880220001BB9D /* RunAllTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunAllTests.sh; sourceTree = "<group>"; };
 		BC4FC0A10BC6CB9500C8913C /* WOCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WOCommon.xcodeproj; path = ../../WOCommon/src/WOCommon.xcodeproj; sourceTree = SOURCE_ROOT; };
 		BC4FC0D30BC6CBA700C8913C /* WODebug.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WODebug.xcodeproj; path = ../../WODebug/src/WODebug.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -682,6 +694,7 @@
 		29B97314FDCFA39411CA2CEA /* WinHex */ = {
 			isa = PBXGroup;
 			children = (
+				BC2A3B2010E6E4DC0051E3BF /* Scripts */,
 				BC4FC7ED0BC6E09900C8913C /* WOCommon */,
 				BC0EF5B309FF8D560049BE71 /* Configuration */,
 				BC81BA2205A27BFB002B17F4 /* Dependencies */,
@@ -741,6 +754,14 @@
 				BCED0CE90BC7FB47005A752F /* buildtools */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		BC2A3B2010E6E4DC0051E3BF /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				BC2A3B2310E6E4F30051E3BF /* gmp.sh */,
+			);
+			name = Scripts;
 			sourceTree = "<group>";
 		};
 		BC4FC0D40BC6CBA700C8913C /* Products */ = {
@@ -1188,6 +1209,7 @@
 				BC7056100BC7ECFA009F566C /* General.prefPane */,
 				BCED0F1F0BC80B90005A752F /* Registration.prefPane */,
 				BCDF3A8E0BCD581000D7FE9C /* Regenerate help */,
+				BC2A3B1910E6E45E0051E3BF /* GMP */,
 			);
 		};
 /* End PBXProject section */
@@ -1320,6 +1342,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BC2A3B1810E6E45E0051E3BF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $SRCROOT/gmp.sh;
+		};
 		BC4FC6820BC6D5E600C8913C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1783,6 +1818,27 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BC2A3B1A10E6E45E0051E3BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = GMP;
+			};
+			name = Debug;
+		};
+		BC2A3B1B10E6E45E0051E3BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = GMP;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		BC4FC6A60BC6D62600C8913C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2035,6 +2091,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BC2A3B1C10E6E47C0051E3BF /* Build configuration list for PBXAggregateTarget "GMP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC2A3B1A10E6E45E0051E3BF /* Debug */,
+				BC2A3B1B10E6E45E0051E3BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BC4FC6A50BC6D62600C8913C /* Build configuration list for PBXAggregateTarget "Update Hextrapolate build number" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
