@@ -16,7 +16,7 @@ BUILDSTRING=${GUESS/$CPU/none}
 
 # now perform the actual build
 cd ${SRCROOT}/gmp && \
-   make clean && \
    ./configure --disable-shared --build=$BUILDSTRING && \
+   make clean && \
    make && \
    make check
