@@ -1,10 +1,7 @@
-//
 // WOGeneralBaseFormatter.m
 // Hextrapolate
 //
-// Created by Wincent Colaiuta on Sat Dec 20 2003.
-// Copyright 2003-2007 Wincent Colaiuta
-// $Id: WOGeneralBaseFormatter.m 53 2007-04-07 13:43:06Z wincent $
+// Copyright 2003-2009 Wincent Colaiuta. All rights reserved.
 
 // class header
 #import "WOGeneralBaseFormatter.h"
@@ -16,11 +13,11 @@
 #import "WOHextrapolate.h"
 #import "WOHextrapolateLocalizations.h"
 
-// WOCommon class headers
-#import "WOCommon/WOLogManager.h"
+// WOPublic class headers
+#import "WOPublic/WOLogManager.h"
 
-// WOCommon other headers
-#import "WOCommon/WOConvenienceMacros.h"
+// WOPublic macro headers
+#import "WOPublic/WOConvenienceMacros.h"
 
 @implementation WOGeneralBaseFormatter
 
