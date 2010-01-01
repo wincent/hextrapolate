@@ -1,9 +1,7 @@
-//
 // WOHextrapolateController.m
 // Hextrapolate
 //
-// Created by Wincent Colaiuta on Sat Dec 20 2003.
-// Copyright 2003-2008 Wincent Colaiuta
+// Copyright 2003-2009 Wincent Colaiuta. All rights reserved.
 
 // class header
 #import "WOHextrapolateController.h"
@@ -25,16 +23,20 @@
 #import "WOHextrapolateLocalizations.h"
 #import "PreferencePanes/General/GeneralPref.h"
 
+// WOPublic class headers
+#import "WOPublic/WOLogManager.h"
+
+// WOPublic category headers
+#import "WOPublic/NSDictionary+WOCreation.h"
+
 // WOCommon class headers
 #import "WOCommon/WOLicense.h"
-#import "WOCommon/WOLogManager.h"
 #import "WOCommon/WOPreferencesWindowController.h"
 #import "WOCommon/WORegistrationController.h"
 
 // WOCommon category headers
 #import "WOCommon/NSApplication+WOConvenience.h"
 #import "WOCommon/NSApplication+WOLicensing.h"
-#import "WOCommon/NSDictionary+WOCreation.h"
 #import "WOCommon/NSString+WOURLUtilities.h"
 
 // WOCommon other headers
