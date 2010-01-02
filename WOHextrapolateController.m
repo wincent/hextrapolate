@@ -92,12 +92,7 @@ static WODynamicBaseTransformer         *alternateSelectableBaseTransformer     
     [NSValueTransformer setValueTransformer:selectableBaseTransformer forName:WO_SELECTABLE_BASE_TRANSFORMER];
     alternateSelectableBaseTransformer = [[WODynamicBaseTransformer alloc] init] ;
     [NSValueTransformer setValueTransformer:alternateSelectableBaseTransformer forName:WO_ALTERNATE_SELECTABLE_BASE_TRANSFORMER];
-    
-    // changing pop-ups should force a redisplay of the model value and window title bar
-    NSArray *keys = WO_ARRAY(@"showAs", @"textEncoding", @"alternateTextEncoding", @"selectableBase", @"alternateSelectableBase");
-    [self setKeys:keys triggerChangeNotificationsForDependentKey:@"representedValue"];    
-    [self setKeys:WO_ARRAY(@"representedValue") triggerChangeNotificationsForDependentKey:@"digitCount"];
-    
+
     // set up defaults for preferences
     NSDictionary    *defaults   = WO_DICTIONARY(WO_YES,    WO_HEXTRAPOLATE_TEXTURE_PREF,
                                                 WO_YES,    WO_HEXTRAPOLATE_CLOSE_PREF,
@@ -192,7 +187,36 @@ static WODynamicBaseTransformer         *alternateSelectableBaseTransformer     
 }
 
 #pragma mark -
-#pragma mark Key-Value Observing
+#pragma mark NSKeyValueObserving protocol
+
++ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key
+{
+    NSSet *set = [super keyPathsForValuesAffectingValueForKey:key];
+    if (!key)
+        return set;
+
+    // changing pop-ups should force a redisplay of the model value and window title bar
+    if ([key isEqualToString:@"showAs"] ||
+        [key isEqualToString:@"textEncoding"] ||
+        [key isEqualToString:@"alternateTextEncoding"] ||
+        [key isEqualToString:@"selectableBase"] ||
+        [key isEqualToString:@"alternateSelectableBase"])
+    {
+        NSMutableSet *mutableSet = [set mutableCopy];
+        [mutableSet addObject:@"representedValue"];
+        return mutableSet;
+    }
+    else if ([key isEqualToString:@"representedValue"])
+    {
+        NSMutableSet *mutableSet = [set mutableCopy];
+        [mutableSet addObject:@"digitCount"];
+        return mutableSet;
+    }
+    return set;
+}
+
+#pragma mark -
+#pragma mark Other Key-Value Observing methods
 
 - (void)registerForKeyValueObserving
 {
