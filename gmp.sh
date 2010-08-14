@@ -19,4 +19,6 @@ cd ${SRCROOT}/gmp && \
    ./configure --disable-shared --build=$BUILDSTRING && \
    make clean && \
    make && \
-   make check
+   make check && \
+   cp .libs/libgmp.a libgmp.a &&
+   make distclean
