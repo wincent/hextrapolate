@@ -15,8 +15,7 @@ echo "Done: compiling buildtools/help files:"
 echo
 echo "Start: Compiling/filling in-application embedded help:"
 cd "${HELP_SOURCE}"
-# note that we explicitly exclude the "autogen" folder
-find pages -name "*.tmpl" -not -path "*/autogen/*" -exec walrus fill --no-backup -v -o "$HELP_TARGET" {} \;
+find . -name "*.tmpl" -exec walrus fill --no-backup -v -o "$HELP_TARGET" {} \;
 echo
 echo "Done: Compiling/filling in-application embedded help:"
 
@@ -38,7 +37,8 @@ echo
 echo "Start: Compiling/filling web-based help:"
 cd "${HELP_SOURCE}"
 export WALRUS_STYLE="web"
-find . -name "*.tmpl" -exec walrus fill --no-backup -v -o "$WEB_TARGET" {} \;
+# exclude the "autogen" folder as it is not used on the web
+find . -name "*.tmpl" -not -path "*/autogen/*" -exec walrus fill --no-backup -v -o "$WEB_TARGET" {} \;
 echo
 echo "Done: Compiling/filling web-based help:"
 
