@@ -72,7 +72,6 @@ index_target = File.expand_path "en.lproj/#{help_book_folder}", File.dirname(__F
 file index_file => app_help_html do
   sh "hiutil -C --min-term-length=3 --anchors --generate-summaries " +
      "--file \"#{index_file}\" \"#{index_target}\""
-  sh "hiutil -A --file \"#{index_file}\""
 end
 
 desc 'Update all help files'
