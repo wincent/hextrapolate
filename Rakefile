@@ -29,7 +29,7 @@ app_help_templates.each do |template|
   end
 end
 app_help_html = app_help_templates.map do |template|
-  html_file = template.ext('html').split('/')
+  html_file = template.ext('').split('/')
   html_file[1] = help_book_folder
   html_file = html_file.join('/')
   output_dir = File.expand_path "en.lproj/#{help_book_folder}",
@@ -49,7 +49,7 @@ web_help_templates = app_help_templates.reject do |path|
   path =~ %r{/autogen/}
 end
 web_help_html = web_help_templates.map do |template|
-  html_file = template.ext('html').split('/')
+  html_file = template.ext('').split('/')
   html_file[1] = 'web_help'
   html_file = html_file.join('/')
   output_dir = File.expand_path 'en.lproj/web_help',
@@ -67,9 +67,9 @@ web_help_html = web_help_templates.map do |template|
 end
 
 web_help_templates_except_index = web_help_templates.reject do |path|
-  path == 'en.lproj/help/pages/full_index.tmpl'
+  path == 'en.lproj/help/pages/full_index.html.tmpl'
 end
-file 'en.lproj/help/pages/full_index.tmpl' => web_help_templates_except_index do
+file 'en.lproj/help/pages/full_index.html.tmpl' => web_help_templates_except_index do
   cd 'en.lproj/help' do
     sh '../../buildtools/help/index_grep.rb | ' +
        '../../buildtools/help/update_full_index.rb'
