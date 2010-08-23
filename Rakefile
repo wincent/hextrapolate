@@ -66,6 +66,16 @@ web_help_html = web_help_templates.map do |template|
   html_file
 end
 
+web_help_templates_except_index = web_help_templates.reject do |path|
+  path == 'en.lproj/help/pages/full_index.tmpl'
+end
+file 'en.lproj/help/pages/full_index.tmpl' => web_help_templates_except_index do
+  cd 'en.lproj/help' do
+    sh '../../buildtools/help/index_grep.rb | ' +
+       '../../buildtools/help/update_full_index.rb'
+  end
+end
+
 index_file = File.expand_path "en.lproj/#{help_book_folder}/#{help_book_folder}.helpindex", File.dirname(__FILE__)
 index_target = File.expand_path "en.lproj/#{help_book_folder}", File.dirname(__FILE__)
 
@@ -83,8 +93,6 @@ namespace :help do
 
   desc 'Update embedded help files'
   task :app => app_help_html + [index_file]
-
-  # TODO: handle index_grep.rb invocation
 
   desc 'Update buildtools help files'
   task :buildtools do
