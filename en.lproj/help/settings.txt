@@ -29,8 +29,11 @@
 ## appliction-wide default settings go in here
 ##
 
-#set $book_id     = 'Hextrapolate Help'
-#set $book_icon   = 'Hextrapolate Help/gfx/icon16.png'
+#set $book_id       = 'Hextrapolate Help'
+#set $book_icon     = 'Hextrapolate Help/gfx/icon16.png'
+#set $author        = 'Wincent Colaiuta'
+#set $author_email  = 'win@wincent.com'
+#set $copyright     = 'Copyright 2007-2010 Wincent Coliauta'
 
 ##
 ## the page_title should be overridden on a per-page basis
