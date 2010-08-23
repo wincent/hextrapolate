@@ -1,6 +1,25 @@
-## Created by Wincent Colaiuta on 11 April 2007.
-## Copyright 2007 Wincent Colaiuta
-## $Id$
+## Copyright 2007-2010 Wincent Colaiuta. All rights reserved.
+##
+## Redistribution and use in source and binary forms, with or without
+## modification, are permitted provided that the following conditions are met:
+##
+## 1. Redistributions of source code must retain the above copyright notice,
+##    this list of conditions and the following disclaimer.
+## 2. Redistributions in binary form must reproduce the above copyright notice,
+##    this list of conditions and the following disclaimer in the documentation
+##    and/or other materials provided with the distribution.
+##
+## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+## AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+## IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+## ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+## LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+## CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+## SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+## INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+## CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+## ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+## POSSIBILITY OF SUCH DAMAGE.
 
 #extends '../../../buildtools/help/master_full_index'
 
@@ -9,23 +28,44 @@
   #super
 #end
 
-###############################################################################
-
 #def main_box
-  
-  ## index items will appear in the order that they are added
-  ## to auto-update this list run ../../buildtools/help/index_grep.rb  from the help directory
-  
+  ## Index items will appear in the order that they are added.
+  ## As an alternative to editing this file by hand, there are two helper
+  ## scripts that can be run from inside the application help directory:
+  ##
+  ##    ../../buildtools/help/index_grep.rb:
+  ##
+  ##          Greps through the help directory looking for suitable
+  ##          directives and emits a list of "index_item" links to standard
+  ##          out. To be detected the directives should be of the form:
+  ##
+  ##                #set $page_title = 'Super title'
+  ##                #set $tag        = 'super_title'
+  ##
+  ##          and will yield "index_item" links like:
+  ##
+  ##                $index_item($link_to('super_title', 'Super title'))
+  ##
+  ##    ../../buildtools/help/update_full_index.rb:
+  ##
+  ##          Takes the output of the index_grep.rb script and inserts it into
+  ##          the file at page/full_index.tmpl inside the application help
+  ##          directory, replacing any existing text between the start and end
+  ##          markers
+
+  ## -- index items start -- ##
   $index_item($link_to('ascii', 'ASCII text encoding'))
   $index_item($link_to('activation', 'Activation'))
   $index_item($link_to('activation_best_practices', 'Activation best practices'))
   $index_item($link_to('activation_privacy', 'Activation privacy'))
   $index_item($link_to('backing_up_your_license', 'Backing up your license'))
+  $index_item($link_to('bases', 'Bases'))
+  $index_item($link_to('before_unregistering', 'Before unregistering'))
   $index_item($link_to('binary_representation', 'Binary representation'))
   $index_item($link_to('decimal_representation', 'Decimal representation'))
   $index_item($link_to('digit_error', 'Digit errors'))
   $index_item($link_to('boms', 'Does Hextrapolate use BOMs?'))
-  $index_item($link_to('downloading', "Downloading Hextrapolate"))
+  $index_item($link_to('downloading', 'Downloading Hextrapolate'))
   $index_item($link_to('locating_hextrapolate', 'Finding out where Hextrapolate is installed'))
   $index_item($link_to('force_quitting', 'Force Quitting Hextrapolate'))
   $index_item($link_to('hexadecimal_representation', 'Hexadecimal representation'))
@@ -33,34 +73,38 @@
   $index_item($link_to('how_many_times_may_i_activate', 'How many times may I activate?'))
   $index_item($link_to('how_to_file_a_good_bug_report', 'How to file a good bug report'))
   $index_item($link_to('feature_requests', 'How to submit a feature request'))
-  $index_item($link_to('installing', "Installing Hextrapolate"))
+  $index_item($link_to('installing', 'Installing Hextrapolate'))
+  $index_item($link_to('learn_about', 'Learn about Hextrapolate'))
   $index_item($link_to('obtaining_a_system_profiler_report', 'Obtaining a System Profiler report'))
   $index_item($link_to('octal_representation', 'Octal representation'))
   $index_item($link_to('purchasing', 'Purchasing Hextrapolate'))
   $index_item($link_to('quitting', 'Quitting Hextrapolate'))
   $index_item($link_to('registering', 'Registering Hextrapolate'))
   $index_item($link_to('reporting_bugs', 'Reporting bugs'))
-  $index_item($link_to('getting_support', 'Requesting support'))
+  $index_item($link_to('requesting_support', 'Requesting support'))
   $index_item($link_to('resetting_the_preferences', 'Resetting the preferences'))
   $index_item($link_to('resetting_your_activation_limit', 'Resetting your activation limit'))
   $index_item($link_to('sending_feedback', 'Sending feedback'))
+  $index_item($link_to('super_title', 'Super title'))
   $index_item($link_to('encoding_error', 'Text encoding errors'))
+  $index_item($link_to('text_encodings', 'Text encodings'))
   $index_item($link_to('transferring_license', 'Transferring your license to another machine'))
   $index_item($link_to('troubleshooting_tips', 'Troubleshooting tips'))
   $index_item($link_to('utf16', 'UTF-16 text encoding'))
   $index_item($link_to('utf8', 'UTF-8 text encoding'))
-  $index_item($link_to('uninstalling', "Uninstalling Hextrapolate"))
+  $index_item($link_to('uninstalling', 'Uninstalling Hextrapolate'))
   $index_item($link_to('unregister', 'Unregistering Hextrapolate'))
+  $index_item($link_to('upgrading_hextrapolate', 'Upgrading Hextrapolate'))
   $index_item($link_to('what_happens_if_wincent_stops_trading', 'What happens if Wincent stops trading?'))
   $index_item($link_to('what_happens_if_the_network_is_down', 'What happens if the network is down when I try to activate?'))
   $index_item($link_to('missing_license', "What to do if you haven't received your license"))
-  $index_item($link_to('lost_license_codes', "What to do if you lose your license code"))
-  $index_item($link_to('blank_fields', "Why are the text fields blank?"))
-  $index_item($link_to('garbage_in_text_fields', "Why are there garbage characters in the text fields?"))
+  $index_item($link_to('lost_license_codes', 'What to do if you lose your license code'))
+  $index_item($link_to('whats_new', "What's new in Hextrapolate?"))
+  $index_item($link_to('blank_fields', 'Why are the text fields blank?'))
+  $index_item($link_to('garbage_in_text_fields', 'Why are there garbage characters in the text fields?'))
   $index_item($link_to('let_me_type', "Why doesn't Hextrapolate let me type the characters I want?"))
   $index_item($link_to('why_use_product_activation', 'Why use product activation?'))
-    
-  #super
-  
-#end
+  ## -- index items end -- ##
 
+  #super
+#end
