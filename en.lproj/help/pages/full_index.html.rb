@@ -80,6 +80,9 @@ module Walrus
                 accumulate('' + "\n") # RawText
                 set_value("book_id", instance_eval { 'Hextrapolate Help' }) # Set directive 
                 set_value("book_icon", instance_eval { 'Hextrapolate Help/gfx/icon16.png' }) # Set directive 
+                set_value("author", instance_eval { 'Wincent Colaiuta' }) # Set directive 
+                set_value("author_email", instance_eval { 'win@wincent.com' }) # Set directive 
+                set_value("copyright", instance_eval { 'Copyright 2007-2010 Wincent Coliauta' }) # Set directive 
                 accumulate('' + "\n") # RawText
                 # Comment:
                 # Comment: the page_title should be overridden on a per-page basis
