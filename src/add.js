@@ -5,6 +5,8 @@
  * @flow
  */
 
+'use strict';
+
 /**
  * Strips the leading prefix from `number` in `base` and returns the remaining
  * part of the string.
