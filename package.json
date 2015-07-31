@@ -4,7 +4,7 @@
   "description": "Number base conversion tool",
   "scripts": {
     "lint": "eslint src",
-    "start": "node server.js",
+    "start": "gulp webpack-dev-server",
     "test": "mocha --opts mocha/mocha.opts 'src/**/__mocks__/*.js' 'src/**/__tests__/*-test.js'"
   },
   "repository": {
@@ -27,6 +27,8 @@
     "babel-loader": "^5.1.2",
     "eslint-plugin-react": "^2.3.0",
     "expect": "^1.8.0",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
     "mocha": "^2.2.5",
     "react-hot-loader": "^1.2.7",
     "sinon": "^1.15.4",
