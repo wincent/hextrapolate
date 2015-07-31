@@ -1,7 +1,7 @@
 {
-  "name": "react-hot-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "name": "hextrapolate",
+  "version": "0.0.1",
+  "description": "Number base conversion tool",
   "scripts": {
     "lint": "eslint src",
     "start": "node server.js",
@@ -9,25 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/wincent/hextrapolate.git"
   },
   "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack"
+    "react"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Greg Hurrell <greg@hurrell.net> (http://github.com/wincent)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": "https://github.com/wincent/hextrapolate/issues"
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "https://github.com/wincent/hextrapolate",
   "devDependencies": {
     "babel": "^5.8.19",
     "babel-core": "^5.4.7",
