@@ -8,6 +8,7 @@
 'use strict';
 
 import React from 'react';
+import convert from './convert';
 
 const DIGITS = '0123456789abcdef';
 
@@ -18,11 +19,7 @@ function fromValue(value: string, base: number): string {
   if (base === 16) {
     return value;
   }
-  for (let i = 0; i < value.length - 1; i++) {
-    const digit = value[value.length - 1 - i]; // eslint-disable-line no-unused-vars
-    // TODO: finish this
-  }
-  return value;
+  return convert(value, 16, base);
 }
 
 /**
@@ -32,7 +29,7 @@ function toValue(value: string, base: number): string {
   if (base === 16) {
     return value;
   }
-  return value;
+  return convert(value, base, 16);
 }
 
 export default class Field extends React.Component {
