@@ -15,7 +15,9 @@ export default function joinDigits(
   digits: Array<number>,
   base: number
 ): string {
-  return digits.reverse()
+  return digits
+    .slice()
+    .reverse()
     .map(number => number.toString(base))
     .join('');
 }
