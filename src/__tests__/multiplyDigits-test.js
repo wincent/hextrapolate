@@ -35,4 +35,11 @@ describe('multiplyDigits()', () => {
     expect(multiplyDigits([4], 100, 10)).toEqual([0, 0, 4]);
     expect(multiplyDigits([12], 100, 16)).toEqual([0, 11, 4]);
   });
+
+  it('multiplies by 1000', () => {
+    expect(multiplyDigits([1], 1000, 2)).toEqual([0, 0, 0, 1, 0, 1, 1, 1, 1, 1]);
+    expect(multiplyDigits([5], 1000, 8)).toEqual([0, 1, 6, 1, 1]);
+    expect(multiplyDigits([4], 1000, 10)).toEqual([0, 0, 0, 4]);
+    expect(multiplyDigits([12], 1000, 16)).toEqual([0, 14, 14, 2]);
+  });
 });
