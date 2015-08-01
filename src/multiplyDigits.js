@@ -18,8 +18,19 @@ export default function multiplyDigits(
   base: number
 ): Array<number> {
   let result = [0];
-  for (let i = 0; i < multiplier; i++) {
-    result = addDigits(result, multiplicand, base);
+  let count = 0;
+
+  while (multiplier) {
+    if (count && count * 2 < multiplier) {
+      multiplier -= count;
+      count *= 2;
+      result = addDigits(result, result, base);
+    } else {
+      result = addDigits(result, multiplicand, base);
+      count++;
+      multiplier--;
+    }
   }
+
   return result;
 }
