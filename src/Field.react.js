@@ -16,6 +16,9 @@ const DIGITS = '0123456789abcdef';
  * Convert from canonical (hexadecimal) value to `base`.
  */
 function fromValue(value: string, base: number): string {
+  if (value === null) {
+    return '';
+  }
   if (base === 16) {
     return value;
   }
@@ -25,7 +28,10 @@ function fromValue(value: string, base: number): string {
 /**
  * Convert from `base` value to canonical (hexadecimal) value.
  */
-function toValue(value: string, base: number): string {
+function toValue(value: string, base: number): ?string {
+  if (value === '') {
+    return null;
+  }
   if (base === 16) {
     return value;
   }
