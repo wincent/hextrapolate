@@ -74,6 +74,7 @@ export default class Field extends React.Component {
   render() {
     return (
       <input
+        className="hextrapolate-input"
         onChange={this._onChange}
         type="text"
         value={fromValue(this.props.value, this.props.base)}

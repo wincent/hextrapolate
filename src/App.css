@@ -1,0 +1,22 @@
+body {
+  font-family: 'Courier New';
+}
+
+.hextrapolate-input {
+  flex-grow: 5;
+  font-family: monaco;
+  font-size: 12px;
+}
+
+.hextrapolate-label {
+  display: flex;
+  padding: 8px;
+}
+
+.hextrapolate-label-text {
+  flex-basis: 0;
+  flex-grow: 1;
+  font-size: 12px;
+  padding-right: 12px;
+  text-align: right;
+}

@@ -9,6 +9,9 @@
 
 import React from 'react';
 import Field from './Field.react';
+import Label from './Label.react';
+
+require('./App.css');
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,39 +27,35 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="hextrapolate">
         <h1>Hextrapolate</h1>
-        <label>
-          Hexadecimal
+        <Label text="Hexadecimal">
           <Field
             base={16}
             onValueChange={this._onValueChange}
             value={this.state.value}
           />
-        </label>
-        <label>
-          Decimal
+        </Label>
+        <Label text="Decimal">
           <Field
             onValueChange={this._onValueChange}
             value={this.state.value}
           />
-        </label>
-        <label>
-          Octal
+        </Label>
+        <Label text="Octal">
           <Field
             base={8}
             onValueChange={this._onValueChange}
             value={this.state.value}
           />
-        </label>
-        <label>
-          Binary
+        </Label>
+        <Label text="Binary">
           <Field
             base={2}
             onValueChange={this._onValueChange}
             value={this.state.value}
           />
-        </label>
+        </Label>
       </div>
     );
   }
