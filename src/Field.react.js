@@ -69,14 +69,38 @@ export default class Field extends React.Component {
     }
   }
 
+  _onCopy = event => {
+    const input = React.findDOMNode(this._input);
+    input.select();
+
+    try {
+      // May throw a SecurityError.
+      document.execCommand('copy');
+    } catch(error) {
+      // Swallow.
+    }
+  }
+
+  _copyLink = () => {
+    // Would check `document.queryCommandSupported('copy')` here, but that
+    // doesn't work; see:
+    // - https://code.google.com/p/chromium/issues/detail?id=476508
+    // - https://github.com/w3c/clipboard-apis/issues/4
+    return <span onClick={this._onCopy}>copy</span>;
+  }
+
   render() {
     return (
-      <input
-        className="hextrapolate-input"
-        onChange={this._onChange}
-        type="text"
-        value={fromValue(this.props.value, this.props.base)}
-      />
+      <span>
+        <input
+          className="hextrapolate-input"
+          onChange={this._onChange}
+          ref={ref => this._input = ref}
+          type="text"
+          value={fromValue(this.props.value, this.props.base)}
+        />
+        {this._copyLink()}
+      </span>
     );
   }
 }
