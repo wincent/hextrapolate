@@ -8,6 +8,7 @@
 'use strict';
 
 import React from 'react';
+import type Value from './Field.react';
 import Field from './Field.react';
 import Label from './Label.react';
 
@@ -21,7 +22,7 @@ export default class App extends React.Component {
     };
   }
 
-  _onValueChange = (value: string) => {
+  _onValueChange = (value: Value) => {
     this.setState({value});
   }
 

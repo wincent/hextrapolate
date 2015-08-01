@@ -10,39 +10,34 @@
 import React from 'react';
 import convert from './convert';
 
+export type Value = {
+  base: number;
+  value: string;
+};
+export const ValuePropType = React.PropTypes.shape({
+  base: React.PropTypes.number,
+  value: React.PropTypes.string,
+});
+
 const DIGITS = '0123456789abcdef';
 
 /**
- * Convert from canonical (hexadecimal) value to `base`.
+ * Convert from `value` to `base`.
  */
-function fromValue(value: string, base: number): string {
+function fromValue(value: ?Value, base: number): string {
   if (value === null) {
     return '';
+  } else if (value.base === base) {
+    return value.value;
   }
-  if (base === 16) {
-    return value;
-  }
-  return convert(value, 16, base);
-}
-
-/**
- * Convert from `base` value to canonical (hexadecimal) value.
- */
-function toValue(value: string, base: number): ?string {
-  if (value === '') {
-    return null;
-  }
-  if (base === 16) {
-    return value;
-  }
-  return convert(value, base, 16);
+  return convert(value.value, value.base, base);
 }
 
 export default class Field extends React.Component {
   static propTypes = {
     base: React.PropTypes.number,
     onValueChange: React.PropTypes.func.required,
-    value: React.PropTypes.string.required,
+    value: ValuePropType,
   };
   static defaultProps = {
     base: 10,
@@ -67,7 +62,10 @@ export default class Field extends React.Component {
   _onChange = event => {
     const value = event.currentTarget.value;
     if (this._isValid(value)) {
-      this.props.onValueChange(toValue(value, this.props.base));
+      this.props.onValueChange({
+        base: this.props.base,
+        value,
+      });
     }
   }
 
