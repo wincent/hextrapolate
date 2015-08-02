@@ -70,11 +70,10 @@ export default class Field extends React.Component {
   }
 
   _onCopy = () => {
-    const input = React.findDOMNode(this._input);
-    input.select();
+    React.findDOMNode(this._input).select();
 
+    // May throw a SecurityError.
     try {
-      // May throw a SecurityError.
       document.execCommand('copy');
     } catch(error) { // eslint-disable-line no-empty
       // Swallow.
@@ -86,7 +85,14 @@ export default class Field extends React.Component {
     // doesn't work; see:
     // - https://code.google.com/p/chromium/issues/detail?id=476508
     // - https://github.com/w3c/clipboard-apis/issues/4
-    return <span className="hextrapolate-copy" onClick={this._onCopy}>copy</span>;
+    return (
+      <span
+        className="hextrapolate-copy"
+        onClick={this._onCopy}
+        title="Copy to Clipboard">
+        copy
+      </span>
+    );
   }
 
   render() {
