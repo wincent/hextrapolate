@@ -19,7 +19,7 @@ export const ValuePropType = React.PropTypes.shape({
   value: React.PropTypes.string,
 });
 
-const DIGITS = '0123456789abcdef';
+const DIGITS = '0123456789abcdefghijklmnopqrstuvwxyz';
 
 /**
  * Convert from `value` to `base`.
@@ -80,7 +80,7 @@ export default class Field extends React.Component {
     }
   }
 
-  _copyLink = () => {
+  _copyLink() {
     // Would check `document.queryCommandSupported('copy')` here, but that
     // doesn't work; see:
     // - https://code.google.com/p/chromium/issues/detail?id=476508

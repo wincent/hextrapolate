@@ -7,6 +7,7 @@
 
 'use strict';
 
+import DynamicField from './DynamicField.react';
 import React from 'react';
 import type Value from './Field.react';
 import Field from './Field.react';
@@ -57,6 +58,16 @@ export default class App extends React.Component {
             value={this.state.value}
           />
         </Label>
+        <DynamicField
+          initialBase={32}
+          value={this.state.value}
+          onValueChange={this._onValueChange}
+        />
+        <DynamicField
+          initialBase={36}
+          value={this.state.value}
+          onValueChange={this._onValueChange}
+        />
       </div>
     );
   }
