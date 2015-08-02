@@ -12,7 +12,7 @@ import type Value from './Field.react';
 import Field from './Field.react';
 import Label from './Label.react';
 
-require('./App.css');
+import './App.css';
 
 export default class App extends React.Component {
   constructor(props) {
