@@ -69,14 +69,14 @@ export default class Field extends React.Component {
     }
   }
 
-  _onCopy = event => {
+  _onCopy = () => {
     const input = React.findDOMNode(this._input);
     input.select();
 
     try {
       // May throw a SecurityError.
       document.execCommand('copy');
-    } catch(error) {
+    } catch(error) { // eslint-disable-line no-empty
       // Swallow.
     }
   }
