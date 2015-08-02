@@ -86,7 +86,7 @@ export default class Field extends React.Component {
     // doesn't work; see:
     // - https://code.google.com/p/chromium/issues/detail?id=476508
     // - https://github.com/w3c/clipboard-apis/issues/4
-    return <span onClick={this._onCopy}>copy</span>;
+    return <span className="hextrapolate-copy" onClick={this._onCopy}>copy</span>;
   }
 
   render() {
