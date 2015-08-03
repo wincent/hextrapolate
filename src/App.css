@@ -1,24 +1,51 @@
-body {
-  font-family: 'Courier New';
+html {
+  box-sizing: border-box;
 }
 
-.hextrapolate-input {
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: monospace;
+}
+
+.hextrapolate-footer {
+  text-align: center;
+}
+
+.hextrapolate-field {
+  display: flex;
   flex-grow: 5;
-  font-family: monaco;
+  font-family: monospace;
   font-size: 12px;
 }
 
-.hextrapolate-label {
-  display: flex;
-  padding: 8px;
+.hextrapolate-field input {
+  flex-grow: 80;
 }
 
-.hextrapolate-label-text {
-  flex-basis: 0;
-  flex-grow: 1;
+.hextrapolate-row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.hextrapolate {
+  padding: 0 64px;
+}
+
+.hextrapolate h1 {
+  text-align: center;
+}
+
+.hextrapolate-base {
+  display: inline-block;
   font-size: 12px;
   padding-right: 12px;
   text-align: right;
+  width: 128px;
 }
 
 .hextrapolate-copy {

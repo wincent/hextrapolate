@@ -97,9 +97,8 @@ export default class Field extends React.Component {
 
   render() {
     return (
-      <span>
+      <span className="hextrapolate-field">
         <input
-          className="hextrapolate-input"
           onChange={this._onChange}
           ref={ref => this._input = ref}
           type="text"

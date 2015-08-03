@@ -83,6 +83,11 @@ export default class App extends React.Component {
           value={value}
           onValueChange={this._onValueChange}
         />
+        <footer className="hextrapolate-footer">
+          <a href="mailto:greg@hurrell.net">Contact</a>
+          {' | '}
+          <a href="https://github.com/wincent/hextrapolate">Source</a>
+        </footer>
       </div>
     );
   }

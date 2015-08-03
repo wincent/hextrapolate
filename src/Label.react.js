@@ -16,8 +16,8 @@ export default class Label extends React.Component {
 
   render() {
     return (
-      <label className="hextrapolate-label">
-        <span className="hextrapolate-label-text">
+      <label className="hextrapolate-row">
+        <span className="hextrapolate-base">
           {this.props.text}
         </span>
         {this.props.children}

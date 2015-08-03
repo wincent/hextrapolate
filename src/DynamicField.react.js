@@ -42,13 +42,14 @@ export default class DynamicField extends React.Component {
 
   render() {
     return (
-      <label className="hextrapolate-label">
-        <select
-          className="hextrapolate-label-text"
-          onChange={this._onChange}
-          value={this.state.base}>
-          {this._renderOptions()}
-        </select>
+      <label className="hextrapolate-row">
+        <span className="hextrapolate-base">
+          <select
+            onChange={this._onChange}
+            value={this.state.base}>
+            {this._renderOptions()}
+          </select>
+        </span>
         <Field
           base={this.state.base}
           onValueChange={this.props.onValueChange}
