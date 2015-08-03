@@ -8,6 +8,7 @@ import flow from 'gulp-flowtype';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import mocha from 'gulp-spawn-mocha';
+import productionConfig from './webpack.production.config.js';
 import webpack from 'webpack';
 
 let watching = false;
@@ -82,20 +83,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('webpack:build', callback => {
-  const myConfig = {
-    ...config,
-    plugins: config.plugins.concat(
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-        },
-      }),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin()
-    ),
-  };
-
-  webpack(myConfig, (err, stats) => {
+  webpack(productionConfig, (err, stats) => {
     if (err) {
       ringBell();
       throw new gutil.PluginError('webpack:build', err);
