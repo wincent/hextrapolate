@@ -71,9 +71,7 @@ export default class Field extends React.Component {
     }
   }
 
-  _onCopy = event => {
-    event.preventDefault();
-    event.stopPropagation();
+  _onCopy = () => {
     React.findDOMNode(this._input).select();
 
     // May throw a SecurityError.
