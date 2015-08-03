@@ -9,6 +9,7 @@
 
 import React from 'react';
 import convert from './convert';
+import cx from 'classnames';
 
 export type Value = {
   base: number;
@@ -50,6 +51,7 @@ export default class Field extends React.Component {
         `base prop must be between 2..${DIGITS.length}`
       );
     }
+    this.state = {copySucceeded: false};
   }
 
   _isValid(value: string): boolean {
@@ -69,14 +71,20 @@ export default class Field extends React.Component {
     }
   }
 
-  _onCopy = () => {
+  _onCopy = event => {
+    event.preventDefault();
+    event.stopPropagation();
     React.findDOMNode(this._input).select();
 
     // May throw a SecurityError.
     try {
-      document.execCommand('copy');
+      this.setState({
+        copySucceeded: document.execCommand('copy'),
+      });
+      setTimeout(() => this.setState({copySucceeded: false}), 750);
     } catch(error) { // eslint-disable-line no-empty
       // Swallow.
+      this.setState({copySucceeded: false});
     }
   }
 
@@ -95,6 +103,14 @@ export default class Field extends React.Component {
     );
   }
 
+  _copyStatus() {
+    const classNames = cx({
+      'hextrapolate-copy-status': true,
+      'hextrapolate-copy-success': this.state.copySucceeded,
+    });
+    return <span className={classNames}>&#x2713;</span>;
+  }
+
   focus() {
     React.findDOMNode(this._input).focus();
   }
@@ -108,6 +124,7 @@ export default class Field extends React.Component {
           type="text"
           value={fromValue(this.props.value, this.props.base)}
         />
+        {this._copyStatus()}
         {this._copyLink()}
       </span>
     );
