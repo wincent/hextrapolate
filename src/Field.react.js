@@ -95,6 +95,10 @@ export default class Field extends React.Component {
     );
   }
 
+  focus() {
+    React.findDOMNode(this._input).focus();
+  }
+
   render() {
     return (
       <span className="hextrapolate-field">

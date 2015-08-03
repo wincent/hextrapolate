@@ -28,6 +28,10 @@ export default class App extends React.Component {
     this.setState({value});
   }
 
+  componentDidMount() {
+    this._firstInput.focus();
+  }
+
   render() {
     const {value} = this.state;
 
@@ -40,6 +44,7 @@ export default class App extends React.Component {
           <Field
             base={16}
             onValueChange={this._onValueChange}
+            ref={ref => this._firstInput = ref}
             value={value}
           />
         </Label>
