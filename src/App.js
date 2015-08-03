@@ -12,7 +12,7 @@ import React from 'react';
 import type Value from './Field.react';
 import Field from './Field.react';
 import Label from './Label.react';
-import convert from './convert';
+import Size from './Size.react';
 
 import './App.css';
 
@@ -30,21 +30,11 @@ export default class App extends React.Component {
 
   render() {
     const {value} = this.state;
-    const bits = value ? convert(
-      value.value,
-      value.base,
-      16
-    ).length * 8 : 0;
 
     return (
       <div className="hextrapolate">
         <h1>
-          Hextrapolate
-          &mdash;
-          {' '}
-          {bits / 8 } byte{bits / 8 === 1 ? '' : 's'},
-          {' '}
-          {bits} bits
+          Hextrapolate &mdash; <Size value={value} />
         </h1>
         <Label text="Hexadecimal">
           <Field
