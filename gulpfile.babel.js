@@ -46,8 +46,6 @@ gulp.task('build', ['webpack:build']);
 
 gulp.task('flow', ['typecheck']);
 
-gulp.task('js', ['build', 'lint', 'test', 'typecheck']);
-
 gulp.task('lint', () => (
   gulp.src('src/**/*.js')
     .pipe(eslint())
@@ -79,7 +77,7 @@ gulp.task('test', () => (
 
 gulp.task('watch', () => {
   watching = true;
-  gulp.watch('src/**/*.js', ['js']);
+  gulp.watch('src/**/*.{css,js}', ['build', 'lint', 'test', 'typecheck']);
 });
 
 gulp.task('webpack:build', callback => {
