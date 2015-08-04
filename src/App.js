@@ -15,7 +15,7 @@ import React from 'react';
 import Size from './Size.react';
 import type Value from './Field.react';
 import convert from './convert';
-import debounce from './debounce';
+import debounce from 'simple-debounce';
 
 import './App.css';
 
