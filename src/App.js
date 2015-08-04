@@ -15,10 +15,20 @@ import Field from './Field.react';
 import Label from './Label.react';
 import Size from './Size.react';
 import convert from './convert';
+import debounce from './debounce';
 
 import './App.css';
 
 const SERIALIZATION_BASE = DIGITS.length;
+
+const replaceHistoryState = debounce(
+  value => window.history.replaceState(
+    {},
+    '',
+    '#' + convert(value.value, value.base, SERIALIZATION_BASE)
+  ),
+  500
+);
 
 function getInitialValue() {
   // Extract value from URL fragment, if present.
@@ -44,11 +54,7 @@ export default class App extends React.Component {
 
   _onValueChange = (value: Value) => {
     this.setState({value});
-    window.history.replaceState(
-      {},
-      '',
-      '#' + convert(value.value, value.base, SERIALIZATION_BASE)
-    );
+    replaceHistoryState(value);
   }
 
   componentDidMount() {
