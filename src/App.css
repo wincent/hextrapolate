@@ -19,13 +19,13 @@ body {
 .hextrapolate-field {
   display: flex;
   flex-grow: 5;
-  font-family: monospace;
   font-size: 12px;
   position: relative;
 }
 
 .hextrapolate-field input {
   flex-grow: 80;
+  font-family: monospace;
 }
 
 .hextrapolate-row {
