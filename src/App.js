@@ -9,11 +9,11 @@
 
 import DIGITS from './DIGITS';
 import DynamicField from './DynamicField.react';
-import React from 'react';
-import type Value from './Field.react';
 import Field from './Field.react';
 import Label from './Label.react';
+import React from 'react';
 import Size from './Size.react';
+import type Value from './Field.react';
 import convert from './convert';
 import debounce from './debounce';
 
