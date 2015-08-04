@@ -10,7 +10,7 @@
 import DIGITS from './DIGITS';
 
 function encode(number: string, base: number) {
-  if (base > 36 && base <=62) {
+  if (base > 36 && base <= 62) {
     return DIGITS[number - 1];
   } else {
     return number.toString(base);
