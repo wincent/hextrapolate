@@ -26,6 +26,7 @@ body {
 
 .hextrapolate-field input {
   flex-grow: 80;
+  text-align: right;
 }
 
 .hextrapolate-row {
