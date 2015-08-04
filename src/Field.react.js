@@ -79,8 +79,7 @@ export default class Field extends React.Component {
         copySucceeded: document.execCommand('copy'),
       });
       setTimeout(() => this.setState({copySucceeded: false}), 750);
-    } catch(error) { // eslint-disable-line no-empty
-      // Swallow.
+    } catch(error) {
       this.setState({copySucceeded: false});
     }
   }
