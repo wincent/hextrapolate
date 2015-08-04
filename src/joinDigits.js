@@ -7,6 +7,16 @@
 
 'use strict';
 
+import DIGITS from './DIGITS';
+
+function encode(number: string, base: number) {
+  if (base > 36 && base <=62) {
+    return DIGITS[number - 1];
+  } else {
+    return number.toString(base);
+  }
+}
+
 /**
  * Turns an unpacked arbitrary-precision representation of a number, `digits`,
  * (as produced by `getDigits`) back into a string representation in `base`.
@@ -18,6 +28,6 @@ export default function joinDigits(
   return digits
     .slice()
     .reverse()
-    .map(number => number.toString(base))
+    .map(number => encode(number, base))
     .join('');
 }

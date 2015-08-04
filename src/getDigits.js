@@ -7,6 +7,8 @@
 
 'use strict';
 
+import DIGITS from './DIGITS';
+
 /**
  * Strips the leading prefix from `number` in `base` and returns the remaining
  * part of the string.
@@ -26,6 +28,15 @@ function stripPrefix(number: string, base: number): string {
   }
 }
 
+function parse(digit: string, base: number) {
+  if (base > 36 && base <= 62) {
+    const position = DIGITS.indexOf(digit);
+    return position !== -1 && position < base ? position + 1 : NaN;
+  } else {
+    return parseInt(digit, base);
+  }
+}
+
 /**
  * Breaks the string repsentation of `number` in `base` into an array of decimal
  * digits (from least significant to most significant) for easier manipulation.
@@ -35,7 +46,7 @@ function stripPrefix(number: string, base: number): string {
  */
 export default function getDigits(number: string, base: number): Array<number> {
   return stripPrefix(number, base).trim().split('').reverse().map(digit => {
-    const result = parseInt(digit, base);
+    const result = parse(digit, base);
     if (isNaN(result)) {
       throw new Error('Invalid digit `' + digit + '` for base `' + base + '`');
     }

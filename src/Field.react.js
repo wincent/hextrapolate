@@ -7,6 +7,7 @@
 
 'use strict';
 
+import DIGITS from './DIGITS';
 import React from 'react';
 import convert from './convert';
 import cx from 'classnames';
@@ -19,8 +20,6 @@ export const ValuePropType = React.PropTypes.shape({
   base: React.PropTypes.number,
   value: React.PropTypes.string,
 });
-
-const DIGITS = '0123456789abcdefghijklmnopqrstuvwxyz';
 
 /**
  * Convert from `value` to `base`.

@@ -7,25 +7,48 @@
 
 'use strict';
 
+import DIGITS from './DIGITS';
 import DynamicField from './DynamicField.react';
 import React from 'react';
 import type Value from './Field.react';
 import Field from './Field.react';
 import Label from './Label.react';
 import Size from './Size.react';
+import convert from './convert';
 
 import './App.css';
+
+const SERIALIZATION_BASE = DIGITS.length;
+
+function getInitialValue() {
+  // Extract value from URL fragment, if present.
+  const value = window.location.hash.replace(/^#/, '');
+  const validator = new RegExp(`^[${DIGITS}]+$`);
+  if (!validator.test(value)) {
+    return null;
+  } else {
+    return {
+      base: SERIALIZATION_BASE,
+      value,
+    };
+  }
+}
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: null,
+      value: getInitialValue(),
     };
   }
 
   _onValueChange = (value: Value) => {
     this.setState({value});
+    window.history.replaceState(
+      {},
+      '',
+      '#' + convert(value.value, value.base, SERIALIZATION_BASE)
+    );
   }
 
   componentDidMount() {
