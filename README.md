@@ -22,7 +22,7 @@ What's a developer to do? Use one of countless number converters available onlin
 
 Let's scratch that last one right away: Xcode has changed so much with every major version that finding my way around and bringing a project up-to-date is a non-trivial (and unpleasant) undertaking. Not only that, but the aforementioned GMP library is notoriously hard to build.
 
-Why not just rewrite the darn thing in JavaScript? If it involves writing arbitrary precision integer arithmetic routines, sounds like fun. So, this is what you'll find in this repo. (And, for old times' sake, you'll find the old Objective-C codebase on [the `objective-c` branch](https://github.com/wincent/walrat/tree/master) too).
+Why not just rewrite the darn thing in JavaScript? If it involves writing arbitrary precision integer arithmetic routines, sounds like fun. So, this is what you'll find in this repo. (And, for old times' sake, you'll find the old Objective-C codebase on [the `objective-c` branch](https://github.com/wincent/hextrapolate/tree/objective-c) too).
 
 It's not entirely feature complete (for example, it doesn't have the ability to convert to and from different string encodings, yet), but it does have a couple of tiny extras that the original Hextrapolate didn't have, like shortcut buttons for copying values to the clipboard and producing a "permalink" to a specific number.
 
