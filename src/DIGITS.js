@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 const DIGITS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 export default DIGITS;

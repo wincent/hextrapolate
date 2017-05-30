@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 export default function addDigits(
   aDigits: Array<number>,
   bDigits: Array<number>,

@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 import React from 'react';
 
 export default class Label extends React.Component {

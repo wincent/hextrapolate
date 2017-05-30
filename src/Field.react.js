@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 import DIGITS from './DIGITS';
 import React from 'react';
 import convert from './convert';

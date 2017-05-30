@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 import DIGITS from './DIGITS';
 import DynamicField from './DynamicField.react';
 import Field from './Field.react';

@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 import React from 'react';
 import {ValuePropType} from './Field.react';
 import convert from './convert';

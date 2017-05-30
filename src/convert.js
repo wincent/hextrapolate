@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 import addDigits from './addDigits';
 import getDigits from './getDigits';
 import joinDigits from './joinDigits';

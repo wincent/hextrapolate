@@ -5,8 +5,6 @@
  * @flow
  */
 
-'use strict';
-
 import DIGITS from './DIGITS';
 
 function encode(number: string, base: number) {
