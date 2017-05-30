@@ -7,7 +7,7 @@ import eslint from 'gulp-eslint';
 import flow from 'gulp-flowtype';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import mocha from 'gulp-spawn-mocha';
+import mocha from 'gulp-mocha';
 import productionConfig from './webpack.production.config.js';
 import webpack from 'webpack';
 
