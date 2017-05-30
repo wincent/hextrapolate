@@ -6,7 +6,9 @@
  */
 
 import DIGITS from './DIGITS';
+import PropTypes from 'prop-types';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import convert from './convert';
 import cx from 'classnames';
 
@@ -14,9 +16,9 @@ export type Value = {
   base: number;
   value: string;
 };
-export const ValuePropType = React.PropTypes.shape({
-  base: React.PropTypes.number,
-  value: React.PropTypes.string,
+export const ValuePropType = PropTypes.shape({
+  base: PropTypes.number,
+  value: PropTypes.string,
 });
 
 /**
@@ -33,8 +35,8 @@ function fromValue(value: ?Value, base: number): string {
 
 export default class Field extends React.Component {
   static propTypes = {
-    base: React.PropTypes.number,
-    onValueChange: React.PropTypes.func.required,
+    base: PropTypes.number,
+    onValueChange: PropTypes.func.isRequired,
     value: ValuePropType,
   };
   static defaultProps = {
@@ -69,7 +71,7 @@ export default class Field extends React.Component {
   }
 
   _onCopy = () => {
-    React.findDOMNode(this._input).select();
+    ReactDOM.findDOMNode(this._input).select();
 
     // May throw a SecurityError.
     try {
@@ -106,7 +108,7 @@ export default class Field extends React.Component {
   }
 
   focus() {
-    React.findDOMNode(this._input).focus();
+    ReactDOM.findDOMNode(this._input).focus();
   }
 
   render() {

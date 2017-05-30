@@ -5,6 +5,7 @@
  * @flow
  */
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import {
   default as Field,
@@ -13,8 +14,8 @@ import {
 
 export default class DynamicField extends React.Component {
   static propTypes = {
-    initialBase: React.PropTypes.number,
-    onValueChange: React.PropTypes.func.required,
+    initialBase: PropTypes.number,
+    onValueChange: PropTypes.func.isRequired,
     value: ValuePropType,
   };
 

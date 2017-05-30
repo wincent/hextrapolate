@@ -5,11 +5,12 @@
  * @flow
  */
 
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class Label extends React.Component {
   static propTypes = {
-    text: React.PropTypes.string.required,
+    text: PropTypes.string.isRequired,
   };
 
   render() {
