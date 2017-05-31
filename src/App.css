@@ -95,14 +95,19 @@ body {
 
   .hextrapolate-field input,
   .hextrapolate-field input:focus,
-  .hextrapolate-field select,
-  .hextrapolate-field select:focus {
+  .hextrapolate-base select,
+  .hextrapolate-base select:focus {
     background: #eee;
     font-size: 16px;
   }
 
+  .hextrapolate-base select {
+    margin-bottom: 8px;
+  }
+
   .hextrapolate-row {
     display: block;
+    min-height: 40px;
   }
 
   .hextrapolate-base {
