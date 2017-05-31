@@ -33,6 +33,13 @@ function fromValue(value: ?Value, base: number): string {
   return convert(value.value, value.base, base);
 }
 
+function getValidator(base) {
+  return new RegExp(
+    `^\\s*[${DIGITS.slice(0, base)}]*\\s*$`,
+    'i'
+  );
+}
+
 export default class Field extends React.Component {
   static propTypes = {
     base: PropTypes.number,
@@ -50,14 +57,16 @@ export default class Field extends React.Component {
         `base prop must be between 2..${DIGITS.length}`
       );
     }
+    this._validator = getValidator(props.base);
     this.state = {copySucceeded: false};
   }
 
+  componentWillReceiveProps(nextProps) {
+    this._validator = getValidator(nextProps.base);
+  }
+
   _isValid(value: string): boolean {
-    const validator = new RegExp(
-      `^[${DIGITS.slice(0, this.props.base)}]*$`
-    );
-    return validator.test(value.trim().toLowerCase());
+    return this._validator.test(value);
   }
 
   _onChange = event => {
