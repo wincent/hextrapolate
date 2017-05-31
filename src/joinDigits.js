@@ -24,8 +24,7 @@ export default function joinDigits(
   base: number
 ): string {
   return digits
-    .slice()
-    .reverse()
     .map(number => encode(number, base))
+    .reverse()
     .join('');
 }
