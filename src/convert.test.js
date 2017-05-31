@@ -5,7 +5,7 @@
 
 'use strict';
 
-import convert from '../convert';
+import convert from './convert';
 
 describe('convert()', () => {
   describe('converting from binary', () => {

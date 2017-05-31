@@ -5,7 +5,7 @@
 
 'use strict';
 
-import multiplyDigits from '../multiplyDigits';
+import multiplyDigits from './multiplyDigits';
 
 describe('multiplyDigits()', () => {
   it('multiplies by 0', () => {

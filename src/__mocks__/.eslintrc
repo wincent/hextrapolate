@@ -1,9 +1,0 @@
-{
-  "env": {
-    "jasmine": true,
-    "node": true
-  },
-  "globals": {
-    "sinon": false
-  }
-}
