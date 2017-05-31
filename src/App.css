@@ -94,7 +94,10 @@ body {
   }
 
   .hextrapolate-field input,
-  .hextrapolate-field select {
+  .hextrapolate-field input:focus,
+  .hextrapolate-field select,
+  .hextrapolate-field select:focus {
+    background: #eee;
     font-size: 16px;
   }
 
