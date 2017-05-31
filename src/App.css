@@ -82,3 +82,23 @@ body {
   transform: scale(5);
   transition: transform .5s, opacity .5s;
 }
+
+@media (max-width: 500px) {
+  .hextrapolate {
+    padding: 0 8px;
+  }
+
+  .hextrapolate h1 {
+    font-size: 1.2em;
+    min-height: 4em;
+  }
+
+  .hextrapolate-row {
+    display: block;
+  }
+
+  .hextrapolate-base {
+    display: block;
+    text-align: left;
+  }
+}
