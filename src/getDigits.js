@@ -7,6 +7,11 @@
 
 import DIGITS from './DIGITS';
 
+const DIGITS_MAP = {};
+DIGITS.split('').forEach((digit, i) => {
+  DIGITS_MAP[digit] = i;
+});
+
 /**
  * Strips the leading prefix from `number` in `base` and returns the remaining
  * part of the string.
@@ -28,7 +33,8 @@ function stripPrefix(number: string, base: number): string {
 
 function parse(digit: string, base: number) {
   if (base > 36 && base <= 62) {
-    const position = DIGITS.indexOf(digit);
+    // This branch only called for serialization to/from the URL.
+    const position = DIGITS_MAP[digit];
     return position !== -1 && position < base ? position + 1 : NaN;
   } else {
     return parseInt(digit, base);
