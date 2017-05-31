@@ -18,6 +18,9 @@ export default function convert(
   inBase: number,
   outBase: number
 ): string {
+  if (inBase === outBase) {
+    return number;
+  }
   const digits = getDigits(number, inBase);
   let result = [0];
   let power = [1];
