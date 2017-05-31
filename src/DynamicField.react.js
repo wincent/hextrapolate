@@ -41,7 +41,7 @@ export default class DynamicField extends React.Component {
 
   render() {
     return (
-      <label className="hextrapolate-row">
+      <div className="hextrapolate-row">
         <span className="hextrapolate-base">
           <select
             onChange={this._onChange}
@@ -54,7 +54,7 @@ export default class DynamicField extends React.Component {
           onValueChange={this.props.onValueChange}
           value={this.props.value}
         />
-      </label>
+      </div>
     );
   }
 }
