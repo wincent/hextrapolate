@@ -126,6 +126,7 @@ export default class Field extends React.Component {
         <input
           onChange={this._onChange}
           ref={ref => this._input = ref}
+          spellcheck="false"
           type="text"
           value={fromValue(this.props.value, this.props.base)}
         />
