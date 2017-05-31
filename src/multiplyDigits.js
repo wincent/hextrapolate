@@ -21,8 +21,10 @@ export default function multiplyDigits(
   // Running total of additions performed so far.
   let count = 0;
 
-  // We memoize partial subresults in a stack so they can be re-used.
+  // We memoize partial subresults in a faux-stack so they can be re-used.
+  // (Faux because we never actually pop, as an optimization.)
   const memo = [];
+  let memoIndex = -1;
 
   while (multiplier) {
     if (count && count * 2 < multiplier) {
@@ -31,19 +33,21 @@ export default function multiplyDigits(
       multiplier -= count;
       count *= 2;
       memo.push({count, result});
+      memoIndex++;
     } else {
-      const last = memo.pop();
+      const last = memoIndex >= 0 ? memo[memoIndex--] : null;
       if (last && last.count < multiplier) {
         // We can use a previous result on the stack to leap ahead.
         result = addDigits(result, last.result, base);
         multiplier -= last.count;
         count += last.count;
-      } else if (!memo.length) {
+      } else if (memoIndex < 0) {
         // Stack is empty, so fall back to base case (single addition).
         result = addDigits(result, multiplicand, base);
         multiplier--;
         count++;
         memo.push({count, result});
+        memoIndex++;
       }
     }
   }
