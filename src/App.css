@@ -93,6 +93,10 @@ body {
     min-height: 4em;
   }
 
+  .hextrapolate-field input {
+    font-size: 16px;
+  }
+
   .hextrapolate-row {
     display: block;
   }
