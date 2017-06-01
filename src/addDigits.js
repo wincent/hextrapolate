@@ -18,11 +18,11 @@ export default function addDigits(
     const aDigit = i < aLength ? aDigits[aLength - i - 1] : 0;
     const bDigit = i < bLength ? bDigits[bLength - i - 1] : 0;
     const sum = aDigit + bDigit + carry;
-    result.push(sum % base);
+    result.unshift(sum % base);
 
     // ~~ here is the equivalent of Math.floor; used to avoid V8 de-opt,
     // "Reference to a variable which requires dynamic lookup".
     carry = ~~(sum / base);
   }
-  return result.length ? result.reverse() : [0];
+  return result.length ? result : [0];
 }
