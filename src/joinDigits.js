@@ -26,5 +26,6 @@ export default function joinDigits(
 ): string {
   return digits
     .map(number => encode(number, base))
+    .reverse()
     .join('');
 }
