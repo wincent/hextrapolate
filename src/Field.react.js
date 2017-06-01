@@ -63,7 +63,9 @@ export default class Field extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this._validator = getValidator(nextProps.base);
+    if (nextProps.base !== this.props.base) {
+      this._validator = getValidator(nextProps.base);
+    }
   }
 
   _isValid(value: string): boolean {
