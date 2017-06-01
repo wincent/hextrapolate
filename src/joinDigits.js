@@ -7,7 +7,7 @@
 
 import DIGITS from './DIGITS';
 
-function encode(number: string, base: number) {
+function encode(number: number, base: number) {
   if (base > 36 && base <= 62) {
     // This branch really only ever called for serializing to the URL.
     return DIGITS[number - 1];
