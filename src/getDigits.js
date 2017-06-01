@@ -17,17 +17,16 @@ DIGITS.split('').forEach((digit, i) => {
  * part of the string.
  *
  * - "0x" (or "0X") for hexadecimal numbers.
- * - "0" for octal numbers.
  *
- * For all bases, leading whitespace is stripped.
+ * For all bases, leading whitespace and zeroes are stripped.
  */
 function stripPrefix(number: string, base: number): string {
   if (base === 16) {
-    return number.replace(/^\s*0x/i, '');
+    return number.replace(/^\s*(?:0x)?0*/i, '');
   } else if (base === 8) {
-    return number.replace(/^\s*0/, '');
+    return number.replace(/^\s*0*/, '');
   } else {
-    return number.replace(/^\s*/, '');
+    return number.replace(/^\s*0*/, '');
   }
 }
 
@@ -42,8 +41,9 @@ function parse(digit: string, base: number) {
 }
 
 /**
- * Breaks the string repsentation of `number` in `base` into an array of decimal
- * digits (from least significant to most significant) for easier manipulation.
+ * Breaks the string representation of `number` in `base` into an array
+ * of decimal digits (from least significant to most significant) for
+ * easier manipulation.
  *
  * For example, the hexadecimal representation `"40fa"` becomes `[10, 15, 0,
  * 4]`.
