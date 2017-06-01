@@ -34,8 +34,9 @@ function fromValue(value: ?Value, base: number): string {
 }
 
 function getValidator(base) {
+  const prefix = base === 16 ? '(?:0x)?' : '';
   return new RegExp(
-    `^\\s*[${DIGITS.slice(0, base)}]*\\s*$`,
+    `^\\s*${prefix}[${DIGITS.slice(0, base)}]*\\s*$`,
     'i'
   );
 }
