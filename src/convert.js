@@ -24,7 +24,7 @@ export default function convert(
   const digits = getDigits(number, inBase);
   let result = [0];
   let power = [1];
-  for (let i = 0; i < digits.length; i++) {
+  for (let i = digits.length - 1; i >= 0; i--) {
     if (digits[i]) {
       result = addDigits(
         result,

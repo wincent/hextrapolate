@@ -43,13 +43,13 @@ function parse(digit: string, base: number) {
 
 /**
  * Breaks the string repsentation of `number` in `base` into an array of decimal
- * digits (from least significant to most significant) for easier manipulation.
+ * digits (from most significant to least significant) for easier manipulation.
  *
- * For example, the hexadecimal representation `"40fa"` becomes `[10, 15, 0,
- * 4]`.
+ * For example, the hexadecimal representation `"40fa"` becomes
+ * `[4, 0, 15, 10]`.
  */
 export default function getDigits(number: string, base: number): Array<number> {
-  return stripPrefix(number, base).trim().split('').reverse().map(digit => {
+  return stripPrefix(number, base).trim().split('').map(digit => {
     const result = parse(digit, base);
     if (isNaN(result)) {
       throw new Error('Invalid digit `' + digit + '` for base `' + base + '`');

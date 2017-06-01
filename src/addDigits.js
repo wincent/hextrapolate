@@ -12,11 +12,13 @@ export default function addDigits(
 ): Array<number> {
   let result = [];
   let carry = 0;
-  for (let i = 0; i < aDigits.length || i < bDigits.length || carry; i++) {
-    const aDigit = i < aDigits.length ? aDigits[i] : 0;
-    const bDigit = i < bDigits.length ? bDigits[i] : 0;
+  const aLength = aDigits.length;
+  const bLength = bDigits.length;
+  for (let i = 0; i < aLength || i < bLength || carry; i++) {
+    const aDigit = i < aLength ? aDigits[aLength - i - 1] : 0;
+    const bDigit = i < bLength ? bDigits[bLength - i - 1] : 0;
     const sum = aDigit + bDigit + carry;
-    result.push(sum % base);
+    result.unshift(sum % base);
 
     // ~~ here is the equivalent of Math.floor; used to avoid V8 de-opt,
     // "Reference to a variable which requires dynamic lookup".
