@@ -34,10 +34,11 @@ function fromValue(value: ?Value, base: number): string {
 
 function getValidator(base) {
   const prefix = base === 16 ? '(?:0x)?' : '';
-  return new RegExp(
+  const regexp = new RegExp(
     `^\\s*${prefix}[${DIGITS.slice(0, base)}]*\\s*$`,
     'i'
   );
+  return value => regexp.test(value);
 }
 
 export default class Field extends React.Component {
@@ -57,28 +58,51 @@ export default class Field extends React.Component {
         `base prop must be between 2..${DIGITS.length}`
       );
     }
-    this._validator = getValidator(props.base);
-    this.state = {copySucceeded: false};
+    this._validate = getValidator(props.base);
+    const value = fromValue(props.value, props.base);
+    this.state = {
+      copySucceeded: false,
+      selectionEnd: value.length,
+      selectionStart: value.length,
+      value,
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const {selectionStart, selectionEnd} = this.state;
+    this._input.setSelectionRange(selectionStart, selectionEnd);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.base !== this.props.base) {
-      this._validator = getValidator(nextProps.base);
+      this._validate = getValidator(nextProps.base);
     }
-  }
-
-  _isValid(value: string): boolean {
-    return this._validator.test(value);
+    this.setState({value: fromValue(nextProps.value, nextProps.base)});
   }
 
   _onChange = event => {
     const value = event.currentTarget.value;
-    if (this._isValid(value)) {
+    if (this._validate(value)) {
+      const {selectionEnd, selectionStart} = event.currentTarget;
+      this.setState({selectionEnd, selectionStart});
       this.props.onValueChange({
         base: this.props.base,
         value,
       });
+    } else {
+      this.setState({
+        selectionEnd: this._selectionEnd,
+        selectionStart: this._selectionStart,
+      });
     }
+  }
+
+  _onSelect = event => {
+    // Remember selection to stop React moving cursor to end:
+    // https://github.com/facebook/react/issues/955
+    const {selectionEnd, selectionStart} = event.currentTarget;
+    this._selectionStart = selectionStart;
+    this._selectionEnd = selectionEnd;
   }
 
   _onCopy = () => {
@@ -127,10 +151,11 @@ export default class Field extends React.Component {
       <span className="hextrapolate-field">
         <input
           onChange={this._onChange}
+          onSelect={this._onSelect}
           ref={ref => this._input = ref}
           spellCheck="false"
           type="text"
-          value={fromValue(this.props.value, this.props.base)}
+          value={this.state.value}
         />
         {this._copyStatus()}
         {this._copyLink()}
