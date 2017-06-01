@@ -8,7 +8,6 @@
 import DIGITS from './DIGITS';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import convert from './convert';
 import cx from 'classnames';
 
@@ -83,7 +82,7 @@ export default class Field extends React.Component {
   }
 
   _onCopy = () => {
-    ReactDOM.findDOMNode(this._input).select();
+    this._input.select();
 
     // May throw a SecurityError.
     try {
@@ -120,7 +119,7 @@ export default class Field extends React.Component {
   }
 
   focus() {
-    ReactDOM.findDOMNode(this._input).focus();
+    this._input.focus();
   }
 
   render() {
