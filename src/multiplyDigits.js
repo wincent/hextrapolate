@@ -39,7 +39,7 @@ export default function multiplyDigits(
       memoIndex++;
     } else if (memoIndex >= 0) {
       // We can use a previous result from the stack to leap ahead.
-      while (memoIndex >= 0) {
+      while (true) {
         const previous = memo[memoIndex--];
         if (previous.count <= multiplier) {
           result = addDigits(result, previous.result, base);
