@@ -37,21 +37,24 @@ export default function multiplyDigits(
       count *= 2;
       memo.push({count, result});
       memoIndex++;
-    } else {
-      const last = memoIndex >= 0 ? memo[memoIndex--] : null;
-      if (last && last.count <= multiplier) {
-        // We can use a previous result on the stack to leap ahead.
-        result = addDigits(result, last.result, base);
-        multiplier -= last.count;
-        count += last.count;
-      } else if (memoIndex < 0) {
-        // Stack is empty, so fall back to base case (single addition).
-        result = addDigits(result, multiplicand, base);
-        multiplier--;
-        count++;
-        memo.push({count, result});
-        memoIndex++;
+    } else if (memoIndex >= 0) {
+      // We can use a previous result from the stack to leap ahead.
+      while (memoIndex >= 0) {
+        const previous = memo[memoIndex--];
+        if (previous.count <= multiplier) {
+          result = addDigits(result, previous.result, base);
+          multiplier -= previous.count;
+          count += previous.count;
+          break;
+        }
       }
+    } else {
+      // Stack is empty, so fall back to base case (single addition).
+      result = addDigits(result, multiplicand, base);
+      multiplier--;
+      count++;
+      memo.push({count, result});
+      memoIndex++;
     }
   }
 
