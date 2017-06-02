@@ -30,7 +30,7 @@ export default function multiplyDigits(
   let memoIndex = -1;
 
   while (multiplier) {
-    if (count && count * 2 < multiplier) {
+    if (count && count * 2 <= multiplier) {
       // We can double the current result without exceeding the target.
       result = addDigits(result, result, base);
       multiplier -= count;
@@ -39,7 +39,7 @@ export default function multiplyDigits(
       memoIndex++;
     } else {
       const last = memoIndex >= 0 ? memo[memoIndex--] : null;
-      if (last && last.count < multiplier) {
+      if (last && last.count <= multiplier) {
         // We can use a previous result on the stack to leap ahead.
         result = addDigits(result, last.result, base);
         multiplier -= last.count;
