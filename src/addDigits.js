@@ -5,6 +5,10 @@
  * @flow
  */
 
+/**
+ * Adds two arrays of decimal digits, `aDigits` and `bDigits`, returning a new
+ * array of decimal digits in base `base`.
+ */
 export default function addDigits(
   aDigits: Array<number>,
   bDigits: Array<number>,

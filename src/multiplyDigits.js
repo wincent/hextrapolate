@@ -8,7 +8,10 @@
 import addDigits from './addDigits';
 
 /**
- * Multiplication is repeated addition.
+ * Multiply an array of decimal digits, `multiplicand`, by `number`, returning
+ * the result as an array of decimal digits in base `base`.
+ *
+ * Note that multiplication is implemented as repeated addition.
  */
 export default function multiplyDigits(
   multiplicand: Array<number>,

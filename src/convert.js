@@ -11,7 +11,8 @@ import joinDigits from './joinDigits';
 import multiplyDigits from './multiplyDigits';
 
 /**
- * Convert `number` in base `inBase`, to base `outBase`.
+ * Convert `number` in base `inBase`, to base `outBase`. Both the input `number`
+ * and return value are string representations.
  */
 export default function convert(
   number: string,
