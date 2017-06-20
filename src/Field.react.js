@@ -62,6 +62,7 @@ export default class Field extends React.Component {
     const value = fromValue(props.value, props.base);
     this.state = {
       copySucceeded: false,
+      isActive: false,
       selectionEnd: value.length,
       selectionStart: value.length,
       value,
@@ -69,8 +70,10 @@ export default class Field extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const {selectionStart, selectionEnd} = this.state;
-    this._input.setSelectionRange(selectionStart, selectionEnd);
+    if (this._isActive) {
+      const {selectionStart, selectionEnd} = this.state;
+      this._input.setSelectionRange(selectionStart, selectionEnd);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -78,6 +81,14 @@ export default class Field extends React.Component {
       this._validate = getValidator(nextProps.base);
     }
     this.setState({value: fromValue(nextProps.value, nextProps.base)});
+  }
+
+  _onBlur = event => {
+    this._isActive = false;
+  }
+
+  _onFocus = event => {
+    this._isActive = true;
   }
 
   _onChange = event => {
@@ -152,6 +163,8 @@ export default class Field extends React.Component {
         <input
           autoCapitalize="none"
           autoComplete="off"
+          onBlur={this._onBlur}
+          onFocus={this._onFocus}
           onChange={this._onChange}
           onSelect={this._onSelect}
           ref={ref => this._input = ref}
