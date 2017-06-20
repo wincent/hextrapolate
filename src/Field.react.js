@@ -150,6 +150,8 @@ export default class Field extends React.Component {
     return (
       <span className="hextrapolate-field">
         <input
+          autoCapitalize="none"
+          autoComplete="off"
           onChange={this._onChange}
           onSelect={this._onSelect}
           ref={ref => this._input = ref}
