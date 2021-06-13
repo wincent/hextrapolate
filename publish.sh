@@ -3,13 +3,13 @@
 # Get a temporary index file to work with.
 INDEX="$(mktemp -d)/index"
 
-for FILE in $(find images public -type f -and -not -name '.*'); do
+for FILE in $(find build -type f -and -not -name '.*'); do
   # Add file contents to object database.
   BLOB_ID=$(git hash-object -w -- "$FILE")
 
   # Add file to index.
   MODE=100644
-  NAME=$(basename "$FILE")
+  NAME=${FILE#build/}
   env GIT_INDEX_FILE="$INDEX" git update-index \
     --add \
     --cacheinfo "${MODE},${BLOB_ID},${NAME}"
@@ -17,7 +17,7 @@ done
 
 # Special file: "CNAME" for GitHub pages custom domain.
 # See: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain
-BLOB_ID=$(/bin/echo -n greg.hurrell.net | git hash-object -w --stdin)
+BLOB_ID=$(/bin/echo -n hex.wincent.com | git hash-object -w --stdin)
 MODE=100644
 NAME=CNAME
 env GIT_INDEX_FILE="$INDEX" git update-index \
