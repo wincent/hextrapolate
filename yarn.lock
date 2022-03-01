@@ -2096,6 +2096,11 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
+"@wincent/debounce@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@wincent/debounce/-/debounce-0.0.1.tgz#76b1fbf71c892cf4a128809a84c09dd0134282b0"
+  integrity sha512-3L89l9MUnYcEZanW9iiwpQJGl5ujB9ntxpGmzVfpDW7FqBkIJRHjO9KpwotX+Vha3H15uGtgxKP5uYRkdCF5qQ==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -9651,11 +9656,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
-
-simple-debounce@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/simple-debounce/-/simple-debounce-0.0.4.tgz#1a01ffd381aca8bb87ca965c1be7e74c3ce3cf55"
-  integrity sha512-xjoy5KrIEvL/uCMKHeXF3tf2X3qc+CoDNnta7lqt8vYWpn+5uJblf4avD5gJc4WdFrEn7CW4u+HhWQ38vJOkng==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"

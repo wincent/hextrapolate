@@ -13,7 +13,7 @@ import React from 'react';
 import Size from './Size.react';
 import type Value from './Field.react';
 import convert from './convert';
-import debounce from 'simple-debounce';
+import debounce from '@wincent/debounce';
 
 import './App.css';
 
