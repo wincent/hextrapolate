@@ -10,6 +10,11 @@ object-assign
   http://jedwatson.github.io/classnames
 */
 
+/**
+ * @copyright Copyright (c) 2019-present Greg Hurrell
+ * @license MIT
+ */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
