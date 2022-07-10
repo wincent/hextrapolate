@@ -16,8 +16,8 @@ export default class App extends React.Component {
 
   render() {
     const {value} = this.props;
-    const bits = value ? convert(value.value, value.base, 16).length * 8 : 0;
-    const bytes = bits / 8;
+    const bits = value ? convert(value.value, value.base, 2).length : 0;
+    const bytes = Math.ceil(bits / 8);
     return (
       <span>
         {bytes} byte{bytes === 1 ? '' : 's'},
