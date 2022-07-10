@@ -9,7 +9,7 @@ import React from 'react';
 import {ValuePropType} from './Field.react';
 import convert from './convert';
 
-export default class App extends React.Component {
+export default class Size extends React.Component {
   static propTypes = {
     value: ValuePropType,
   };
