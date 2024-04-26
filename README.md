@@ -1,14 +1,14 @@
 # Hextrapolate
 
-Hextrapolate is a tool to convert numbers between bases (for example: binary, octal, decimal, hexadecimal; in fact, any base from Base 2 to Base 36) with arbitrary precision. A running instance can be found at [hex.typechecked.net](https://hex.typechecked.net).
+Hextrapolate is a tool to convert numbers between bases (for example: binary, octal, decimal, hexadecimal; in fact, any base from Base 2 to Base 36) with arbitrary precision. A running instance can be found at [hex.wincent.dev](https://hex.wincent.dev).
 
 ## History
 
 Way back in ancient history (late 2003) I wrote a number conversion tool for OS X called WinHex (later renaming it to "Hextrapolate" to avoid confusion with another product of the same name). I did this because I found I frequently needed to perform these kinds of conversions in my development work, I wasn't happy with any of the existing tools, and the project presented me with an opportunity to brush up my skills with the then-new [Cocoa Bindings](http://cocoadevcentral.com/articles/000080.php).
 
-You can see the original product page [here](https://typechecked.net/a/products/hextrapolate/). It had a couple of interesting features: namely, a nice UI, and the ability to perform arbitrary precision integer conversions, thanks to the venerable [GMP library](https://gmplib.org/).
+You can see the original product page [here](https://wincent.dev/a/products/hextrapolate/). It had a couple of interesting features: namely, a nice UI, and the ability to perform arbitrary precision integer conversions, thanks to the venerable [GMP library](https://gmplib.org/).
 
-I feel a fair bit of nostalgia for this little project because it [had documentation](https://typechecked.net/a/products/hextrapolate/help/front_page.html) that had a single set of source templates from which I could generate multiple outputs (specifically HTML for uploading on the web, and Apple's bastardized pseudo-HTML "help book" format).
+I feel a fair bit of nostalgia for this little project because it [had documentation](https://wincent.dev/a/products/hextrapolate/help/front_page.html) that had a single set of source templates from which I could generate multiple outputs (specifically HTML for uploading on the web, and Apple's bastardized pseudo-HTML "help book" format).
 
 In a classic example of Yak shaving, this was built using an object-oriented templating system that I wrote called [Walrus](https://github.com/wincent/walrus), which employed a memoizing "Packrat" PEG based parser generator called [Walrat](https://github.com/wincent/walrat), which was the vehicle that I used to teach myself Ruby and also the first example of a project that I drove pretty much start-to-finish via [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development).
 

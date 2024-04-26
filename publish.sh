@@ -17,7 +17,7 @@ done
 
 # Special file: "CNAME" for GitHub pages custom domain.
 # See: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain
-BLOB_ID=$(/bin/echo -n hex.typechecked.net | git hash-object -w --stdin)
+BLOB_ID=$(/bin/echo -n hex.wincent.dev | git hash-object -w --stdin)
 MODE=100644
 NAME=CNAME
 env GIT_INDEX_FILE="$INDEX" git update-index \
